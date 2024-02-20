@@ -17,6 +17,7 @@ footer_f = windows.gui_theme.font_arial_footer
 small_f = windows.gui_theme.font_arial_kicsi
 small_bold = windows.gui_theme.font_arial_kicsi_bold
 medium_f = windows.gui_theme.font_arial_kozepes
+medium_bold = windows.gui_theme.font_arial_kozepes_bold
 large_f = windows.gui_theme.font_arial_nagy
 large_bold = windows.gui_theme.font_arial_nagy_bold
 
@@ -46,7 +47,8 @@ def main():
             sg.Input("", k = "-new_package-", font = medium_f, size = 30), 
             sg.Button("Hozzáad", k = "-ADD-", font = medium_f, size = 12, bind_return_key = True),
             sg.Button("Módosít", k = "-EDIT-", font = medium_f, size = 12),
-            sg.Button("Töröl", k = "-DELETE-", font = medium_f, size = 12)
+            sg.Button("Töröl", k = "-DELETE-", font = medium_f, size = 12),
+            sg.Push(), sg.Text("", k = "-info-", font = medium_bold, text_color = "red"), sg.Push()
         ]
     ]
 
@@ -84,7 +86,7 @@ def main():
 
     layout = [
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("OPCIÓK", option_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("RÖGZÍTÉS", option_layout, font = small_bold, expand_x = True)],
         [sg.Frame("CSOMAGOK", package_layout, font = small_bold, expand_x = True, expand_y = True)],
         [sg.VPush()],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = small_bold, expand_x = True)],
@@ -103,10 +105,17 @@ def main():
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             break
         if event == "-ADD-" and value["-new_package-"]:
-            local_db.insert(csomag_table_insert, (value["-new_package-"], usercode, hostname))
-            columns, results = local_db.select(csomag_table_select)
-            window["-new_package-"].update("")
-            window["-packages-"].update(values = results)
+            if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
+                window["-info-"].update("")
+                local_db.insert(csomag_table_insert, (value["-new_package-"], usercode, hostname))
+                columns, results = local_db.select(csomag_table_select)
+                window["-new_package-"].update("")
+                window["-packages-"].update(values = results)
+            else:
+                window["-info-"].update("Ismétlődés!")
+                window["-new_package-"].update("")
+        if event in ["-EDIT-", "-DELETE-", "-UPLOAD-", "-SETTINGS-"]:
+            sgpop( event + " fejlesztés alatt")
 
     os._exit(1)
 

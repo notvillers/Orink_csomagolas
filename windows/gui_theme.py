@@ -6,6 +6,7 @@ font_arial_kozepes = (font, 30)
 font_arial_nagy = (font, 45)
 # Bold
 font_arial_kicsi_bold = (font, 20, "bold")
+font_arial_kozepes_bold = (font, 30, "bold")
 font_arial_nagy_bold = (font, 45, "bold")
 
 # Színek + téma

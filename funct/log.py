@@ -4,7 +4,7 @@ import config_path
 import datetime
 import os
 
-logname = "log.txt"
+logname = "event.txt"
 
 # Logolás .txt-be
 def text_to_log(text, path = config_path.path):

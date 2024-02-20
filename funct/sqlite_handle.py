@@ -36,3 +36,15 @@ class connection:
         self.cursor.close()
         self.connection.close()
         text_to_log(self.name + " connection closed")
+
+    def is_value_there(self, columns, results, column_name: str, search_val):
+        index = None
+        for i in range(len(columns)):
+            if columns[i] == column_name:
+                index = i
+                break
+        if index != None:
+            for result in results:
+                if result[index] == search_val:
+                    return True
+        return False
