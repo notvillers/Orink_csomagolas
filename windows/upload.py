@@ -15,6 +15,8 @@ medium_f = windows.gui_theme.font_arial_kozepes
 medium_bold = windows.gui_theme.font_arial_kozepes_bold
 large_f = windows.gui_theme.font_arial_nagy
 large_bold = windows.gui_theme.font_arial_nagy_bold
+bsize = windows.gui_theme.button_size
+isize = windows.gui_theme.input_size
 
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
@@ -25,18 +27,22 @@ def main():
         [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
     ]
 
+    text_layout = [
+        [sg.Push(), sg.Text("Indulhat az adatok feltöltése?", font = medium_f), sg.Push()]
+    ]
+
     options_layout = [
-        [sg.Push(), sg.Text("Indulhat az adatok feltöltése?", font = medium_f), sg.Push()],
-        [sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = small_f, button_color = "green", size = 10), sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = small_f, button_color = "red", size = 10), sg.Push()]
+        [sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = small_f, button_color = "green", size = bsize), sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = small_f, button_color = "red", size = bsize), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("", options_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", text_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("OPCIÓK", options_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]

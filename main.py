@@ -21,6 +21,8 @@ medium_f = windows.gui_theme.font_arial_kozepes
 medium_bold = windows.gui_theme.font_arial_kozepes_bold
 large_f = windows.gui_theme.font_arial_nagy
 large_bold = windows.gui_theme.font_arial_nagy_bold
+bsize = windows.gui_theme.button_size
+isize = windows.gui_theme.input_size
 
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
@@ -45,10 +47,10 @@ def main():
 
     option_layout = [
         [
-            sg.Input("", k = "-new_package-", font = small_f, size = 20), 
-            sg.Button("HOZZÁADÁS", k = "-ADD-", font = small_f, size = 10, bind_return_key = True),
-            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = small_f, size = 10),
-            sg.Button("TÖRLÉS", k = "-DELETE-", font = small_f, size = 10, mouseover_colors = "red"),
+            sg.Input("", k = "-new_package-", font = small_f, size = isize), 
+            sg.Button("HOZZÁADÁS", k = "-ADD-", font = small_f, size = bsize, bind_return_key = True),
+            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = small_f, size = bsize),
+            sg.Button("TÖRLÉS", k = "-DELETE-", font = small_f, size = bsize, mouseover_colors = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = medium_bold, text_color = "red"), sg.Push()
         ]
     ]
@@ -72,17 +74,17 @@ def main():
                 sbar_frame_color = windows.gui_theme.bg_c,
                 sbar_trough_color = windows.gui_theme.bg_c,
                 vertical_scroll_only = False,
-                alternating_row_color = windows.gui_theme.ok_color
+                alternating_row_color = windows.gui_theme.ok_color,
             )
         ]
     ]
 
     settings_layout = [
-        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = small_f, size = 10), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = small_f, size = 10), sg.Push()]
+        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = small_f, size = bsize), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = small_f, size = bsize), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [

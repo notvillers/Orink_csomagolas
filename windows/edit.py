@@ -15,6 +15,8 @@ medium_f = windows.gui_theme.font_arial_kozepes
 medium_bold = windows.gui_theme.font_arial_kozepes_bold
 large_f = windows.gui_theme.font_arial_nagy
 large_bold = windows.gui_theme.font_arial_nagy_bold
+bsize = windows.gui_theme.button_size
+isize = windows.gui_theme.input_size
 
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
@@ -30,17 +32,17 @@ def main(selected_item):
     ]
 
     package_layout = [
-        [sg.Text("ID: ", font = small_f), sg.Push(), sg.Input(package_id, font = small_f, size = 20, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
-        [sg.Text("Csomagszám: ", font = small_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = small_f, size = 20)],
-        [sg.Text("Rögzítő: ", font = small_f), sg.Push(), sg.Input(package_user, font = small_f, size = 20, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
+        [sg.Text("ID: ", font = small_f), sg.Push(), sg.Input(package_id, font = small_f, size = isize, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
+        [sg.Text("Csomagszám: ", font = small_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = small_f, size = isize)],
+        [sg.Text("Rögzítő: ", font = small_f), sg.Push(), sg.Input(package_user, font = small_f, size = isize, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
     ]
 
     button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = 10, bind_return_key = True), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = bsize, bind_return_key = True), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [

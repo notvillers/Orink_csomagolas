@@ -1,14 +1,14 @@
 # Betűtípus
 font = 'Arial'
-font_arial_footer = (font, 15)
-font_arial_kicsi = (font, 20)
-font_arial_kozepes = (font, 30)
-font_arial_nagy = (font, 45)
+font_arial_footer = (font, 10)
+font_arial_kicsi = (font, 15)
+font_arial_kozepes = (font, 25)
+font_arial_nagy = (font, 40)
 # Bold
-font_arial_footer_bold = (font, 15, "bold")
-font_arial_kicsi_bold = (font, 20, "bold")
-font_arial_kozepes_bold = (font, 30, "bold")
-font_arial_nagy_bold = (font, 45, "bold")
+font_arial_footer_bold = (font, 10, "bold")
+font_arial_kicsi_bold = (font, 15, "bold")
+font_arial_kozepes_bold = (font, 25, "bold")
+font_arial_nagy_bold = (font, 40, "bold")
 
 # Színek + téma
 bg_c = '#93B1C3'
@@ -39,8 +39,14 @@ sgsize = (
     int(round(sc_height * sc_percent, 0))
 )
 
-main_percent = 0.1
+main_percent = 0.3
 main_sgisze = ( 
     int(round(sgsize[0] * main_percent, 0)),
     int(round(sgsize[1] * main_percent, 0))
 )
+
+# Button size
+button_size = 12
+
+# Input size
+input_size = 20

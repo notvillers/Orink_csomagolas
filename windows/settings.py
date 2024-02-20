@@ -6,7 +6,7 @@ import funct.json_handle
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-header = "OCTOPY - CSOMAGOLÁS \ BEÁLLÍTÁS"
+header = "OCTOPY - CSOMAGOLÁS \ ADATOK"
 # Font
 footer_bold = windows.gui_theme.font_arial_footer_bold
 footer_f = windows.gui_theme.font_arial_footer
@@ -16,6 +16,8 @@ medium_f = windows.gui_theme.font_arial_kozepes
 medium_bold = windows.gui_theme.font_arial_kozepes_bold
 large_f = windows.gui_theme.font_arial_nagy
 large_bold = windows.gui_theme.font_arial_nagy_bold
+bsize = windows.gui_theme.button_size
+isize = windows.gui_theme.input_size
 
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
@@ -30,15 +32,15 @@ def main():
     ]
 
     setting_layout = [
-        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = 20)]
+        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize)]
     ]
 
     button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = footer_f, size = 10, bind_return_key = True), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = bsize, bind_return_key = True), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [
