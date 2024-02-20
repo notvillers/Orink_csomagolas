@@ -5,6 +5,7 @@ font_arial_kicsi = (font, 20)
 font_arial_kozepes = (font, 30)
 font_arial_nagy = (font, 45)
 # Bold
+font_arial_footer_bold = (font, 15, "bold")
 font_arial_kicsi_bold = (font, 20, "bold")
 font_arial_kozepes_bold = (font, 30, "bold")
 font_arial_nagy_bold = (font, 45, "bold")
@@ -42,4 +43,4 @@ main_percent = 0.1
 main_sgisze = ( 
     int(round(sgsize[0] * main_percent, 0)),
     int(round(sgsize[1] * main_percent, 0))
- )
+)

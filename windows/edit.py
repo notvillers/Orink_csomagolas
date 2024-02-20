@@ -5,8 +5,9 @@ import config_path
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-header = "OCTOPY - ORINK: CSOMAGOLÁS \ MÓDOSÍTÁS"
+header = "OCTOPY - CSOMAGOLÁS \ MÓDOSÍTÁS"
 # Font
+footer_bold = windows.gui_theme.font_arial_footer_bold
 footer_f = windows.gui_theme.font_arial_footer
 small_f = windows.gui_theme.font_arial_kicsi
 small_bold = windows.gui_theme.font_arial_kicsi_bold
@@ -29,9 +30,9 @@ def main(selected_item):
     ]
 
     package_layout = [
-        [sg.Text("ID: ", font = small_f), sg.Push(), sg.Input(package_id, font = small_f, size = 18, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
-        [sg.Text("Csomagszám: ", font = small_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = small_f, size = 18)],
-        [sg.Text("Rögzítő: ", font = small_f), sg.Push(), sg.Input(package_user, font = small_f, size = 18, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
+        [sg.Text("ID: ", font = small_f), sg.Push(), sg.Input(package_id, font = small_f, size = 20, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
+        [sg.Text("Csomagszám: ", font = small_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = small_f, size = 20)],
+        [sg.Text("Rögzítő: ", font = small_f), sg.Push(), sg.Input(package_user, font = small_f, size = 20, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
     ]
 
     button_layout = [

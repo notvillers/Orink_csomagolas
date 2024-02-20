@@ -1,12 +1,11 @@
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
-import funct.json_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-header = "OCTOPY - CSOMAGOLÁS \ BEÁLLÍTÁS"
+header = "OCTOPY - CSOMAGOLÁS \ FELTÖLTÉS"
 # Font
 footer_bold = windows.gui_theme.font_arial_footer_bold
 footer_f = windows.gui_theme.font_arial_footer
@@ -22,19 +21,13 @@ def sgpop(text):
 
 def main():
 
-    config_json = funct.json_handle.config_read()
-    usercode = config_json["usercode"]
-
     header_layout = [
         [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
     ]
 
-    setting_layout = [
-        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = 20)]
-    ]
-
-    button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = footer_f, size = 10, bind_return_key = True), sg.Push()]
+    options_layout = [
+        [sg.Push(), sg.Text("Indulhat az adatok feltöltése?", font = medium_f), sg.Push()],
+        [sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = small_f, button_color = "green", size = 10), sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = small_f, button_color = "red", size = 10), sg.Push()]
     ]
 
     footer_layout = [
@@ -43,8 +36,7 @@ def main():
 
     layout = [
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("ADATOK", setting_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("OPCIÓK", button_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", options_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
@@ -57,13 +49,8 @@ def main():
         event, value = window.read()
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
-        if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
+        if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-" or event == "-UPLOAD_NO-":
             window.close()
             break
-        if event == "-UPDATE-":
-            if value["-usercode-"]:
-                funct.json_handle.config_update(usercode = value["-usercode-"])
-                window.close()
-                break
-            else:
-                sgpop("Üres azonosító nem rögzíthető!")
+        if event == "-UPLOAD_YES-":
+            None
