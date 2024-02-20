@@ -25,21 +25,21 @@ def main(selected_item):
     package_user = selected_item[2]
 
     header_layout = [
-        [sg.Push(), sg.Text(header, font = large_bold), sg.Push()]
+        [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
     ]
 
     package_layout = [
-        [sg.Text("ID: ", font = medium_f), sg.Push(), sg.Input(package_id, font = medium_f, size = 30, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
-        [sg.Text("Csomagszám: ", font = medium_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = medium_f, size = 30)],
-        [sg.Text("Rögzítő: ", font = medium_f), sg.Push(), sg.Input(package_user, font = medium_f, size = 30, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
+        [sg.Text("ID: ", font = small_f), sg.Push(), sg.Input(package_id, font = small_f, size = 18, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
+        [sg.Text("Csomagszám: ", font = small_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = small_f, size = 18)],
+        [sg.Text("Rögzítő: ", font = small_f), sg.Push(), sg.Input(package_user, font = small_f, size = 18, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
     ]
 
     button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = medium_f, size = 12, bind_return_key = True), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = 10, bind_return_key = True), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = small_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = small_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [

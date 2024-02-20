@@ -25,19 +25,19 @@ def main():
     usercode = config_json["usercode"]
 
     header_layout = [
-        [sg.Push(), sg.Text(header, font = large_bold), sg.Push()]
+        [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
     ]
 
     setting_layout = [
-        [sg.Text("Felhasználó azonosító:", font = medium_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = medium_f, size = 30)]
+        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = 18)]
     ]
 
     button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = medium_f, size = 12, bind_return_key = True), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = footer_f, size = 10, bind_return_key = True), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = small_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = small_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [

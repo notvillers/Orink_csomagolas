@@ -39,15 +39,15 @@ def main():
     columns, results = local_db.select(csomag_table_select)
 
     header_layout = [
-        [sg.Push(), sg.Text(header, font = large_bold), sg.Push()]
+        [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
     ]
 
     option_layout = [
         [
-            sg.Input("", k = "-new_package-", font = medium_f, size = 30), 
-            sg.Button("HOZZÁADÁS", k = "-ADD-", font = medium_f, size = 12, bind_return_key = True),
-            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = medium_f, size = 12),
-            sg.Button("TÖRLÉS", k = "-DELETE-", font = medium_f, size = 12, mouseover_colors = "red"),
+            sg.Input("", k = "-new_package-", font = small_f, size = 18), 
+            sg.Button("HOZZÁADÁS", k = "-ADD-", font = small_f, size = 10, bind_return_key = True),
+            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = small_f, size = 10),
+            sg.Button("TÖRLÉS", k = "-DELETE-", font = small_f, size = 10, mouseover_colors = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = medium_bold, text_color = "red"), sg.Push()
         ]
     ]
@@ -58,7 +58,7 @@ def main():
                 values = results, 
                 headings = columns, 
                 key = "-packages-", 
-                font = medium_f,
+                font = small_f,
                 justification = 'right',
                 auto_size_columns = True, 
                 enable_events = True, 
@@ -77,11 +77,11 @@ def main():
     ]
 
     settings_layout = [
-        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = medium_f, size = 12), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = medium_f, size = 12), sg.Push()]
+        [sg.Button("ADATOK", k = "-SETTINGS-", font = small_f, size = 10), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = small_f, size = 10)]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.version, font = small_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = small_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.version, font = footer_f), sg.Push(), sg.VerticalSeparator(), sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
 
     layout = [
