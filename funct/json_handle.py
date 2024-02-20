@@ -7,7 +7,7 @@ config_json = config_path.config_json_path
 def create_config(name: str = config_json):
     if not os.path.exists(name):
         data = {
-            "usercode": 1234
+            "usercode": 0000
         }
         with open(name, "w", encoding = "utf-8") as file:
             json.dump(data, file, indent = 2)

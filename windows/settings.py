@@ -1,11 +1,12 @@
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
+import funct.json_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-header = "OCTOPY - ORINK: CSOMAGOLÁS \ MÓDOSÍTÁS"
+header = "OCTOPY - ORINK: CSOMAGOLÁS \ BEÁLLÍTÁS"
 # Font
 footer_f = windows.gui_theme.font_arial_footer
 small_f = windows.gui_theme.font_arial_kicsi
@@ -18,20 +19,17 @@ large_bold = windows.gui_theme.font_arial_nagy_bold
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
 
-def main(selected_item):
+def main():
 
-    package_id = selected_item[0]
-    package_no = selected_item[1]
-    package_user = selected_item[2]
+    config_json = funct.json_handle.config_read()
+    usercode = config_json["usercode"]
 
     header_layout = [
         [sg.Push(), sg.Text(header, font = large_bold), sg.Push()]
     ]
 
-    package_layout = [
-        [sg.Text("ID: ", font = medium_f), sg.Push(), sg.Input(package_id, font = medium_f, size = 30, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
-        [sg.Text("Csomagszám: ", font = medium_f), sg.Push(), sg.Input(package_no, k = "-package_no-", font = medium_f, size = 30)],
-        [sg.Text("Rögzítő: ", font = medium_f), sg.Push(), sg.Input(package_user, font = medium_f, size = 30, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)]
+    setting_layout = [
+        [sg.Text("Felhasználó azonosító:", font = medium_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = medium_f, size = 30)]
     ]
 
     button_layout = [
@@ -43,8 +41,8 @@ def main(selected_item):
     ]
 
     layout = [
-        [sg.Frame("", header_layout, font = small_f, expand_x = True)],
-        [sg.Frame("CSOMAG", package_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("ADATOK", setting_layout, font = small_bold, expand_x = True)],
         [sg.Frame("OPCIÓK", button_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
@@ -60,10 +58,11 @@ def main(selected_item):
         print("value: ", end = "\t"); print(value)
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()
-            return None
+            break
         if event == "-UPDATE-":
-            if value["-package_no-"]:
+            if value["-usercode-"]:
+                funct.json_handle.config_update(usercode = value["-usercode-"])
                 window.close()
-                return [package_id, value["-package_no-"], package_user]
+                break
             else:
-                sgpop("Üres csomagszám nem rögzítehető!")
+                sgpop("Üres azonosító nem rögzíthető!")

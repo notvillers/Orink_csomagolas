@@ -6,7 +6,7 @@ import sys
 import config_path
 import funct.json_handle
 from funct.sqlite_handle import connection as sqlite_connection
-from funct.db_config import csomag_table_create, csomag_table_select, csomag_table_insert, csomag_table_delete
+from funct.db_config import csomag_table_create, csomag_table_select, csomag_table_insert, csomag_table_delete, csomag_table_update_by_id
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -45,9 +45,9 @@ def main():
     option_layout = [
         [
             sg.Input("", k = "-new_package-", font = medium_f, size = 30), 
-            sg.Button("Hozzáad", k = "-ADD-", font = medium_f, size = 12, bind_return_key = True),
-            sg.Button("Módosít", k = "-EDIT-", font = medium_f, size = 12),
-            sg.Button("Töröl", k = "-DELETE-", font = medium_f, size = 12, mouseover_colors = "red"),
+            sg.Button("HOZZÁADÁS", k = "-ADD-", font = medium_f, size = 12, bind_return_key = True),
+            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = medium_f, size = 12),
+            sg.Button("TÖRLÉS", k = "-DELETE-", font = medium_f, size = 12, mouseover_colors = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = medium_bold, text_color = "red"), sg.Push()
         ]
     ]
@@ -77,7 +77,7 @@ def main():
     ]
 
     settings_layout = [
-        [sg.Push(), sg.Button("Feltöltés", k = "-UPLOAD-", font = medium_f, size = 12), sg.Push(), sg.Button("Adatok", k = "-SETTINGS-", font = medium_f, size = 12), sg.Push()]
+        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = medium_f, size = 12), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = medium_f, size = 12), sg.Push()]
     ]
 
     footer_layout = [
@@ -124,15 +124,27 @@ def main():
                     window["-new_package-"].update("")
             else:
                 window["-info-"].update("Üres csomagszám!")
-        if event == "-EDIT-":
+        if event == "-EDIT-": # TODO üres csomagszám figyelés ide is
             if selected_item_id:
                 from windows.edit import main as edit_main
-                edit_main()
+                update_item = edit_main(selected_item)
+                if update_item != None:
+                    print(csomag_table_update_by_id)
+                    print(update_item)
+                    print("csomagszam: " + update_item[1])
+                    print("id: " + str(update_item[0]))
+                    update_val = (update_item[1], update_item[0]) 
+                    local_db.insert(csomag_table_update_by_id, (update_val))
+                    columns, results = local_db.select(csomag_table_select)
+                    window["-packages-"].update(values = results)
         if event == "-DELETE-":
-            local_db.execute(csomag_table_delete, selected_item_id)
+            local_db.execute(csomag_table_delete, (selected_item_id))
             columns, results = local_db.select(csomag_table_select)
             window["-packages-"].update(values = results)
-        elif event in ["-UPLOAD-", "-SETTINGS-"]:
+        if event == "-SETTINGS-":
+            from windows.settings import main as settings_main
+            settings_main()
+        elif event in ["-UPLOAD-"]:
             sgpop( event + " fejlesztés alatt")
 
     window.close()

@@ -20,13 +20,14 @@ class connection:
         columns = [description[0] for description in self.cursor.description]
         return columns, result
     
-    def execute(self, query: str, values: str = None):
+    def execute(self, query: str, values = None):
         if values == None:
             self.cursor.execute(query)
             self.connection.commit()
             return
         self.cursor.execute(query, (values,))
         self.connection.commit()
+        return 
 
     def insert(self, inserter: str, insert: str):
         self.cursor.execute(inserter, insert)
