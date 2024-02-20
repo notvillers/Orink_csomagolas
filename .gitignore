@@ -1,4 +1,5 @@
 *.pyc
-*.txt
+log.txt
+event.txt
 *.json
 *.db
