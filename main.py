@@ -31,8 +31,7 @@ def main():
     text_to_log(header + " started")    
 
     if funct.json_handle.create_config():
-        text_to_log("please fill out the json in " + config_path.config_json_path)
-        sys.exit()
+        sgpop("please fill out the json in " + config_path.config_json_path)
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
     hostname = config_path.hostname
@@ -97,7 +96,7 @@ def main():
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
 
-    window = sg.Window(header, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze)
+    window = sg.Window(header, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
     window.Maximize()
 

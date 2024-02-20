@@ -18,3 +18,7 @@ db_path = os.path.join(path, db_subpath, db_name)
 
 if not os.path.exists(os.path.join(path, db_subpath)):
     os.makedirs(os.path.join(path, db_subpath))
+    
+icon_subpath = "src"
+icon_name = "icon.ico"
+icon_path = os.path.join(path, icon_subpath, icon_name)
