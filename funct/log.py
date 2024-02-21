@@ -1,4 +1,4 @@
-# Naplózó
+# Logger
 
 import config_path
 import datetime
@@ -6,7 +6,7 @@ import os
 
 logname = "event.txt"
 
-# Logolás .txt-be
+# Logs to logfile
 def text_to_log(text, path = config_path.path):
     datetime_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     result = datetime_string + "\t" + text
@@ -14,7 +14,7 @@ def text_to_log(text, path = config_path.path):
     with open(os.path.join(path, logname), "a") as file:
         file.write(result + "\n")
 
-# Log törlése
+# Deletes log
 def delete_log(path = config_path.path):
     path = os.path.join(config_path.path, logname)
     try:

@@ -1,6 +1,8 @@
+# Resolution handler
+
 from screeninfo import get_monitors
 
-# Elsődleges monitor felbontását adja vissza
+# Return the resolution of primary display
 def get_primary():
     for disp in get_monitors():
         if disp.is_primary == True:

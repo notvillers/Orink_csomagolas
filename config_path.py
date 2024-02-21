@@ -7,6 +7,8 @@ version = "0.1"
 config_json_subpath = "config"
 config_json_name = "config.json"
 config_json_path = os.path.join(path, config_json_subpath, config_json_name)
+ftp_json_name = "ftp.json"
+ftp_json_path = os.path.join(path, config_json_subpath, ftp_json_name)
 
 if not os.path.exists(os.path.join(path, config_json_subpath)):
     os.makedirs(os.path.join(path, config_json_subpath))

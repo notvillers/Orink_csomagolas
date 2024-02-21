@@ -1,4 +1,6 @@
-# Betűtípus
+# Configuration for the PySimpleGUI
+
+# Font
 font = 'Arial'
 font_arial_footer = (font, 10)
 font_arial_kicsi = (font, 15)
@@ -10,7 +12,7 @@ font_arial_kicsi_bold = (font, 15, "bold")
 font_arial_kozepes_bold = (font, 25, "bold")
 font_arial_nagy_bold = (font, 40, "bold")
 
-# Színek + téma
+# Colors + Theme
 bg_c = '#93B1C3'
 ok_color = '#B8DDF5'
 err_color = '#F8665D'
@@ -30,7 +32,7 @@ o8_theme = {
     'PROGRESS_DEPTH': 0
 }
 
-# Méret
+# Size
 import funct.resolution
 sc_width, sc_height = funct.resolution.get_primary()
 sc_percent = 0.85

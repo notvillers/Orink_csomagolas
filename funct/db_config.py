@@ -1,3 +1,5 @@
+# Queries for the database
+
 csomag_table_create = """
     CREATE TABLE IF NOT EXISTS csomag
         (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME)

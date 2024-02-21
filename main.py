@@ -1,3 +1,5 @@
+# Main
+
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
@@ -24,14 +26,19 @@ large_bold = windows.gui_theme.font_arial_nagy_bold
 bsize = windows.gui_theme.button_size
 isize = windows.gui_theme.input_size
 
+# Popup
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
 
+# Main
 def main():
+
     text_to_log(header + " started")    
 
     if funct.json_handle.create_config():
         sgpop("Kérlek töltsd ki a felhasználó adatokat!")
+    if funct.json_handle.create_ftp():
+        sgpop("Kérlek töltsd ki az FTP adatokat!")
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
     hostname = config_path.hostname
@@ -106,15 +113,19 @@ def main():
         event, value = window.read()
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
+        # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             break
+        # Checking for table click
         if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
             selected_item = results[event[2][0]]
             selected_item_id = selected_item[0]
             print(selected_item)
             print(selected_item_id)
+        # Add
         if event == "-ADD-":
             if value["-new_package-"]:
+                # If not repeatable package no.
                 if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
                     window["-info-"].update("")
                     local_db.insert(csomag_table_insert, (value["-new_package-"], usercode, hostname))
@@ -126,6 +137,7 @@ def main():
                     window["-new_package-"].update("")
             else:
                 window["-info-"].update("Üres csomagszám!")
+        # Edit
         if event == "-EDIT-":
             if selected_item_id:
                 from windows.edit import main as edit_main
@@ -141,15 +153,18 @@ def main():
                         window["-packages-"].update(values = results)
                     else:
                         window["-info-"].update("Ismétlődés!")
+        # Delete
         if event == "-DELETE-" and selected_item_id:
             local_db.execute(csomag_table_delete, (selected_item_id))
             columns, results = local_db.select(csomag_table_select)
             window["-packages-"].update(values = results)
+        # Settings
         if event == "-SETTINGS-":
             from windows.settings import main as settings_main
             window.Minimize()
             settings_main()
             window.Maximize()
+        # Upload
         elif event in ["-UPLOAD-"]:
             from windows.upload import main as upload_main
             window.Minimize()

@@ -1,3 +1,5 @@
+# Edits choosen package
+
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
@@ -18,9 +20,11 @@ large_bold = windows.gui_theme.font_arial_nagy_bold
 bsize = windows.gui_theme.button_size
 isize = windows.gui_theme.input_size
 
+# Popup
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
 
+# Main
 def main(selected_item):
 
     package_id = selected_item[0]
@@ -61,12 +65,16 @@ def main(selected_item):
         event, value = window.read()
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
+        # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()
             return None
+        # Update
         if event == "-UPDATE-":
             if value["-package_no-"]:
                 window.close()
                 return [package_id, value["-package_no-"], package_user]
             else:
                 sgpop("Üres csomagszám nem rögzítehető!")
+
+    window.close()

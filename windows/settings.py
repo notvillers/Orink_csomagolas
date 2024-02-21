@@ -1,3 +1,5 @@
+# Settings
+
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
@@ -19,9 +21,11 @@ large_bold = windows.gui_theme.font_arial_nagy_bold
 bsize = windows.gui_theme.button_size
 isize = windows.gui_theme.input_size
 
+# Popup
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
 
+# Main
 def main():
 
     config_json = funct.json_handle.config_read()
@@ -59,9 +63,11 @@ def main():
         event, value = window.read()
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
+        # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()
             break
+        # Update
         if event == "-UPDATE-":
             if value["-usercode-"]:
                 funct.json_handle.config_update(usercode = value["-usercode-"])
@@ -69,3 +75,5 @@ def main():
                 break
             else:
                 sgpop("Üres azonosító nem rögzíthető!")
+
+    window.close()
