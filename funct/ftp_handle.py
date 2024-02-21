@@ -22,3 +22,5 @@ class Client:
                 ftp.storbinary(f'STOR {remote_filename}', local_file)
 
             text_to_log(f"File '{local_file_path}' uploaded to '{remote_directory}/{remote_filename}'")
+            
+            return True

@@ -1,10 +1,12 @@
 # Upload
 
 import PySimpleGUI as sg
+import os
 import windows.gui_theme
 import config_path
 import funct.json_handle
 import funct.ftp_handle
+import funct.file_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -41,6 +43,10 @@ def main():
         [sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = small_f, button_color = "green", size = bsize), sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = small_f, button_color = "red", size = bsize), sg.Push()]
     ]
 
+    info_layout = [
+        [sg.Push(), sg.Text("", k = "-info-", font = small_bold, text_color = "red"), sg.Push()]
+    ]
+
     footer_layout = [
         [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
     ]
@@ -49,6 +55,7 @@ def main():
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
         [sg.Frame("", text_layout, font = small_bold, expand_x = True)],
         [sg.Frame("OPCIÓK", options_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", info_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
@@ -59,12 +66,12 @@ def main():
 
     while True:
         event, value = window.read()
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        #print("event: ", end = "\t"); print(event)
+        #print("value: ", end = "\t"); print(value)
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-" or event == "-UPLOAD_NO-":
             window.close()
-            break
+            return False
         # Uploads to ftp by ftp.json
         if event == "-UPLOAD_YES-":
             ftp_json = funct.json_handle.ftp_read()
@@ -73,5 +80,11 @@ def main():
                 username = ftp_json["username"],
                 password = ftp_json["password"]
             )
-            ftp_client.upload(config_path.db_path, "", config_path.db_name)
+            if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name) == True:
+                sgpop("Sikeres feltöltés!")
+                funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
+                window.close()
+                return True
+
     window.close()
+    return False

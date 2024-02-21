@@ -63,8 +63,8 @@ def main(selected_item):
 
     while True:
         event, value = window.read()
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        #print("event: ", end = "\t"); print(event)
+        #print("value: ", end = "\t"); print(value)
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()

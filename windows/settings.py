@@ -4,6 +4,7 @@ import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
 import funct.json_handle
+import funct.file_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -39,8 +40,13 @@ def main():
         [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize)]
     ]
 
-    button_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = bsize, bind_return_key = True), sg.Push()]
+    option_layout = [
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = small_f, size = bsize, bind_return_key = True), sg.Push()],
+        [sg.Push(), sg.Button("TEMP TÖRLÉSE", k = "-TEMP_DEL-", font = small_f, size = int(round(bsize * 1.3, 0)), button_color = "red"), sg.Push()]
+    ]
+
+    info_layout = [
+        [sg.Push(), sg.Text("", k = "-info-", font = small_bold, text_color = "red"), sg.Push()]
     ]
 
     footer_layout = [
@@ -50,7 +56,8 @@ def main():
     layout = [
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
         [sg.Frame("ADATOK", setting_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("OPCIÓK", button_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("OPCIÓK", option_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("ADATOK", info_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
@@ -61,8 +68,8 @@ def main():
 
     while True:
         event, value = window.read()
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        #print("event: ", end = "\t"); print(event)
+        #print("value: ", end = "\t"); print(value)
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()
@@ -75,5 +82,8 @@ def main():
                 break
             else:
                 sgpop("Üres azonosító nem rögzíthető!")
+        if event == "-TEMP_DEL-":
+            funct.file_handle.clean_dir(config_path.temp_path)
+            window["-info-"].update("./TEMP törölve/")
 
     window.close()

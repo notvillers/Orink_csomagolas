@@ -1,8 +1,9 @@
+# Configs
+
 import os
 import socket
 
 path = os.path.dirname(__file__)
-version = "0.1"
 
 config_json_subpath = "config"
 config_json_name = "config.json"
@@ -20,6 +21,13 @@ db_path = os.path.join(path, db_subpath, db_name)
 
 if not os.path.exists(os.path.join(path, db_subpath)):
     os.makedirs(os.path.join(path, db_subpath))
+
+temp_dir = "temp"
+temp_path = os.path.join(path, temp_dir)
+backup_interval_s = 120
+
+if not os.path.exists(os.path.join(path, temp_dir)):
+    os.makedirs(os.path.join(path, temp_dir))
     
 icon_subpath = "src"
 icon_name = "icon.ico"

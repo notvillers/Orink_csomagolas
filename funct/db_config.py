@@ -15,7 +15,7 @@ csomag_table_insert = """
 """
 
 csomag_table_delete = """
-    DELETE FROM csomag WHERE csomag.id = ?
+    DELETE FROM csomag WHERE id = ?
     ;
 """
 

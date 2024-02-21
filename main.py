@@ -5,9 +5,11 @@ import windows.gui_theme
 from funct.log import text_to_log
 import os
 import sys
+from datetime import datetime
 import config_path
 import funct.json_handle
-from funct.sqlite_handle import connection as sqlite_connection
+import funct.file_handle
+from funct.sqlite_handle import Connection as sqlite_connection
 from funct.db_config import csomag_table_create, csomag_table_select, csomag_table_insert, csomag_table_delete, csomag_table_update_by_id
 
 # Theme
@@ -30,6 +32,12 @@ isize = windows.gui_theme.input_size
 def sgpop(text):
     sg.popup_no_buttons(text, font = small_f, title = header)
 
+def backup_db():
+    datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    
+    backup_db_name = datetime_string + "_" + config_path.db_name
+    backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
+    funct.file_handle.copy(config_path.db_path, backup_db_path)
+
 # Main
 def main():
 
@@ -46,6 +54,8 @@ def main():
     local_db = sqlite_connection()
     local_db.execute(csomag_table_create)
     columns, results = local_db.select(csomag_table_select)
+
+    backup_countdown = config_path.backup_interval_s
 
     header_layout = [
         [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
@@ -110,12 +120,20 @@ def main():
     selected_item_id = False
 
     while True:
-        event, value = window.read()
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        event, value = window.read(timeout = 1000)
+        #print("event: ", end = "\t"); print(event)
+        #print("value: ", end = "\t"); print(value)
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             break
+        # Timeout event
+        if event == "__TIMEOUT__":
+            if backup_countdown > 0:
+                backup_countdown -= 1
+            else:
+                backup_db()
+                backup_countdown = config_path.backup_interval_s
+
         # Checking for table click
         if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
             selected_item = results[event[2][0]]
@@ -168,7 +186,8 @@ def main():
         elif event in ["-UPLOAD-"]:
             from windows.upload import main as upload_main
             window.Minimize()
-            upload_main()
+            if upload_main():
+                break
             window.Maximize()
 
     window.close()
@@ -176,3 +195,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# TODO feltöltés esetén sgpop helyett kiírás

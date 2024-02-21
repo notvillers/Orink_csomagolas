@@ -43,7 +43,8 @@ def create_ftp(name: str = ftp_json):
         data = {
             "hostname": "your_server",
             "username": "your_username",
-            "password": "your_password"
+            "password": "your_password",
+            "directory": "your_directory"
         }
         with open(name, "w", encoding = "utf-8") as file:
             json.dump(data, file, indent = 2)
