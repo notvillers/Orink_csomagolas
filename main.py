@@ -31,7 +31,7 @@ def main():
     text_to_log(header + " started")    
 
     if funct.json_handle.create_config():
-        sgpop("please fill out the json in " + config_path.config_json_path)
+        sgpop("Kérlek töltsd ki a felhasználó adatokat!")
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
     hostname = config_path.hostname
