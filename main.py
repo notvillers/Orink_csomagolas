@@ -64,9 +64,9 @@ def main():
     option_layout = [
         [
             sg.Input("", k = "-new_package-", font = small_f, size = isize), 
-            sg.Button("HOZZÁADÁS", k = "-ADD-", font = small_f, size = bsize, bind_return_key = True),
+            sg.Button("HOZZÁADÁS", k = "-ADD-", font = small_f, size = bsize, bind_return_key = True, button_color = "green"),
             sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = small_f, size = bsize),
-            sg.Button("TÖRLÉS", k = "-DELETE-", font = small_f, size = bsize, mouseover_colors = "red"),
+            sg.Button("TÖRLÉS", k = "-DELETE-", font = small_f, size = bsize, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = medium_bold, text_color = "red"), sg.Push()
         ]
     ]
@@ -173,9 +173,10 @@ def main():
                         window["-info-"].update("Ismétlődés!")
         # Delete
         if event == "-DELETE-" and selected_item_id:
-            local_db.execute(csomag_table_delete, (selected_item_id))
-            columns, results = local_db.select(csomag_table_select)
-            window["-packages-"].update(values = results)
+            if sg.popup_yes_no("Biztosan törli?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
+                local_db.execute(csomag_table_delete, (selected_item_id))
+                columns, results = local_db.select(csomag_table_select)
+                window["-packages-"].update(values = results)
         # Settings
         if event == "-SETTINGS-":
             from windows.settings import main as settings_main
