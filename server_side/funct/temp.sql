@@ -1,3 +1,4 @@
+INSERT or IGNORE INTO osszesito (csomagszam, user, hostname, crdti)
 SELECT DISTINCT
 	csomag.csomagszam csomagszam,
 	(SELECT cs.user FROM csomag cs WHERE cs.csomagszam = csomag.csomagszam ORDER by cs.crdti ASC LIMIT 1)  user,

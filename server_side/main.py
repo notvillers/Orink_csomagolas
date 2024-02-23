@@ -2,7 +2,7 @@ import config_path
 import os
 from funct.log import text_to_log
 from funct.sqlite_handle import Connection as sqlite_connection
-from funct.db_config import csomag_table_create, osszesito_table_create, csomag_table_select, csomag_table_insert
+from funct.db_config import csomag_table_create, osszesito_table_create, csomag_table_select, csomag_table_insert, osszesito_table_insert_from_csomag
 import funct.file_handle
 
 def main():
@@ -16,6 +16,7 @@ def main():
         for row in result:
             db_client.insert(csomag_table_insert, (row[0], row[1], os.path.basename(file), row[2]))
         os.remove(file)
+    db_client.execute(osszesito_table_insert_from_csomag)
 
 if __name__ == "__main__":
     main()
