@@ -7,7 +7,7 @@ csomag_table_create = """
 """
 
 csomag_table_insert = """
-    INSERT INTO csomag
+    INSERT or IGNORE INTO csomag
         (csomagszam, user, hostname, crdti)
         values 
         (?, ?, ?, ?)
@@ -32,7 +32,7 @@ csomag_distinct_select = """
 
 osszesito_table_create = """
     CREATE TABLE IF NOT EXISTS osszesito
-        (csomagszam TEXT, id INTEGER PRIMARY KEY, user TEXT, hostname TEXT, crdti DATETIME)
+        (id INT PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME)
     ;
 """
 
@@ -40,8 +40,19 @@ osszesito_table_insert = """
     INSERT OR IGNORE INTO osszesito
         (csomagszam, user, hostname, crdti)
         values
-        (?, ?, ?, CURRENT_TIMESTAMP)
+        (?, ?, ?, ?)
 ;
+"""
+
+osszesito_table_insert_from_csomag = """
+    INSERT or IGNORE INTO osszesito
+        (csomagszam, user, hostname, crdti)
+    SELECT csaomg.csomagszam, csomag.user, csomag.hostname 
+    FROM csomag
+    WHERE
+        NOT EXISTS in (SELECT * FROM osszesito WHERE )
+    ORDER BY csomag.crdti ASC
+    
 """
 
 osszesito_table_delete = """

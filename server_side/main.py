@@ -15,6 +15,7 @@ def main():
         columns, result = cache_db.select(csomag_table_select)
         for row in result:
             db_client.insert(csomag_table_insert, (row[0], row[1], os.path.basename(file), row[2]))
+        os.remove(file)
 
 if __name__ == "__main__":
     main()
