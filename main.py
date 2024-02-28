@@ -107,9 +107,9 @@ def main():
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = small_bold, expand_x = True)],
         [sg.Frame("CSOMAGOK", packages_layout, font = small_bold, expand_x = True, expand_y = True)],
-        [sg.VPush()],
+        #[sg.VPush()],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = small_bold, expand_x = True)],
-        [sg.VPush()],
+        #[sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
 
