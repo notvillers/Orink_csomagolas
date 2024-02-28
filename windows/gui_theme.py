@@ -51,4 +51,4 @@ main_sgisze = (
 button_size = 12
 
 # Input size
-input_size = 20
+input_size = 30

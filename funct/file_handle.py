@@ -23,7 +23,7 @@ def clean_dir(directory_path: str):
 
 def read_csv(file_name: str):
     if os.path.exists(file_name):
-        with open(file_name, "r") as file:
+        with open(file_name, "r", encoding = "utf-8") as file:
             lines_list = [line.strip() for line in file]
         return lines_list
     return False
