@@ -29,6 +29,8 @@ def sgpop(text):
 # Main
 def main():
 
+    users_list = funct.file_handle.csv_user_format(funct.file_handle.read_csv(config_path.users_path))
+
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
 
@@ -37,7 +39,8 @@ def main():
     ]
 
     setting_layout = [
-        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize)]
+        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize)],
+        [sg.Push(), sg.Push(), sg.Push(), sg.Listbox(values = users_list, k = "-userlist-", font = small_f, expand_x = True, expand_y = True, enable_events = True, sbar_trough_color = windows.gui_theme.bg_c)]
     ]
 
     option_layout = [
@@ -55,9 +58,9 @@ def main():
 
     layout = [
         [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("ADATOK", setting_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("ADATOK", setting_layout, font = small_bold, expand_x = True, expand_y = True)],
         [sg.Frame("OPCIÓK", option_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("ADATOK", info_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", info_layout, font = small_bold, expand_x = True)],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
     ]
@@ -68,13 +71,16 @@ def main():
 
     while True:
         event, value = window.read()
-        #print("event: ", end = "\t"); print(event)
-        #print("value: ", end = "\t"); print(value)
+        print("event: ", end = "\t"); print(event)
+        print("value: ", end = "\t"); print(value)
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-":
             window.close()
             break
         # Update
+        if event == "-userlist-":
+            user = value["-userlist-"][0].split(" - ")[0]
+            window["-usercode-"].update(user)
         if event == "-UPDATE-":
             if value["-usercode-"]:
                 funct.json_handle.config_update(usercode = value["-usercode-"])

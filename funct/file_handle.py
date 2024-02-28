@@ -20,3 +20,17 @@ def clean_dir(directory_path: str):
                     text_to_log(file_path + " removed")
             except Exception as e:
                 text_to_log(str(e))
+
+def read_csv(file_name: str):
+    if os.path.exists(file_name):
+        with open(file_name, "r") as file:
+            lines_list = [line.strip() for line in file]
+        return lines_list
+    return False
+
+def csv_user_format(csv_list: list):
+    new_list = []
+    for row in csv_list:
+        row_split = row.replace(",", " - ")
+        new_list.append(row_split)
+    return new_list

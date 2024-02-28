@@ -32,3 +32,5 @@ if not os.path.exists(os.path.join(path, temp_dir)):
 icon_subpath = "src"
 icon_name = "icon.ico"
 icon_path = os.path.join(path, icon_subpath, icon_name)
+users_name = "users.csv"
+users_path = os.path.join(path, icon_subpath, users_name)
