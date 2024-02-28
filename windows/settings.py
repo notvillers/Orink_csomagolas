@@ -39,7 +39,7 @@ def main():
     ]
 
     setting_layout = [
-        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize)],
+        [sg.Text("Felhasználó azonosító:", font = small_f), sg.Push(), sg.Input(usercode, k = "-usercode-", font = small_f, size = isize, readonly = True, disabled_readonly_background_color = windows.gui_theme.bg_c)],
         [sg.Push(), sg.Push(), sg.Push(), sg.Listbox(values = users_list, k = "-userlist-", font = small_f, expand_x = True, expand_y = True, enable_events = True, sbar_trough_color = windows.gui_theme.bg_c)]
     ]
 
