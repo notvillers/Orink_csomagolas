@@ -23,6 +23,15 @@ class Connection:
         result = self.cursor.fetchall()
         columns = [description[0] for description in self.cursor.description]
         return columns, result
+
+    def select_with_arg(self, query: str, arg = None):
+        if arg == None:
+            return self.select(query)
+        else:
+            self.cursor.execute(query, arg)
+            result = self.cursor.fetchall()
+            columns = [column[0] for column in self.cursor.description]
+            return columns, result
     
     # Executes query with value argument
     def execute(self, query: str, values = None):

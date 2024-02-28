@@ -32,7 +32,7 @@ csomag_distinct_select = """
 
 osszesito_table_create = """
     CREATE TABLE IF NOT EXISTS osszesito
-        (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME)
+        (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME, o8_confirm INTEGER)
     ;
 """
 
@@ -65,5 +65,17 @@ osszesito_table_delete = """
 
 osszesito_table_select = """
     SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő', crdti as 'Rögzítése dátuma' FROM osszesito
+    ;
+"""
+
+osszesito_table_select_distinct_users = """
+    SELECT DISTINCT user from osszesito
+    ;
+"""
+
+osszesito_select_by_user = """
+    SELECT id as 'ID', csomagszam as 'Csomagszám', replace(replace(hostname, '.db', ''), '_log', '') as 'Host', crdti as 'Rögzítés ideje'
+    FROM osszesito 
+    WHERE user = ?
     ;
 """
