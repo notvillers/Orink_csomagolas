@@ -189,8 +189,9 @@ def main():
         elif event in ["-UPLOAD-"]:
             from windows.upload import main as upload_main
             window.Minimize()
-            if upload_main():
-                window.Maximize()
+            succ_upload = upload_main()
+            window.Maximize()
+            if succ_upload:
                 if sg.popup_yes_no("Törli a helyi adatokat?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
                     window.close()
                     local_db.close()
