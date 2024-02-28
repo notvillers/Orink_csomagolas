@@ -32,7 +32,7 @@ csomag_distinct_select = """
 
 osszesito_table_create = """
     CREATE TABLE IF NOT EXISTS osszesito
-        (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME, o8_confirm INTEGER)
+        (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME, o8_confirm INTEGER, o8_date DATETIME)
     ;
 """
 
