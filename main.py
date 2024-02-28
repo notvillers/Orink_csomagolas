@@ -182,12 +182,17 @@ def main():
             from windows.settings import main as settings_main
             window.Minimize()
             settings_main()
+            config_json = funct.json_handle.config_read()
+            usercode = config_json["usercode"]
             window.Maximize()
         # Upload
         elif event in ["-UPLOAD-"]:
             from windows.upload import main as upload_main
             window.Minimize()
             if upload_main():
+                window.close()
+                local_db.close()
+                funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 break
             window.Maximize()
 
@@ -198,3 +203,4 @@ if __name__ == "__main__":
     main()
 
 # TODO feltöltés esetén sgpop helyett kiírás
+# TODO windowson sqlite3 db nem törölhető, bezárás esetén töröljön

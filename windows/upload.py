@@ -82,7 +82,7 @@ def main():
             )
             if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name) == True:
                 sgpop("Sikeres feltöltés!")
-                funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
+                #funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 window.close()
                 return True
 
