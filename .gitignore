@@ -3,3 +3,4 @@ log.txt
 event.txt
 *.json
 *.db
+.venv/
