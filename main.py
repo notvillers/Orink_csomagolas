@@ -190,11 +190,12 @@ def main():
             from windows.upload import main as upload_main
             window.Minimize()
             if upload_main():
-                window.close()
-                local_db.close()
-                funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
-                break
-            window.Maximize()
+                window.Maximize()
+                if sg.popup_yes_no("Törli a helyi adatokat?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
+                    window.close()
+                    local_db.close()
+                    funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
+                    break
 
     window.close()
     os._exit(1)

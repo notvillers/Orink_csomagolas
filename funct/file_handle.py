@@ -34,3 +34,10 @@ def csv_user_format(csv_list: list):
         row_split = row.replace(",", " - ")
         new_list.append(row_split)
     return new_list
+
+def csv_tuple(csv_list: list):
+    new_list = []
+    for row in csv_list:
+        row_split = row.split(";")
+        new_list.append(row_split)
+    return new_list

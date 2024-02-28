@@ -16,8 +16,8 @@ font_arial_nagy_bold = (font, 40, "bold")
 bg_c = '#93B1C3'
 ok_color = '#B8DDF5'
 err_color = '#F8665D'
-txt_c = 'black'
-btt_c = bg_c + ' on ' + txt_c
+txt_c = "black"
+btt_c = bg_c + " on " + txt_c
 
 o8_theme = {
     'BACKGROUND': bg_c,
@@ -27,7 +27,7 @@ o8_theme = {
     'SCROLL': '#c7e78b',
     'BUTTON': (bg_c, txt_c),
     'PROGRESS': ('#01826B', '#D0D0D0'),
-    'BORDER': 1,
+    'BORDER': 3,
     'SLIDER_DEPTH': 0,
     'PROGRESS_DEPTH': 0
 }
