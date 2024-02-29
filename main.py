@@ -173,7 +173,7 @@ def main():
                         window["-info-"].update("Ismétlődés!")
         # Delete
         if event == "-DELETE-" and selected_item_id:
-            if sg.popup_yes_no("Biztosan törli?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
+            if sg.popup_yes_no("Biztosan törli?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red") == "Yes":
                 local_db.execute(csomag_table_delete, (selected_item_id))
                 columns, results = local_db.select(csomag_table_select)
                 window["-packages-"].update(values = results)
@@ -192,7 +192,7 @@ def main():
             succ_upload = upload_main()
             #window.Maximize()
             if succ_upload:
-                if sg.popup_yes_no("Törli a helyi adatokat?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
+                if sg.popup_yes_no("Törli a helyi adatokat?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red") == "Yes":
                     window.close()
                     local_db.close()
                     funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
