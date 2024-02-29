@@ -159,9 +159,9 @@ def main():
         if event == "-EDIT-":
             if selected_item_id:
                 from windows.edit import main as edit_main
-                window.Minimize()
+                #window.Minimize()
                 update_item = edit_main(selected_item)
-                window.Maximize()
+                #window.Maximize()
                 if update_item != None:
                     if not local_db.is_value_there(columns, results, "Csomagszám", update_item[1]):
                         window["-info-"].update("")
@@ -180,17 +180,17 @@ def main():
         # Settings
         if event == "-SETTINGS-":
             from windows.settings import main as settings_main
-            window.Minimize()
+            #window.Minimize()
             settings_main()
             config_json = funct.json_handle.config_read()
             usercode = config_json["usercode"]
-            window.Maximize()
+            #window.Maximize()
         # Upload
         elif event in ["-UPLOAD-"]:
             from windows.upload import main as upload_main
-            window.Minimize()
+            #window.Minimize()
             succ_upload = upload_main()
-            window.Maximize()
+            #window.Maximize()
             if succ_upload:
                 if sg.popup_yes_no("Törli a helyi adatokat?", font = small_f, keep_on_top = True, no_titlebar = True, background_color = "red"):
                     window.close()

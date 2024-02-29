@@ -35,13 +35,13 @@ o8_theme = {
 # Size
 import funct.resolution
 sc_width, sc_height = funct.resolution.get_primary()
-sc_percent = 0.85
+sc_percent = 1
 sgsize = (
     int(round(sc_width * sc_percent, 0)), 
     int(round(sc_height * sc_percent, 0))
 )
 
-main_percent = 0.3
+main_percent = 1
 main_sgisze = ( 
     int(round(sgsize[0] * main_percent, 0)),
     int(round(sgsize[1] * main_percent, 0))
