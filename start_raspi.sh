@@ -31,7 +31,7 @@ if [ -d "$folder_path" ];
         pip install --upgrade pip
         # Installing packages
         echo -e "${GREEN}installing packages${RESET}"
-        pip install -r requirements.txt
+        pip install -r requirements_raspi.txt
 fi
 
 # Runs the script
