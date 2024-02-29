@@ -1,0 +1,28 @@
+/home/villers/app/Orink_csomagolas
+2024. febr. 29., csütörtök, 16:25:04 CET dirmove
+2024. febr. 29., csütörtök, 16:25:04 CET found venv
+2024. febr. 29., csütörtök, 16:25:04 CET script start
+2024. febr. 29., csütörtök, 16:25:06 CET script end
+/home/villers/app/Orink_csomagolas
+2024. febr. 29., csütörtök, 16:26:45 CET dirmove
+2024. febr. 29., csütörtök, 16:26:45 CET found venv
+2024. febr. 29., csütörtök, 16:26:45 CET script start
+2024. febr. 29., csütörtök, 16:26:50 CET script end
+2024. febr. 29., csütörtök, 16:27:01 CET found venv
+2024. febr. 29., csütörtök, 16:27:01 CET script start
+2024. febr. 29., csütörtök, 16:27:01 CET script end
+/home/villers/app/Orink_csomagolas
+2024. febr. 29., csütörtök, 16:28:51 CET dirmove
+2024. febr. 29., csütörtök, 16:28:51 CET found venv
+2024. febr. 29., csütörtök, 16:28:51 CET script start
+2024. febr. 29., csütörtök, 16:28:51 CET script end
+/home/villers/app/Orink_csomagolas
+2024. febr. 29., csütörtök, 16:48:36 CET dirmove
+2024. febr. 29., csütörtök, 16:48:36 CET found venv
+2024. febr. 29., csütörtök, 16:48:36 CET script start
+2024. febr. 29., csütörtök, 16:48:52 CET script end
+/home/villers/app/Orink_csomagolas
+2024. febr. 29., csütörtök, 16:48:55 CET dirmove
+2024. febr. 29., csütörtök, 16:48:55 CET found venv
+2024. febr. 29., csütörtök, 16:48:55 CET script start
+2024. febr. 29., csütörtök, 16:49:15 CET script end

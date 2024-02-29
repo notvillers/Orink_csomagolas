@@ -115,7 +115,7 @@ def main():
 
     window = sg.Window(header, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
-    window.Maximize()
+    #window.Maximize()
 
     selected_item_id = False
 
