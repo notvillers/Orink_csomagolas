@@ -46,11 +46,12 @@ def sgpop_yn(text: str = "Biztos?", color: str = "red"):
 
 
 def backup_db():
-    '''Backups the db to temp path'''
-    datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    backup_db_name = datetime_string + "_" + config_path.db_name
-    backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
-    funct.file_handle.copy(config_path.db_path, backup_db_path)
+	'''Backups the db to temp path'''
+	datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+	backup_db_name = datetime_string + "_" + config_path.db_name
+	backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
+	funct.file_handle.copy(config_path.db_path, backup_db_path)
+	text_to_log(backup_db_path + " saved")
 
 
 # Main
@@ -211,9 +212,10 @@ def main():
 
 
 if __name__ == "__main__":
-    if main():
-        main()
-    os._exit(1)
+	text_to_log("started")
+	if main():
+		main()
+	os._exit(1)
 
 # TODO feltöltés esetén sgpop helyett kiírás
 # TODO windowson sqlite3 db nem törölhető, bezárás esetén töröljön
