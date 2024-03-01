@@ -26,7 +26,7 @@ ISIZE = windows.gui_theme.INPUT_SIZE
 def sgpop(text: str):
     '''Drops a popup'''
     sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
-    
+
 
 # Main
 def main():
