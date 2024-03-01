@@ -1,36 +1,36 @@
-# Configs
+'''Paths'''
 
 import os
 import socket
 
 path = os.path.dirname(__file__)
 
-config_json_subpath = "config"
-config_json_name = "config.json"
-config_json_path = os.path.join(path, config_json_subpath, config_json_name)
-ftp_json_name = "ftp.json"
-ftp_json_path = os.path.join(path, config_json_subpath, ftp_json_name)
+CONFIG_JSON_SUBPATH = "config"
+CONFIG_JSON_NAME = "config.json"
+config_json_path = os.path.join(path, CONFIG_JSON_SUBPATH, CONFIG_JSON_NAME)
+FTP_JSON_NAME = "ftp.json"
+ftp_json_path = os.path.join(path, CONFIG_JSON_SUBPATH, FTP_JSON_NAME)
 
-if not os.path.exists(os.path.join(path, config_json_subpath)):
-    os.makedirs(os.path.join(path, config_json_subpath))
+if not os.path.exists(os.path.join(path, CONFIG_JSON_SUBPATH)):
+    os.makedirs(os.path.join(path, CONFIG_JSON_SUBPATH))
 
-db_subpath = "db"
+DB_SUBPATH = "db"
 hostname = socket.gethostname()
 db_name = hostname + "_log.db"
-db_path = os.path.join(path, db_subpath, db_name)
+db_path = os.path.join(path, DB_SUBPATH, db_name)
 
-if not os.path.exists(os.path.join(path, db_subpath)):
-    os.makedirs(os.path.join(path, db_subpath))
+if not os.path.exists(os.path.join(path, DB_SUBPATH)):
+    os.makedirs(os.path.join(path, DB_SUBPATH))
 
-temp_dir = "temp"
-temp_path = os.path.join(path, temp_dir)
-backup_interval_s = 120
+TEMP_DIR = "temp"
+temp_path = os.path.join(path, TEMP_DIR)
+BP_INTERVAL_S = 120
 
-if not os.path.exists(os.path.join(path, temp_dir)):
-    os.makedirs(os.path.join(path, temp_dir))
-    
-icon_subpath = "src"
-icon_name = "icon.ico"
-icon_path = os.path.join(path, icon_subpath, icon_name)
-users_name = "users.csv"
-users_path = os.path.join(path, icon_subpath, users_name)
+if not os.path.exists(os.path.join(path, TEMP_DIR)):
+    os.makedirs(os.path.join(path, TEMP_DIR))
+
+ICON_SUBPATH = "src"
+ICON_NAME = "icon.ico"
+icon_path = os.path.join(path, ICON_SUBPATH, ICON_NAME)
+USERS_NAME = "users.csv"
+users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)

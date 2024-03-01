@@ -1,7 +1,6 @@
 # Upload
 
 import PySimpleGUI as sg
-import os
 import windows.gui_theme
 import config_path
 import funct.json_handle
@@ -11,56 +10,62 @@ import funct.file_handle
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-header = "OCTOPY - CSOMAGOLÁS \ FELTÖLTÉS"
+HEADER = "OCTOPY - CSOMAGOLÁS \ FELTÖLTÉS"
 # Font
-footer_bold = windows.gui_theme.font_arial_footer_bold
-footer_f = windows.gui_theme.font_arial_footer
-small_f = windows.gui_theme.font_arial_kicsi
-small_bold = windows.gui_theme.font_arial_kicsi_bold
-medium_f = windows.gui_theme.font_arial_kozepes
-medium_bold = windows.gui_theme.font_arial_kozepes_bold
-large_f = windows.gui_theme.font_arial_nagy
-large_bold = windows.gui_theme.font_arial_nagy_bold
-bsize = windows.gui_theme.button_size
-isize = windows.gui_theme.input_size
+FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
+FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
+SMALL_F = windows.gui_theme.FONT_ARIAL_KICSI
+SMALL_BOLD = windows.gui_theme.FONT_ARIAL_KICSI_BOLD
+MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
+MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
+LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
+LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
 
 # Popup
 def sgpop(text):
-    sg.popup_no_buttons(text, font = small_f, title = header)
+    '''Drops a popup'''
+    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
+    
 
 # Main
 def main():
+    '''Main definition, runs the GUI'''
 
     header_layout = [
-        [sg.Push(), sg.Text(header, font = medium_bold), sg.Push()]
+        [sg.Push(), sg.Text(HEADER, font = MEDIUM_BOLD), sg.Push()]
     ]
 
     text_layout = [
-        [sg.Push(), sg.Text("Indulhat az adatok feltöltése?", font = medium_f), sg.Push()]
+        [sg.Push(), sg.Text("Indulhat az adatok feltöltése?", font = MEDIUM_F), sg.Push()]
     ]
 
     options_layout = [
-        [sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = small_f, button_color = "green", size = bsize), sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = small_f, button_color = "red", size = bsize), sg.Push()]
+        [
+            sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = SMALL_F, button_color = "green", size = BSIZE),
+            sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = SMALL_F, button_color = "red", size = BSIZE), sg.Push()
+        ]
     ]
 
     info_layout = [
-        [sg.Push(), sg.Text("", k = "-info-", font = small_bold, text_color = "red"), sg.Push()]
+        [sg.Push(), sg.Text("", k = "-info-", font = SMALL_BOLD, text_color = "red"), sg.Push()]
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.hostname, font = footer_f), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, font = FOOTER_F), sg.Push()]
     ]
 
     layout = [
-        [sg.Frame("", header_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("", text_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("OPCIÓK", options_layout, font = small_bold, expand_x = True)],
-        [sg.Frame("", info_layout, font = small_bold, expand_x = True)],
+        [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True)],
+        [sg.Frame("", text_layout, font = SMALL_BOLD, expand_x = True)],
+        [sg.Frame("OPCIÓK", options_layout, font = SMALL_BOLD, expand_x = True)],
+        [sg.Frame("", info_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.VPush()],
-        [sg.Frame("", footer_layout, font = small_bold, expand_x = True)]
+        [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
 
-    window = sg.Window(header, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
     window.Maximize()
 
@@ -80,7 +85,7 @@ def main():
                 username = ftp_json["username"],
                 password = ftp_json["password"]
             )
-            if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name) == True:
+            if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name):
                 sgpop("Sikeres feltöltés!")
                 #funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 window.close()

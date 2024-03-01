@@ -1,12 +1,12 @@
-# Queries for the database
+'''Queries for the database'''
 
-csomag_table_create = """
+CSOMAG_TABLE_CREATE = """
     CREATE TABLE IF NOT EXISTS csomag
         (id INTEGER PRIMARY KEY, csomagszam TEXT, user TEXT, hostname TEXT, crdti DATETIME)
     ;
 """
 
-csomag_table_insert = """
+CSOMAG_TABLE_INSERT = """
     INSERT INTO csomag
         (csomagszam, user, hostname, crdti)
         values 
@@ -14,17 +14,17 @@ csomag_table_insert = """
     ;
 """
 
-csomag_table_delete = """
+CSOMAG_TABLE_DELETE = """
     DELETE FROM csomag WHERE id = ?
     ;
 """
 
-csomag_table_select = """
+CSOMAG_TABLE_SELECT = """
     SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő' FROM csomag ORDER BY id DESC
     ;
 """
 
-csomag_table_update_by_id = """
+CSOMAG_TABLE_UPDATE_BY_ID = """
     UPDATE csomag set csomagszam = ? where id = ?
     ;
 """

@@ -1,31 +1,33 @@
-# Configuration for the PySimpleGUI
+'''Configuration for the PySimpleGUI'''
+
+import funct.resolution
 
 # Font
-font = 'Arial'
-font_arial_footer = (font, 10)
-font_arial_kicsi = (font, 15)
-font_arial_kozepes = (font, 25)
-font_arial_nagy = (font, 40)
+FONT = 'Arial'
+FONT_ARIAL_FOOTER = (FONT, 10)
+FONT_ARIAL_KICSI = (FONT, 15)
+FONT_ARIAL_KOZEPES = (FONT, 25)
+FONT_ARIAL_NAGY = (FONT, 40)
 # Bold
-font_arial_footer_bold = (font, 10, "bold")
-font_arial_kicsi_bold = (font, 15, "bold")
-font_arial_kozepes_bold = (font, 25, "bold")
-font_arial_nagy_bold = (font, 40, "bold")
+FONT_ARIAL_FOOTER_BOLD = (FONT, 10, "bold")
+FONT_ARIAL_KICSI_BOLD = (FONT, 15, "bold")
+FONT_ARIAL_KOZEPES_BOLD = (FONT, 25, "bold")
+FONT_ARIAL_NAGY_BOLD = (FONT, 40, "bold")
 
 # Colors + Theme
-bg_c = '#93B1C3'
-ok_color = '#B8DDF5'
-err_color = '#F8665D'
-txt_c = "black"
-btt_c = bg_c + " on " + txt_c
+BG_C = '#93B1C3'
+OK_COLOR = '#B8DDF5'
+ERR_COLOR = '#F8665D'
+TXT_C = "black"
+BTT_C = BG_C + " on " + TXT_C
 
 o8_theme = {
-    'BACKGROUND': bg_c,
-    'TEXT': txt_c,
+    'BACKGROUND': BG_C,
+    'TEXT': TXT_C,
     'INPUT': '#B8DDF5',
     'TEXT_INPUT': '#000000',
     'SCROLL': '#c7e78b',
-    'BUTTON': (bg_c, txt_c),
+    'BUTTON': (BG_C, TXT_C),
     'PROGRESS': ('#01826B', '#D0D0D0'),
     'BORDER': 3,
     'SLIDER_DEPTH': 0,
@@ -33,22 +35,22 @@ o8_theme = {
 }
 
 # Size
-import funct.resolution
 sc_width, sc_height = funct.resolution.get_primary()
-sc_percent = 1
+
+SC_PERCENT = 1
 sgsize = (
-    int(round(sc_width * sc_percent, 0)), 
-    int(round(sc_height * sc_percent, 0))
+    int(round(sc_width * SC_PERCENT, 0)), 
+    int(round(sc_height * SC_PERCENT, 0))
 )
 
-main_percent = 1
+MAIN_PERCENT = 1
 main_sgisze = ( 
-    int(round(sgsize[0] * main_percent, 0)),
-    int(round(sgsize[1] * main_percent, 0))
+    int(round(sgsize[0] * MAIN_PERCENT, 0)),
+    int(round(sgsize[1] * MAIN_PERCENT, 0))
 )
 
 # Button size
-button_size = 12
+BUTTON_SIZE = 12
 
 # Input size
-input_size = 30
+INPUT_SIZE = 30

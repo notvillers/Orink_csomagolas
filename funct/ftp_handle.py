@@ -1,9 +1,11 @@
-# FTP handler
+'''FTP handler'''
 
 from ftplib import FTP
 from funct.log import text_to_log
 
 class Client:
+    '''FTP client'''
+
     def __init__(self, hostname, username, password):
         self.hostname = hostname
         self.username = username
@@ -13,6 +15,7 @@ class Client:
         return self.username + "@" + self.hostname
     
     def upload(self, local_file_path, remote_directory, remote_filename):
+        '''uploads a file'''
         with FTP(self.hostname) as ftp:
             ftp.login(user = self.username, passwd = self.password)
 
