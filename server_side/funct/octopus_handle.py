@@ -1,17 +1,17 @@
-# Handles the database
+'''Handles the database'''
 
-import funct.json_handle
 import sys
+from time import sleep
 from ping3 import ping
-import os
 import pyodbc
 import funct.data_config
-import config_path
+import funct.json_handle
 from funct.log import text_to_log
-from time import sleep
 
 # Class for the Octopus 8 SQL connection
 class Octopus8_sql:
+    '''creates an octopus8 sql connection class
+    needs a db_info dict passed for __init__'''
 
     def __init__(self, db_info):
         self.server = db_info["server"]
@@ -20,27 +20,31 @@ class Octopus8_sql:
 
     def __str__(self):
         return self.server + "\\" + self.database
-    
+
     # Pings the server
-    def ping_srvr(self, server, retry_attempt = funct.data_config.retry_attempt):
+    def ping_srvr(self, server, retry_attempt = funct.data_config.RETRY_ATTEMPT):
+        '''pings with retry'''
+
         if retry_attempt != 0:
             response_time = ping(server)
             if response_time:
                 text_to_log(server + " reached")
                 return True
             else:
-                text_to_log("can't reach " + server + ", retry in " + str(funct.data_config.wait_time) + " second(s)")
-                sleep(funct.data_config.wait_time)
+                text_to_log("can't reach " + server + ", retry in " + str(funct.data_config.WAIT_TIME) + " second(s)")
+                sleep(funct.data_config.WAIT_TIME)
                 text_to_log("retry:")
-                self.ping_srvr(self, server, retry_attempt - 1)
+                self.ping_srvr(server, retry_attempt - 1)
         text_to_log("can't reach " + server + ", no more attempts")
         return False
     
     # Creates the connection and the cursor
     def connect(self, server, database, username, password):
+        '''connects to sql with odbc'''
+
         if not self.ping_srvr(server):
             sys.exit()
-        connection_string = 'DRIVER={ODBC Driver '+ funct.data_config.odbc_driver + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
+        connection_string = 'DRIVER={ODBC Driver '+ funct.data_config.ODBC_DRIVER + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
         connection = pyodbc.connect(connection_string)
         cursor = connection.cursor()
         text_to_log("connected to " + server + "\\" + database)
@@ -48,12 +52,18 @@ class Octopus8_sql:
     
     # Closes the connection
     def close(self):
+        '''closes connection
+        1. cursor
+        2. connection'''
+
         self.cursor.close()
         self.connection.close()
         text_to_log("connection to " + self.server + "\\" + self.database + " is now closed")
 
     # Executing query
     def execute(self, query: str, insert = ""):
+        '''executes query and return columns, results of result'''
+
         if query:
             if insert:
                 self.cursor.execute(query, insert)
@@ -67,5 +77,8 @@ class Octopus8_sql:
     
     # Returning 1 value select
     def one_value_select(self, query: str, insert):
+        '''return 1 value from select
+        used for 1 return queries'''
+
         columns, result = self.execute(query = query, insert = insert)
         return result[0][0]

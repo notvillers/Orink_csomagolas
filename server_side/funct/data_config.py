@@ -1,25 +1,25 @@
-# Configuration datas
+'''Configuration datas'''
 
 import os
 import platform
 
-isWindows = (True if platform.system() == "Windows" else False)
+IS_WINDOWS = (True if platform.system() == "Windows" else False)
 
-wait_time = 30 # in second(s)
-retry_attempt = 5 #
+WAIT_TIME = 30 # in second(s)
+RETRY_ATTEMPT = 5 #
 
 #Pyodbc
-odbc_driver = "17"
-if os.path.exists("odbc_ver_ps.py") and isWindows:
+ODBC_DRIVER = "17"
+if os.path.exists("odbc_ver_ps.py") and IS_WINDOWS:
     import odbc_ver_ps
-    odbc_driver = str(odbc_ver_ps.verno)
+    ODBC_DRIVER = str(odbc_ver_ps.verno)
 
-o8_select_username_by_usercode = """
+O8_SELECT_USERNAME_BY_USERCODE = """
     SELECT username FROM users WHERE usercode = ?
     ;
 """
 
-o8_select_info_by_csomagszam = """
+O8_SELECT_INFO_BY_CSOMAGSZAM = """
     SELECT CASE WHEN 'ORH1041398_1' IN (SELECT csomagszam FROM wcsomag) THEN 2 ELSE 2 END
     ;
 """

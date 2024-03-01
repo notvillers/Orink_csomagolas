@@ -1,27 +1,27 @@
-# Configs
+'''Configs'''
 
 import os
 
 path = os.path.dirname(__file__)
 
-db_subpath = "db"
-db_name = "csomagolas.db"
-db_path = os.path.join(path, db_subpath, db_name)
+DB_USBPATH = "db"
+DB_NAME = "csomagolas.db"
+db_path = os.path.join(path, DB_USBPATH, DB_NAME)
 
-if not os.path.exists(os.path.join(path, db_subpath)):
-    os.makedirs(os.path.join(path, db_subpath))
+if not os.path.exists(os.path.join(path, DB_USBPATH)):
+    os.makedirs(os.path.join(path, DB_USBPATH))
 
-logs_subpath = "logs"
-logs_path = os.path.join(path, logs_subpath)
+LOGS_SUBPATH = "logs"
+logs_path = os.path.join(path, LOGS_SUBPATH)
 
-if not os.path.exists(os.path.join(path, logs_subpath)):
-    os.makedirs(os.path.join(path, logs_subpath))
+if not os.path.exists(os.path.join(path, LOGS_SUBPATH)):
+    os.makedirs(os.path.join(path, LOGS_SUBPATH))
 
-temp_subpath = "temp"
-temp_path = os.path.join(path, temp_subpath)
+TEMP_SUBPATH = "temp"
+temp_path = os.path.join(path, TEMP_SUBPATH)
 
-if not os.path.exists(os.path.join(path, temp_subpath)):
-    os.makedirs(os.path.join(path, temp_subpath))
+if not os.path.exists(os.path.join(path, TEMP_SUBPATH)):
+    os.makedirs(os.path.join(path, TEMP_SUBPATH))
 
-login_json = "login.json"
-login_path = os.path.join(path, login_json)
+LOGIN_JSON = "login.json"
+login_path = os.path.join(path, LOGIN_JSON)

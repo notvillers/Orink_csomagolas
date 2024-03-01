@@ -1,13 +1,14 @@
-# Handles the .jsons
+'''Handles the .jsons'''
 
-import config_path
 import json
 import os
 import sys
+import config_path
 from funct.log import text_to_log
 
 # Creating login.json if not found
 def login_db_create(json_file = config_path.login_path):
+    '''creates login.json'''
     if not os.path.exists(json_file):
         data = {
             "server": "server_name", # Name of your server
@@ -24,6 +25,7 @@ def login_db_create(json_file = config_path.login_path):
 
 # Reading .json
 def json_read(json_file):
+    '''reads .json'''
     if os.path.exists(json_file):
         with open(json_file, "r", encoding = "utf-8") as file:
             data = json.load(file)
