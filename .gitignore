@@ -4,3 +4,4 @@ event.txt
 *.json
 *.db
 .venv/
+cli_log.txt
