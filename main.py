@@ -261,6 +261,3 @@ if __name__ == "__main__":
     main_open = True
     while main_open:
         main_open = main()
-
-# TODO feltöltés esetén sgpop helyett kiírás
-# TODO windowson sqlite3 db nem törölhető, bezárás esetén töröljön

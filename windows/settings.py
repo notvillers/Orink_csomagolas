@@ -5,6 +5,7 @@ import windows.gui_theme
 import config_path
 import funct.json_handle
 import funct.file_handle
+from funct.log import text_to_log, delete_log
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -83,6 +84,13 @@ def main(admin_mode):
         ]
     ]
 
+    log_layout = [
+        [
+            place(sg.Button("LOG TÖRLÉSE", k = "-LOG_DELETE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = "False")),
+            place(sg.Text("", k = "-log_info-", font = SMALL_BOLD, text_color = "red", visible = False))
+        ]
+    ]
+
     footer_layout = [
         [sg.Push(), sg.Text(config_path.hostname, font = FOOTER_F), sg.Push()]
     ]
@@ -92,6 +100,7 @@ def main(admin_mode):
         [sg.Frame("ADATOK", setting_layout, font = SMALL_BOLD, expand_x = True, expand_y = True)],
         [sg.Frame("OPCIÓK", option_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.Frame("FTP", ftp_layout, font = SMALL_BOLD, expand_x = True, visible = False, k = "-ftp_frame-")],
+        [sg.Frame("LOG", log_layout, font= SMALL_BOLD, expand_x = True, visible = False, k = "-log_frame-")],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
@@ -102,6 +111,7 @@ def main(admin_mode):
 
     while True:
         if admin_mode:
+            # ftp layout
             window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
             window["-ftp_frame-"].update(visible = True)
             window["-ftp_hostname-"].update(visible = True)
@@ -110,6 +120,10 @@ def main(admin_mode):
             window["-ftp_directory-"].update(visible = True)
             window["-FTP_UPDATE-"].update(visible = True)
             window["-ftp_info-"].update(visible = True)
+            # log layout
+            window["-log_frame-"].update(visible = True)
+            window["-LOG_DELETE-"].update(visible = True)
+            window["-log_info-"].update(visible = True)
         event, value = window.read()
         #print("event: ", end = "\t"); print(event)
         #print("value: ", end = "\t"); print(value)
@@ -137,5 +151,10 @@ def main(admin_mode):
             directory = (value["-ftp_directory-"] if value["-ftp_directory-"] != "" else None)
             funct.json_handle.ftp_update(hostname = hostname, username = username, password = password, directory = directory)
             window["-ftp_info-"].update("frissítve")
+
+        # LOG DELETE
+        if event == "-LOG_DELETE-":
+            delete_log()
+            window["-log_info-"].update("törölve")
 
     window.close()
