@@ -62,11 +62,8 @@ def main(admin_mode):
                 enable_events = True,
                 sbar_trough_color = windows.gui_theme.BG_C
             )
-        ]
-    ]
-
-    option_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, bind_return_key = True), sg.Push()]
+        ],
+        [sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, bind_return_key = True)]
     ]
 
     ftp_layout = [
@@ -92,13 +89,12 @@ def main(admin_mode):
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.hostname, font = FOOTER_F), sg.Push()]
+        [sg.Push(), sg.Text(config_path.hostname, k = "-hostname-", font = FOOTER_F), sg.Push()]
     ]
 
     layout = [
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.Frame("ADATOK", setting_layout, font = SMALL_BOLD, expand_x = True, expand_y = True)],
-        [sg.Frame("OPCIÓK", option_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.Frame("FTP - RENDSZERGAZDA MÓD", ftp_layout, font = SMALL_BOLD, expand_x = True, visible = False, k = "-ftp_frame-")],
         [sg.Frame("LOG - RENDSZERGAZDA MÓD", log_layout, font= SMALL_BOLD, expand_x = True, visible = False, k = "-log_frame-")],
         [sg.VPush()],
@@ -112,7 +108,6 @@ def main(admin_mode):
     while True:
         if admin_mode:
             # ftp layout
-            window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
             window["-ftp_frame-"].update(visible = True)
             window["-ftp_hostname-"].update(visible = True)
             window["-ftp_username-"].update(visible = True)
@@ -124,6 +119,8 @@ def main(admin_mode):
             window["-log_frame-"].update(visible = True)
             window["-LOG_DELETE-"].update(visible = True)
             window["-log_info-"].update(visible = True)
+            # footer
+            window["-hostname-"].update("RENDSZERGAZDA MÓD", font = SMALL_BOLD, background_color = "red")
         event, value = window.read()
         #print("event: ", end = "\t"); print(event)
         #print("value: ", end = "\t"); print(value)

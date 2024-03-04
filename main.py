@@ -141,12 +141,21 @@ def main():
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
-    # 'ctrl + s' event
+    # 'ctrl' event
+    window.bind("<Control-KeyPress>", "-ctrl-")
+    # 'ctrl+s' event
     window.bind("<Control-KeyPress-s>", "-ctrl_s-")
     window.bind("<Control-KeyPress-S>", "-ctrl_s-")
+    # 'ctrl+a' event
+    window.bind("<Control-KeyPress-a>", "-ctrl_a-")
+    window.bind("<Control-KeyPress-A>", "-ctrl_a-")
+    # 'ctrl+f' event 
+    window.bind("<Control-KeyPress-f>", "-ctrl_f-")
+    window.bind("<Control-KeyPress-F>", "-ctrl_f-")
 
     window.Maximize()
 
+    ctrl_event = False
     selected_item_id = False
     admin_mode = False
 
@@ -155,8 +164,19 @@ def main():
         #print("event: ", end = "\t"); print(event)
         #print("value: ", end = "\t"); print(value)
 
+        # ctrl event
+        if event == "-ctrl-":
+            if not ctrl_event:
+                window["-SETTINGS-"].update("CTRL + A")
+                window["-UPLOAD-"].update("CTRL + F")
+                ctrl_event = not ctrl_event
+            else:
+                window["-SETTINGS-"].update("ADATOK")
+                window["-UPLOAD-"].update("FELTÖLTÉS")
+                ctrl_event = not ctrl_event
+
         # Toggle admin mode
-        if event in ["-ctrl_s-"]:
+        if event == "-ctrl_s-":
             text_to_log("-ctrl_s-")
             if not admin_mode:
                 admin_mode = admin_main()
@@ -169,7 +189,7 @@ def main():
                 event = "-DISABLE_ADMIN-"
 
         # Disable admin mode
-        if event in ["-DISABLE_ADMIN-"]:
+        if event == "-DISABLE_ADMIN-":
             text_to_log("-DISABLE_ADMIN-")
             admin_mode = False
             window["-QUICK_BACKUP-"].update(visible = False)
@@ -177,11 +197,11 @@ def main():
             window["-hostname-"].update(config_path.hostname, background_color = windows.gui_theme.BG_C, font = FOOTER_F)
 
         # Admin mode
-        if event in ["-QUICK_BACKUP-"]:
+        if event == "-QUICK_BACKUP-":
             text_to_log("-QUICK_BACKUP-")
             backup_db()
             window["-header-"].update("SIKERES MENTÉS", background_color = "green")
-        if event in ["-DELETE_BACKUP-"]:
+        if event == "-DELETE_BACKUP-":
             text_to_log("-DELETE_BACKUP-")
             funct.file_handle.clean_dir(config_path.temp_path)
             window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
@@ -249,14 +269,14 @@ def main():
                 window["-packages-"].update(values = results)
 
         # Settings
-        if event == "-SETTINGS-":
+        if event in ["-SETTINGS-", "-ctrl_a-"]:
             text_to_log("-SETTINGS-")
             settings_main(admin_mode)
             config_json = funct.json_handle.config_read()
             usercode = config_json["usercode"]
 
         # Upload
-        elif event in ["-UPLOAD-"]:
+        elif event in ["-UPLOAD-", "-ctrl_f-"]:
             text_to_log("-UPLOAD-")
             succ_upload = upload_main()
             if succ_upload:
