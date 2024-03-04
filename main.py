@@ -91,9 +91,9 @@ def main():
             sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F, size = BSIZE),
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, size = BSIZE, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
-            place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "green", visible = False)),
-            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "yellow", visible = False)),
-            place(sg.Button("SU. KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False)),
+            place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, button_color = "green", visible = False)),
+            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "yellow", visible = False)),
+            place(sg.Button("SU. KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, button_color = "red", visible = False)),
             place(sg.Button("X", k = "-EXIT_BUTTON-", font = SMALL_F, visible = False))
         ]
     ]
