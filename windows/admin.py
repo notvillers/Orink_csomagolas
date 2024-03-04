@@ -8,7 +8,7 @@ import config_path
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-HEADER = "ADMIN"
+HEADER = "RENDSZERGAZDA MÓD"
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -31,11 +31,11 @@ def main():
         [sg.Push(background_color = "red"), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE, bind_return_key = True, mouseover_colors = "white"), sg.Push(background_color = "red")],
         [sg.Push(background_color = "red"), sg.Text("", k = "-info-", font = MEDIUM_BOLD, background_color = "red"), sg.Push(background_color = "red")],
         [sg.VPush(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Text("CTRL+A = ADMIN", font = SMALL_F, background_color = "red"), sg.Push(background_color = "red")]
+        [sg.Push(background_color = "red"), sg.Text("CTRL+S = RENDSZERGAZDA MÓD", font = SMALL_F, background_color = "red"), sg.Push(background_color = "red")]
     ]
 
     layout = [
-        [sg.Frame("ADMIN", admin_layout, font = MEDIUM_BOLD, expand_x = True, expand_y = True, background_color = "red")]
+        [sg.Frame(HEADER, admin_layout, font = MEDIUM_BOLD, expand_x = True, expand_y = True, background_color = "red")]
     ]
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = "red")

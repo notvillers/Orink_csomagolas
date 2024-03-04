@@ -35,7 +35,7 @@ ISIZE = windows.gui_theme.INPUT_SIZE
 # Popup
 def sgpop(text: str):
     '''Drops a popup'''
-    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
+    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER, keep_on_top = True)
 
 
 def sgpop_yn(text: str = "Biztos?", color: str = "red"):
@@ -91,9 +91,10 @@ def main():
             sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F, size = BSIZE),
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, size = BSIZE, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
-            place(sg.Button("MENTÉS", k = "-QUICK_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "green", visible = False)),
-            place(sg.Button("MENT. TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "yellow", visible = False)),
-            place(sg.Button("ADMIN KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False))
+            place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "green", visible = False)),
+            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "yellow", visible = False)),
+            place(sg.Button("SU. KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False)),
+            place(sg.Button("X", k = "-EXIT_BUTTON-", font = SMALL_F, visible = False))
         ]
     ]
 
@@ -139,8 +140,10 @@ def main():
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
-    window.bind("<Control-KeyPress-a>", "-ctrl_a-")
-    window.bind("<Control-KeyPress-A>", "-ctrl_a-")
+    # 'ctrl + s' event
+    window.bind("<Control-KeyPress-s>", "-ctrl_s-")
+    window.bind("<Control-KeyPress-S>", "-ctrl_s-")
+
     window.Maximize()
 
     selected_item_id = False
@@ -152,7 +155,7 @@ def main():
         #print("value: ", end = "\t"); print(value)
 
         # Toggle admin mode
-        if event in ["-ctrl_a-"]:
+        if event in ["-ctrl_s-"]:
             if not admin_mode:
                 admin_mode = admin_main()
                 if admin_mode:
@@ -160,6 +163,7 @@ def main():
                     window["-QUICK_BACKUP-"].update(visible = True)
                     window["-DELETE_BACKUP-"].update(visible = True)
                     window["-DISABLE_ADMIN-"].update(visible = True)
+                    window["-EXIT_BUTTON-"].update(visible = True)
             else:
                 event = "-DISABLE_ADMIN-"
 
@@ -178,9 +182,10 @@ def main():
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
             window["-DISABLE_ADMIN-"].update(visible = False)
+            window["-EXIT_BUTTON-"].update(visible = False)
 
         # Exit
-        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
+        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-", "-EXIT_BUTTON-"]:
             if admin_mode:
                 return not admin_mode
         # Timeout event
@@ -197,8 +202,8 @@ def main():
         if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
             selected_item = results[event[2][0]]
             selected_item_id = selected_item[0]
-            print(selected_item)
-            print(selected_item_id)
+            #print(selected_item)
+            #print(selected_item_id)
 
         # Add
         if event == "-ADD-":
