@@ -54,9 +54,9 @@ def backup_db():
     funct.file_handle.copy(config_path.db_path, backup_db_path)
     text_to_log(backup_db_path + " saved")
 
-# Visibility
+
 def place(elem):
-    '''place element'''
+    '''places element'''
 
     return sg.Column([[elem]], pad = (0, 0))
 
@@ -153,12 +153,15 @@ def main():
 
         # Toggle admin mode
         if event in ["-ctrl_a-"]:
-            admin_mode = admin_main()
-            if admin_mode:
-                window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
-                window["-QUICK_BACKUP-"].update(visible = True)
-                window["-DELETE_BACKUP-"].update(visible = True)
-                window["-DISABLE_ADMIN-"].update(visible = True)
+            if not admin_mode:
+                admin_mode = admin_main()
+                if admin_mode:
+                    window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
+                    window["-QUICK_BACKUP-"].update(visible = True)
+                    window["-DELETE_BACKUP-"].update(visible = True)
+                    window["-DISABLE_ADMIN-"].update(visible = True)
+            else:
+                event = "-DISABLE_ADMIN-"
 
         # Admin mode
         if event in ["-QUICK_BACKUP-"]:
@@ -236,7 +239,7 @@ def main():
 
         # Settings
         if event == "-SETTINGS-":
-            settings_main()
+            settings_main(admin_mode)
             config_json = funct.json_handle.config_read()
             usercode = config_json["usercode"]
 

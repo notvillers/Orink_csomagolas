@@ -63,3 +63,17 @@ def ftp_read(name: str = ftp_json):
             data = json.load(file)
         return data
     return False
+
+def ftp_update(name: str = ftp_json, hostname: str = None, username: str = None, password: str = None, directory: str = None):
+    '''updates ftp.json'''
+    if os.path.exists(name):
+        with open(name, "r", encoding = "utf-8") as file:
+            data = json.load(file)
+        data["hostname"] = (hostname if hostname is not None else data["hostname"])
+        data["username"] = (username if username is not None else data["username"])
+        data["password"] = (password if password is not None else data["password"])
+        data["directory"] = (directory if directory is not None else data["directory"])
+        with open(name, "w", encoding= "utf-8") as file:
+            json.dump(data, file, indent = 2)
+        return True
+    return False

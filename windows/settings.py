@@ -27,10 +27,17 @@ def sgpop(text: str):
     '''Drops a popup'''
     sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
 
+def place(elem):
+    '''places element'''
+
+    return sg.Column([[elem]], pad = (0, 0))
 
 # Main
-def main():
+def main(admin_mode):
     '''Main definition, runs the GUI'''
+
+    ftp_info = "Rendszergazda szükséges" if not admin_mode else ""
+    ftp = funct.json_handle.ftp_read()
 
     users_list = funct.file_handle.csv_user_format(funct.file_handle.read_csv(config_path.users_path))
 
@@ -38,7 +45,7 @@ def main():
     usercode = config_json["usercode"]
 
     header_layout = [
-        [sg.Push(), sg.Text(HEADER, font = MEDIUM_BOLD), sg.Push()]
+        [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
     ]
 
     setting_layout = [
@@ -57,12 +64,23 @@ def main():
     ]
 
     option_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, size = BSIZE, bind_return_key = True), sg.Push()],
-        [sg.Push(), sg.Button("TEMP TÖRLÉSE", k = "-TEMP_DEL-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red"), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, size = BSIZE, bind_return_key = True), sg.Push()]
     ]
 
-    info_layout = [
-        [sg.Push(), sg.Text("", k = "-info-", font = SMALL_BOLD, text_color = "red"), sg.Push()]
+    ftp_layout = [
+        [sg.Push(), sg.Text(ftp_info, k = "-info-", font = SMALL_BOLD, text_color = "red"), sg.Push()],
+        [
+            place(sg.Input(ftp["hostname"], k = "-ftp_hostname-", font = SMALL_F , tooltip = "ftp hostname", visible = False)),
+            place(sg.Input(ftp["username"], k = "-ftp_username-", font = SMALL_F, tooltip = "ftp username", visible = False))
+        ],
+        [
+            place(sg.Input(ftp["password"], k = "-ftp_password-", font = SMALL_F, tooltip = "ftp password", visible = False)),
+            place(sg.Input(ftp["directory"], k = "-ftp_directory-", font = SMALL_F, tooltip = "ftp directory", visible = False))
+        ],
+        [
+            place(sg.Button("FRISSÍTÉS", k = "-FTP_UPDATE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = False)),
+            place(sg.Text("", k = "-ftp_info-", font = SMALL_BOLD, text_color = "red", visible = False))
+        ]
     ]
 
     footer_layout = [
@@ -73,7 +91,7 @@ def main():
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.Frame("ADATOK", setting_layout, font = SMALL_BOLD, expand_x = True, expand_y = True)],
         [sg.Frame("OPCIÓK", option_layout, font = SMALL_BOLD, expand_x = True)],
-        [sg.Frame("", info_layout, font = SMALL_BOLD, expand_x = True)],
+        [sg.Frame("FTP", ftp_layout, font = SMALL_BOLD, expand_x = True, visible = False, k = "-ftp_frame-")],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
@@ -83,6 +101,15 @@ def main():
     window.Maximize()
 
     while True:
+        if admin_mode:
+            window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
+            window["-ftp_frame-"].update(visible = True)
+            window["-ftp_hostname-"].update(visible = True)
+            window["-ftp_username-"].update(visible = True)
+            window["-ftp_password-"].update(visible = True)
+            window["-ftp_directory-"].update(visible = True)
+            window["-FTP_UPDATE-"].update(visible = True)
+            window["-ftp_info-"].update(visible = True)
         event, value = window.read()
         #print("event: ", end = "\t"); print(event)
         #print("value: ", end = "\t"); print(value)
@@ -90,6 +117,7 @@ def main():
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.close()
             break
+
         # Update
         if event == "-userlist-":
             user = value["-userlist-"][0].split(" - ")[0]
@@ -100,8 +128,14 @@ def main():
                 window.close()
                 break
             sgpop("Üres azonosító nem rögzíthető!")
-        if event == "-TEMP_DEL-":
-            funct.file_handle.clean_dir(config_path.temp_path)
-            window["-info-"].update("./TEMP törölve/")
+        
+        # FTP UPDATE
+        if event == "-FTP_UPDATE-":
+            hostname = (value["-ftp_hostname-"] if value["-ftp_hostname-"] != "" else None)
+            username = (value["-ftp_username-"] if value["-ftp_username-"] != "" else None)
+            password = (value["-ftp_password-"] if value["-ftp_password-"] != "" else None)
+            directory = (value["-ftp_directory-"] if value["-ftp_directory-"] != "" else None)
+            funct.json_handle.ftp_update(hostname = hostname, username = username, password = password, directory = directory)
+            window["-ftp_info-"].update("frissítve")
 
     window.close()
