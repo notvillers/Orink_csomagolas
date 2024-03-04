@@ -14,6 +14,7 @@ from funct.db_config import CSOMAG_TABLE_CREATE, CSOMAG_TABLE_SELECT, CSOMAG_TAB
 from windows.edit import main as edit_main
 from windows.settings import main as settings_main
 from windows.upload import main as upload_main
+from windows.admin import main as admin_main
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -46,13 +47,18 @@ def sgpop_yn(text: str = "Biztos?", color: str = "red"):
 
 
 def backup_db():
-	'''Backups the db to temp path'''
-	datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-	backup_db_name = datetime_string + "_" + config_path.db_name
-	backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
-	funct.file_handle.copy(config_path.db_path, backup_db_path)
-	text_to_log(backup_db_path + " saved")
+    '''Backups the db to temp path'''
+    datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    backup_db_name = datetime_string + "_" + config_path.db_name
+    backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
+    funct.file_handle.copy(config_path.db_path, backup_db_path)
+    text_to_log(backup_db_path + " saved")
 
+# Visibility
+def place(elem):
+    '''place element'''
+
+    return sg.Column([[elem]], pad = (0, 0))
 
 # Main
 def main():
@@ -75,16 +81,17 @@ def main():
     backup_countdown = config_path.BP_INTERVAL_S
 
     header_layout = [
-        [sg.Push(), sg.Text(HEADER, font = MEDIUM_BOLD), sg.Push()]
+        [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
     ]
 
     option_layout = [
         [
-            sg.Input("", k = "-new_package-", font = SMALL_F, size = ISIZE), 
+            sg.Input("", k = "-new_package-", font = SMALL_F, size = ISIZE),
             sg.Button("HOZZÁADÁS", k = "-ADD-", font = SMALL_F, size = BSIZE, bind_return_key = True, button_color = "green"),
             sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F, size = BSIZE),
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, size = BSIZE, button_color = "red"),
-            sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push()
+            sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
+            place(sg.Button("DISABLE ADM.", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False))
         ]
     ]
 
@@ -121,28 +128,39 @@ def main():
     ]
 
     layout = [
-        [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True)],
-        [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True)],
-        [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True)],
-        #[sg.VPush()],
-        [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True)],
-        #[sg.VPush()],
-        [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
+        [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
+        [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
+        [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
+        [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True, k = "-settings_frame-")],
+        [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")]
     ]
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
+    window.bind("<Control-KeyPress-a>", "-ctrl_a-"); 
+    window.bind("<Control-KeyPress-A>", "-ctrl_a-")
     window.Maximize()
 
     selected_item_id = False
+    admin_mode = False
 
     while True:
         event, value = window.read(timeout = 1000)
-        #print("event: ", end = "\t"); print(event)
-        #print("value: ", end = "\t"); print(value)
+        print("event: ", end = "\t"); print(event)
+        print("value: ", end = "\t"); print(value)
+        # Toggle admin mode
+        if event in ["-ctrl_a-"]:
+            admin_mode = admin_main()
+            if admin_mode:
+                window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
+                window["-DISABLE_ADMIN-"].update(visible = True)
+        if event in ["-DISABLE_ADMIN-"]:
+            admin_mode = False
+            window["-header-"].update(HEADER, background_color = windows.gui_theme.BG_C)
+            window["-DISABLE_ADMIN-"].update(visible = False)
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
-            break
+            return not admin_mode
         # Timeout event
         if event == "__TIMEOUT__":
             window["-time-"].update(get_time())
@@ -212,10 +230,9 @@ def main():
 
 
 if __name__ == "__main__":
-	text_to_log("started")
-	if main():
-		main()
-	os._exit(1)
+    main_open = True
+    while main_open:
+        main_open = main()
 
 # TODO feltöltés esetén sgpop helyett kiírás
 # TODO windowson sqlite3 db nem törölhető, bezárás esetén töröljön

@@ -8,8 +8,9 @@ path = os.path.dirname(__file__)
 CONFIG_JSON_SUBPATH = "config"
 CONFIG_JSON_NAME = "config.json"
 config_json_path = os.path.join(path, CONFIG_JSON_SUBPATH, CONFIG_JSON_NAME)
+FTP_JSON_SUBPATH = os.path.join(".venv")
 FTP_JSON_NAME = "ftp.json"
-ftp_json_path = os.path.join(path, CONFIG_JSON_SUBPATH, FTP_JSON_NAME)
+ftp_json_path = os.path.join(path, FTP_JSON_SUBPATH, FTP_JSON_NAME)
 
 if not os.path.exists(os.path.join(path, CONFIG_JSON_SUBPATH)):
     os.makedirs(os.path.join(path, CONFIG_JSON_SUBPATH))
