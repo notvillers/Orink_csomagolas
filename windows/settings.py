@@ -66,7 +66,7 @@ def main(admin_mode):
     ]
 
     option_layout = [
-        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, size = BSIZE, bind_return_key = True), sg.Push()]
+        [sg.Push(), sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, bind_return_key = True), sg.Push()]
     ]
 
     ftp_layout = [
@@ -79,14 +79,14 @@ def main(admin_mode):
             place(sg.Input(ftp["directory"], k = "-ftp_directory-", font = SMALL_F, tooltip = "ftp directory", visible = False))
         ],
         [
-            place(sg.Button("FRISSÍTÉS", k = "-FTP_UPDATE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = False)),
+            place(sg.Button("FRISSÍTÉS", k = "-FTP_UPDATE-", font = SMALL_F, button_color = "red", visible = False)),
             place(sg.Text("", k = "-ftp_info-", font = SMALL_BOLD, text_color = "red", visible = False))
         ]
     ]
 
     log_layout = [
         [
-            place(sg.Button("LOG TISZTÍTÁSA", k = "-LOG_DELETE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = "False")),
+            place(sg.Button("TISZTÍTÁS", k = "-LOG_DELETE-", font = SMALL_F, button_color = "red", visible = "False")),
             place(sg.Text("", k = "-log_info-", font = SMALL_BOLD, text_color = "red", visible = False))
         ]
     ]

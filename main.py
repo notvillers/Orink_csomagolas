@@ -86,10 +86,10 @@ def main():
 
     option_layout = [
         [
-            sg.Input("", k = "-new_package-", font = SMALL_F, size = ISIZE),
-            sg.Button("HOZZÁADÁS", k = "-ADD-", font = SMALL_F, size = BSIZE, bind_return_key = True, button_color = "green"),
-            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F, size = BSIZE),
-            sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, size = BSIZE, button_color = "red"),
+            sg.Input("", k = "-new_package-", font = SMALL_F),
+            sg.Button("HOZZÁADÁS", k = "-ADD-", font = SMALL_F, bind_return_key = True, button_color = "green"),
+            sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F),
+            sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
             place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, button_color = "green", visible = False)),
             place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "yellow", visible = False)),
@@ -123,7 +123,7 @@ def main():
     ]
 
     settings_layout = [
-        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F, size = BSIZE), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F, size = BSIZE), sg.Push()]
+        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F), sg.Push()]
     ]
 
     footer_layout = [

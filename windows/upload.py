@@ -46,8 +46,8 @@ def main():
 
     options_layout = [
         [
-            sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = SMALL_F, button_color = "green", size = BSIZE),
-            sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = SMALL_F, button_color = "red", size = BSIZE), sg.Push()
+            sg.Push(), sg.Button("IGEN", k = "-UPLOAD_YES-", font = SMALL_F, button_color = "green"),
+            sg.Push(), sg.Button("NEM", k = "-UPLOAD_NO-", font = SMALL_F, button_color = "red"), sg.Push()
         ]
     ]
 
