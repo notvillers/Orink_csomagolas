@@ -170,9 +170,12 @@ def main():
                 window["-SETTINGS-"].update("CTRL + A")
                 window["-UPLOAD-"].update("CTRL + F")
                 ctrl_event = not ctrl_event
+                if admin_mode:
+                    window["-hostname-"].update("KIKAPCSOLÁSA: CTRL + S")
             else:
                 window["-SETTINGS-"].update("ADATOK")
                 window["-UPLOAD-"].update("FELTÖLTÉS")
+                window["-hostname-"].update("RENDSZERGAZDA MÓD")
                 ctrl_event = not ctrl_event
 
         # Toggle admin mode
@@ -184,7 +187,10 @@ def main():
                     text_to_log("ADMIN MODE ENABLED")
                     window["-QUICK_BACKUP-"].update(visible = True)
                     window["-DELETE_BACKUP-"].update(visible = True)
-                    window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
+                    if not ctrl_event:
+                        window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
+                    else:
+                        window["-hostname-"].update("KIKAPCSOLÁSA: CTRL + S", background_color = "red", font = SMALL_BOLD)
             else:
                 event = "-DISABLE_ADMIN-"
 
