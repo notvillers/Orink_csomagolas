@@ -52,7 +52,7 @@ def main(admin_mode):
 
     setting_layout = [
         [sg.Text("Választott felhasználó azonosító:", font = SMALL_F)],
-        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = True, disabled_readonly_background_color = windows.gui_theme.BG_C)],
+        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = windows.gui_theme.BG_C)],
         [
             sg.Listbox(
                 values = users_list,

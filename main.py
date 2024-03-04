@@ -35,12 +35,14 @@ ISIZE = windows.gui_theme.INPUT_SIZE
 # Popup
 def sgpop(text: str):
     '''Drops a popup'''
+
     sg.popup_no_buttons(text, font = SMALL_F, title = HEADER, keep_on_top = True)
 
 
 def sgpop_yn(text: str = "Biztos?", color: str = "red"):
     '''Drops a yes or no popup
     returns True if Yes'''
+
     if sg.popup_yes_no(text, font = SMALL_F, keep_on_top = True, no_titlebar = True, background_color = color) == "Yes":
         return True
     return False
@@ -48,6 +50,7 @@ def sgpop_yn(text: str = "Biztos?", color: str = "red"):
 
 def backup_db():
     '''Backups the db to temp path'''
+    
     datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     backup_db_name = datetime_string + "_" + config_path.db_name
     backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
