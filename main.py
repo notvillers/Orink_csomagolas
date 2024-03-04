@@ -91,7 +91,9 @@ def main():
             sg.Button("MÓDOSÍTÁS", k = "-EDIT-", font = SMALL_F, size = BSIZE),
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, size = BSIZE, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
-            place(sg.Button("DISABLE ADM.", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False))
+            place(sg.Button("MENTÉS", k = "-QUICK_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "green", visible = False)),
+            place(sg.Button("MENT. TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, size = BSIZE, button_color = "yellow", visible = False)),
+            place(sg.Button("ADMIN KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, size = BSIZE, button_color = "red", visible = False))
         ]
     ]
 
@@ -137,7 +139,7 @@ def main():
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
-    window.bind("<Control-KeyPress-a>", "-ctrl_a-"); 
+    window.bind("<Control-KeyPress-a>", "-ctrl_a-")
     window.bind("<Control-KeyPress-A>", "-ctrl_a-")
     window.Maximize()
 
@@ -148,16 +150,32 @@ def main():
         event, value = window.read(timeout = 1000)
         #print("event: ", end = "\t"); print(event)
         #print("value: ", end = "\t"); print(value)
+
         # Toggle admin mode
         if event in ["-ctrl_a-"]:
             admin_mode = admin_main()
             if admin_mode:
                 window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
+                window["-QUICK_BACKUP-"].update(visible = True)
+                window["-DELETE_BACKUP-"].update(visible = True)
                 window["-DISABLE_ADMIN-"].update(visible = True)
+
+        # Admin mode
+        if event in ["-QUICK_BACKUP-"]:
+            backup_db()
+            window["-header-"].update("SIKERES MENTÉS", background_color = "green")
+        if event in ["-DELETE_BACKUP-"]:
+            funct.file_handle.clean_dir(config_path.temp_path)
+            window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
+
+        # Disable admin mode
         if event in ["-DISABLE_ADMIN-"]:
             admin_mode = False
             window["-header-"].update(HEADER, background_color = windows.gui_theme.BG_C)
+            window["-QUICK_BACKUP-"].update(visible = False)
+            window["-DELETE_BACKUP-"].update(visible = False)
             window["-DISABLE_ADMIN-"].update(visible = False)
+
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             if admin_mode:
@@ -168,8 +186,9 @@ def main():
             if backup_countdown > 0:
                 backup_countdown -= 1
             else:
-                backup_db()
-                backup_countdown = config_path.BP_INTERVAL_S
+                if not admin_mode:
+                    backup_db()
+                    backup_countdown = config_path.BP_INTERVAL_S
 
         # Checking for table click
         if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
@@ -177,6 +196,7 @@ def main():
             selected_item_id = selected_item[0]
             print(selected_item)
             print(selected_item_id)
+
         # Add
         if event == "-ADD-":
             if value["-new_package-"]:
@@ -192,6 +212,7 @@ def main():
                     window["-new_package-"].update("")
             else:
                 window["-info-"].update("Üres csomagszám!")
+
         # Edit
         if event == "-EDIT-":
             if selected_item_id:
@@ -205,17 +226,20 @@ def main():
                         window["-packages-"].update(values = results)
                     else:
                         window["-info-"].update("Ismétlődés!")
+
         # Delete
         if event == "-DELETE-" and selected_item_id:
             if sgpop_yn("Biztosan törli?"):
                 local_db.execute(CSOMAG_TABLE_DELETE, (selected_item_id))
                 columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                 window["-packages-"].update(values = results)
+
         # Settings
         if event == "-SETTINGS-":
             settings_main()
             config_json = funct.json_handle.config_read()
             usercode = config_json["usercode"]
+
         # Upload
         elif event in ["-UPLOAD-"]:
             succ_upload = upload_main()
