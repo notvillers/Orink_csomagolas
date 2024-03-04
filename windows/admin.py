@@ -30,11 +30,12 @@ def main():
         [sg.Push(background_color = "red"), sg.Input("", k = "-admin_data-", font = SMALL_F, size = ISIZE, password_char = "*", background_color = "white"), sg.Push(background_color = "red")],
         [sg.Push(background_color = "red"), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE, bind_return_key = True, mouseover_colors = "white"), sg.Push(background_color = "red")],
         [sg.Push(background_color = "red"), sg.Text("", k = "-info-", font = MEDIUM_BOLD, background_color = "red"), sg.Push(background_color = "red")],
-        [sg.VPush(background_color = "red")]
+        [sg.VPush(background_color = "red")],
+        [sg.Push(background_color = "red"), sg.Text("CTRL+A = ADMIN", font = SMALL_F, background_color = "red"), sg.Push(background_color = "red")]
     ]
 
     layout = [
-        [sg.Frame("ADMIN", admin_layout, font = LARGE_BOLD, expand_x = True, expand_y = True, background_color = "red")]
+        [sg.Frame("ADMIN", admin_layout, font = MEDIUM_BOLD, expand_x = True, expand_y = True, background_color = "red")]
     ]
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = "red")
