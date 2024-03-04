@@ -160,7 +160,8 @@ def main():
             window["-DISABLE_ADMIN-"].update(visible = False)
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
-            return not admin_mode
+            if admin_mode:
+                return not admin_mode
         # Timeout event
         if event == "__TIMEOUT__":
             window["-time-"].update(get_time())
