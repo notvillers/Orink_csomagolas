@@ -4,6 +4,7 @@ import base64
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
+from funct.log import text_to_log
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -23,6 +24,8 @@ ISIZE = windows.gui_theme.INPUT_SIZE
 
 def main():
     '''Main definition, runs the GUI'''
+
+    text_to_log(HEADER + " started")
     
     admin_layout = [
         [sg.VPush(background_color = "red")],
@@ -54,6 +57,7 @@ def main():
             return False
         if event == "-OK-":
             if value["-admin_data-"] == passwd:
+                text_to_log("ADMIN ENABLED")
                 window.Close()
                 return True
             if not value["-admin_data-"]:

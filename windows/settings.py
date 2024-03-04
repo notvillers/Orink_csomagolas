@@ -37,7 +37,8 @@ def place(elem):
 def main(admin_mode):
     '''Main definition, runs the GUI'''
 
-    ftp_info = "Rendszergazda szükséges" if not admin_mode else ""
+    text_to_log(HEADER + " started")
+
     ftp = funct.json_handle.ftp_read()
 
     users_list = funct.file_handle.csv_user_format(funct.file_handle.read_csv(config_path.users_path))
@@ -69,7 +70,6 @@ def main(admin_mode):
     ]
 
     ftp_layout = [
-        [sg.Push(), sg.Text(ftp_info, k = "-info-", font = SMALL_BOLD, text_color = "red"), sg.Push()],
         [
             place(sg.Input(ftp["hostname"], k = "-ftp_hostname-", font = SMALL_F , tooltip = "ftp hostname", visible = False)),
             place(sg.Input(ftp["username"], k = "-ftp_username-", font = SMALL_F, tooltip = "ftp username", visible = False))
@@ -86,7 +86,7 @@ def main(admin_mode):
 
     log_layout = [
         [
-            place(sg.Button("LOG TÖRLÉSE", k = "-LOG_DELETE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = "False")),
+            place(sg.Button("LOG TISZTÍTÁSA", k = "-LOG_DELETE-", font = SMALL_F, size = int(round(BSIZE * 1.3, 0)), button_color = "red", visible = "False")),
             place(sg.Text("", k = "-log_info-", font = SMALL_BOLD, text_color = "red", visible = False))
         ]
     ]
@@ -139,6 +139,7 @@ def main(admin_mode):
         if event == "-UPDATE-":
             if value["-usercode-"]:
                 funct.json_handle.config_update(usercode = value["-usercode-"])
+                text_to_log("-UPDATE-")
                 window.close()
                 break
             sgpop("Üres azonosító nem rögzíthető!")
@@ -150,11 +151,13 @@ def main(admin_mode):
             password = (value["-ftp_password-"] if value["-ftp_password-"] != "" else None)
             directory = (value["-ftp_directory-"] if value["-ftp_directory-"] != "" else None)
             funct.json_handle.ftp_update(hostname = hostname, username = username, password = password, directory = directory)
+            text_to_log("-FTP_UPDATE-")
             window["-ftp_info-"].update("frissítve")
 
         # LOG DELETE
         if event == "-LOG_DELETE-":
             delete_log()
+            text_to_log("-LOG_DELETE-")
             window["-log_info-"].update("törölve")
 
     window.close()

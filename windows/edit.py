@@ -3,6 +3,7 @@
 import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
+from funct.log import text_to_log
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -29,6 +30,8 @@ def sgpop(text):
 # Main
 def main(selected_item):
     '''Main definition, runs the GUI'''
+
+    text_to_log(HEADER + " started")
 
     package_id = selected_item[0]
     package_no = selected_item[1]
@@ -76,6 +79,7 @@ def main(selected_item):
         if event == "-UPDATE-":
             if value["-package_no-"]:
                 window.close()
+                text_to_log("UPDATE")
                 return [package_id, value["-package_no-"], package_user]
             sgpop("Üres csomagszám nem rögzítehető!")
 

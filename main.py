@@ -156,9 +156,11 @@ def main():
 
         # Toggle admin mode
         if event in ["-ctrl_s-"]:
+            text_to_log("-ctrl_s-")
             if not admin_mode:
                 admin_mode = admin_main()
                 if admin_mode:
+                    text_to_log("ADMIN MODE ENABLED")
                     window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
                     window["-QUICK_BACKUP-"].update(visible = True)
                     window["-DELETE_BACKUP-"].update(visible = True)
@@ -167,16 +169,9 @@ def main():
             else:
                 event = "-DISABLE_ADMIN-"
 
-        # Admin mode
-        if event in ["-QUICK_BACKUP-"]:
-            backup_db()
-            window["-header-"].update("SIKERES MENTÉS", background_color = "green")
-        if event in ["-DELETE_BACKUP-"]:
-            funct.file_handle.clean_dir(config_path.temp_path)
-            window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
-
         # Disable admin mode
         if event in ["-DISABLE_ADMIN-"]:
+            text_to_log("-DISABLE_ADMIN-")
             admin_mode = False
             window["-header-"].update(HEADER, background_color = windows.gui_theme.BG_C)
             window["-QUICK_BACKUP-"].update(visible = False)
@@ -184,9 +179,20 @@ def main():
             window["-DISABLE_ADMIN-"].update(visible = False)
             window["-EXIT_BUTTON-"].update(visible = False)
 
+        # Admin mode
+        if event in ["-QUICK_BACKUP-"]:
+            text_to_log("-QUICK_BACKUP-")
+            backup_db()
+            window["-header-"].update("SIKERES MENTÉS", background_color = "green")
+        if event in ["-DELETE_BACKUP-"]:
+            text_to_log("-DELETE_BACKUP-")
+            funct.file_handle.clean_dir(config_path.temp_path)
+            window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
+
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-", "-EXIT_BUTTON-"]:
             if admin_mode:
+                text_to_log("EXIT")
                 return not admin_mode
         # Timeout event
         if event == "__TIMEOUT__":
@@ -212,6 +218,7 @@ def main():
                 if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
                     window["-info-"].update("")
                     local_db.insert(CSOMAG_TABLE_INSERT, (value["-new_package-"], usercode, hostname))
+                    text_to_log(value["-new_package-"] + " PACK NO. ADDED")
                     columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                     window["-new_package-"].update("")
                     window["-packages-"].update(values = results)
@@ -230,6 +237,7 @@ def main():
                         window["-info-"].update("")
                         update_val = (update_item[1], update_item[0])
                         local_db.insert(CSOMAG_TABLE_UPDATE_BY_ID, (update_val))
+                        text_to_log("UPDATE: " + str(update_item[0]) + " - " + str(update_item[1]))
                         columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                         window["-packages-"].update(values = results)
                     else:
@@ -240,19 +248,23 @@ def main():
             if sgpop_yn("Biztosan törli?"):
                 local_db.execute(CSOMAG_TABLE_DELETE, (selected_item_id))
                 columns, results = local_db.select(CSOMAG_TABLE_SELECT)
+                text_to_log("ID: " + str(selected_item_id) + " DELETED")
                 window["-packages-"].update(values = results)
 
         # Settings
         if event == "-SETTINGS-":
+            text_to_log("-SETTINGS-")
             settings_main(admin_mode)
             config_json = funct.json_handle.config_read()
             usercode = config_json["usercode"]
 
         # Upload
         elif event in ["-UPLOAD-"]:
+            text_to_log("-UPLOAD-")
             succ_upload = upload_main()
             if succ_upload:
                 if sgpop_yn("Törli a helyi adatokat?"):
+                    text_to_log("DB DELETE")
                     window.close()
                     local_db.close()
                     funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))

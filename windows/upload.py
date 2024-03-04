@@ -6,6 +6,7 @@ import config_path
 import funct.json_handle
 import funct.ftp_handle
 import funct.file_handle
+from funct.log import text_to_log
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -32,6 +33,8 @@ def sgpop(text):
 # Main
 def main():
     '''Main definition, runs the GUI'''
+
+    text_to_log(HEADER + " started")
 
     header_layout = [
         [sg.Push(), sg.Text(HEADER, font = MEDIUM_BOLD), sg.Push()]
