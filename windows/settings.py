@@ -99,8 +99,8 @@ def main(admin_mode):
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True)],
         [sg.Frame("ADATOK", setting_layout, font = SMALL_BOLD, expand_x = True, expand_y = True)],
         [sg.Frame("OPCIÓK", option_layout, font = SMALL_BOLD, expand_x = True)],
-        [sg.Frame("FTP", ftp_layout, font = SMALL_BOLD, expand_x = True, visible = False, k = "-ftp_frame-")],
-        [sg.Frame("LOG", log_layout, font= SMALL_BOLD, expand_x = True, visible = False, k = "-log_frame-")],
+        [sg.Frame("FTP - RENDSZERGAZDA MÓD", ftp_layout, font = SMALL_BOLD, expand_x = True, visible = False, k = "-ftp_frame-")],
+        [sg.Frame("LOG - RENDSZERGAZDA MÓD", log_layout, font= SMALL_BOLD, expand_x = True, visible = False, k = "-log_frame-")],
         [sg.VPush()],
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]

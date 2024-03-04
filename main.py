@@ -92,9 +92,7 @@ def main():
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
             place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, button_color = "green", visible = False)),
-            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "yellow", visible = False)),
-            place(sg.Button("SU. KILÉP", k = "-DISABLE_ADMIN-", font = SMALL_F, button_color = "red", visible = False)),
-            place(sg.Button("X", k = "-EXIT_BUTTON-", font = SMALL_F, visible = False))
+            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "red", visible = False))
         ]
     ]
 
@@ -123,11 +121,14 @@ def main():
     ]
 
     settings_layout = [
-        [sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F), sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F), sg.Push()]
+        [
+            sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F),
+            sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F), sg.Push(),
+        ]
     ]
 
     footer_layout = [
-        [sg.Text(config_path.hostname, font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
+        [sg.Text(config_path.hostname, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
     ]
 
     layout = [
@@ -161,11 +162,9 @@ def main():
                 admin_mode = admin_main()
                 if admin_mode:
                     text_to_log("ADMIN MODE ENABLED")
-                    window["-header-"].update("RENDSZERGAZDA MÓD", background_color = "red")
                     window["-QUICK_BACKUP-"].update(visible = True)
                     window["-DELETE_BACKUP-"].update(visible = True)
-                    window["-DISABLE_ADMIN-"].update(visible = True)
-                    window["-EXIT_BUTTON-"].update(visible = True)
+                    window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
             else:
                 event = "-DISABLE_ADMIN-"
 
@@ -173,11 +172,9 @@ def main():
         if event in ["-DISABLE_ADMIN-"]:
             text_to_log("-DISABLE_ADMIN-")
             admin_mode = False
-            window["-header-"].update(HEADER, background_color = windows.gui_theme.BG_C)
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
-            window["-DISABLE_ADMIN-"].update(visible = False)
-            window["-EXIT_BUTTON-"].update(visible = False)
+            window["-hostname-"].update(config_path.hostname, background_color = windows.gui_theme.BG_C, font = FOOTER_F)
 
         # Admin mode
         if event in ["-QUICK_BACKUP-"]:
@@ -190,7 +187,7 @@ def main():
             window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
 
         # Exit
-        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-", "-EXIT_BUTTON-"]:
+        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             if admin_mode:
                 text_to_log("EXIT")
                 return not admin_mode
