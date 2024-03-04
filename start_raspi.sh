@@ -13,8 +13,6 @@ echo -e "${GREEN}file's directory: $script_dir${RESET}"
 
 # Move to file's dir
 cd $script_dir
-echo "$script_dir" >> cli_log.txt
-echo "$(date) dirmove" >> cli_log.txt
 echo -e "${GREEN}moved to: $script_dir${RESET}"
 
 # Looking for venv and creating it if not found
@@ -22,11 +20,9 @@ folder_path=".venv"
 if [ -d "$folder_path" ]; 
     then
         echo -e "${GREEN}.venv found${RESET}"
-	echo "$(date) found venv" >> cli_log.txt
         # Activating venv
         source .venv/bin/activate
     else
-	echo "$(date) creating venv" >> cli_log.txt
         echo -e "${GREEN}creating .venv${RESET}"
         python3 -m venv .venv
         # Activating venv
@@ -39,12 +35,10 @@ if [ -d "$folder_path" ];
 fi
 
 # Runs the script
-echo "$(date) script start" >> cli_log.txt
 echo -e "${GREEN}script starting...${RESET}"
 ##### Script goes here
 python start.py
 #####
-echo "$(date) script end" >> cli_log.txt
 echo -e "${GREEN}...script ended${RESET}"
 
 # Deactivates the venv
