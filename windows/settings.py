@@ -128,6 +128,7 @@ def main(admin_mode):
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.close()
+            text_to_log(HEADER + " closed")
             break
 
         # Update
@@ -138,6 +139,7 @@ def main(admin_mode):
             if value["-usercode-"]:
                 funct.json_handle.config_update(usercode = value["-usercode-"])
                 text_to_log("-UPDATE-")
+                text_to_log(HEADER + " closed")
                 window.close()
                 break
             sgpop("Üres azonosító nem rögzíthető!")

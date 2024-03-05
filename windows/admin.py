@@ -55,11 +55,13 @@ def main():
         #print("value:", end = "\t"); print(value)
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.Close()
+            text_to_log(HEADER + " closed")
             return False
         if event == "-OK-":
             if value["-admin_data-"] == passwd:
                 text_to_log("ADMIN ENABLED")
                 window.Close()
+                text_to_log(HEADER + " closed")
                 return True
             if not value["-admin_data-"]:
                 window["-info-"].update("Üres jelszó!")

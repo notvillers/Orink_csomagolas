@@ -44,7 +44,7 @@ sgsize = (
 )
 
 MAIN_PERCENT = 1
-main_sgisze = ( 
+main_sgisze = (
     int(round(sgsize[0] * MAIN_PERCENT, 0)),
     int(round(sgsize[1] * MAIN_PERCENT, 0))
 )

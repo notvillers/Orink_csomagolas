@@ -80,6 +80,7 @@ def main():
         # Exit
         if event == "Exit" or event == sg.WIN_CLOSED or event == "-ESCAPE-" or event == "-UPLOAD_NO-":
             window.close()
+            text_to_log(HEADER + " closed")
             return False
         # Uploads to ftp by ftp.json
         if event == "-UPLOAD_YES-":
@@ -93,6 +94,7 @@ def main():
                 sgpop("Sikeres feltöltés!")
                 #funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 window.close()
+                text_to_log(HEADER + " closed")
                 return True
 
     window.close()

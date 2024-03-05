@@ -75,11 +75,13 @@ def main(selected_item):
         # Exit
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.close()
+            text_to_log(HEADER + " closed")
             return None
         # Update
         if event == "-UPDATE-":
             if value["-package_no-"]:
                 window.close()
+                text_to_log(HEADER + " closed")
                 text_to_log("UPDATE")
                 return [package_id, value["-package_no-"], package_user]
             sgpop("Üres csomagszám nem rögzítehető!")
