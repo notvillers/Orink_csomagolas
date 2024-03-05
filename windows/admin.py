@@ -35,7 +35,7 @@ def main():
         [sg.Push(background_color = BG_C), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE, bind_return_key = True, mouseover_colors = "white"), sg.Push(background_color = BG_C)],
         [sg.Push(background_color = BG_C), sg.Text("", k = "-info-", font = MEDIUM_BOLD, background_color = BG_C), sg.Push(background_color = BG_C)],
         [sg.VPush(background_color = BG_C)],
-        [sg.Push(background_color = BG_C), sg.Text("CTRL+S = RENDSZERGAZDA MÓD", font = SMALL_F, background_color = BG_C), sg.Push(background_color = BG_C)]
+        [sg.Push(background_color = BG_C), sg.Text("CTRL+S = " + HEADER, font = SMALL_F, background_color = BG_C), sg.Push(background_color = BG_C)]
     ]
 
     layout = [

@@ -10,7 +10,7 @@ import funct.slave
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-HEADER = "RENDSZERGAZDA MÓD"
+HEADER = "ESEMÉNY NAPLÓ"
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
 BG_C = "red"
@@ -45,11 +45,11 @@ def main():
                 sbar_arrow_color = "black"
             )
         ],
-        [sg.Push(background_color = BG_C), sg.Text("CTRL+E = ESEMÉNY NAPLÓ", font = SMALL_F, background_color = BG_C), sg.Push(background_color = BG_C)]
+        [sg.Push(background_color = BG_C), sg.Text("CTRL+E = " + HEADER, font = SMALL_F, background_color = BG_C), sg.Push(background_color = BG_C)]
     ]
 
     layout = [
-        [sg.Frame("ESEMÉNY NAPLÓ", event_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, background_color = BG_C)]
+        [sg.Frame(HEADER, event_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, background_color = BG_C)]
     ]
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = "red")
@@ -63,6 +63,7 @@ def main():
 
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.Close()
+            funct.log.text_to_log(HEADER + " closed")
             break
 
     window.Close()
