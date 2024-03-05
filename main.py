@@ -20,6 +20,9 @@ from windows.admin import main as admin_main
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS"
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
+B_GC = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -29,8 +32,6 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
-BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
 
 # Popup
 def sgpop(text: str):
@@ -50,7 +51,7 @@ def sgpop_yn(text: str = "Biztos?", color: str = "red"):
 
 def backup_db():
     '''Backups the db to temp path'''
-    
+
     datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     backup_db_name = datetime_string + "_" + config_path.db_name
     backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
@@ -112,11 +113,11 @@ def main():
                 enable_click_events = True,
                 expand_x = True,
                 expand_y = True,
-                header_text_color = windows.gui_theme.BG_C,
+                header_text_color = B_GC,
                 header_background_color = windows.gui_theme.TXT_C,
                 sbar_background_color = windows.gui_theme.TXT_C,
-                sbar_frame_color = windows.gui_theme.BG_C,
-                sbar_trough_color = windows.gui_theme.BG_C,
+                sbar_frame_color = B_GC,
+                sbar_trough_color = B_GC,
                 vertical_scroll_only = False,
                 alternating_row_color = windows.gui_theme.OK_COLOR,
             )
@@ -145,16 +146,16 @@ def main():
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
     window.bind("<Escape>", "-ESCAPE-")
     # 'ctrl' event
-    window.bind("<Control-KeyPress>", "-ctrl-")
+    window.bind("<Control-Key>", "-ctrl-")
     # 'ctrl+s' event
-    window.bind("<Control-KeyPress-s>", "-ctrl_s-")
-    window.bind("<Control-KeyPress-S>", "-ctrl_s-")
+    window.bind("<Control-s>", "-ctrl_s-")
+    window.bind("<Control-S>", "-ctrl_s-")
     # 'ctrl+a' event
-    window.bind("<Control-KeyPress-a>", "-ctrl_a-")
-    window.bind("<Control-KeyPress-A>", "-ctrl_a-")
+    window.bind("<Control-a>", "-ctrl_a-")
+    window.bind("<Control-A>", "-ctrl_a-")
     # 'ctrl+f' event 
-    window.bind("<Control-KeyPress-f>", "-ctrl_f-")
-    window.bind("<Control-KeyPress-F>", "-ctrl_f-")
+    window.bind("<Control-f>", "-ctrl_f-")
+    window.bind("<Control-F>", "-ctrl_f-")
 
     window.Maximize()
 
@@ -174,11 +175,12 @@ def main():
                 window["-UPLOAD-"].update("CTRL + F")
                 ctrl_event = not ctrl_event
                 if admin_mode:
-                    window["-hostname-"].update("KIKAPCSOLÁSA: CTRL + S")
+                    window["-hostname-"].update("KIKAPCSOLÁS: CTRL + S")
             else:
                 window["-SETTINGS-"].update("ADATOK")
                 window["-UPLOAD-"].update("FELTÖLTÉS")
-                window["-hostname-"].update("RENDSZERGAZDA MÓD")
+                if admin_mode:
+                    window["-hostname-"].update("RENDSZERGAZDA MÓD")
                 ctrl_event = not ctrl_event
 
         # Toggle admin mode
@@ -203,7 +205,7 @@ def main():
             admin_mode = False
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
-            window["-hostname-"].update(config_path.hostname, background_color = windows.gui_theme.BG_C, font = FOOTER_F)
+            window["-hostname-"].update(config_path.hostname, background_color = B_GC, font = FOOTER_F)
 
         # Admin mode
         if event == "-QUICK_BACKUP-":

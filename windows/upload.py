@@ -12,6 +12,9 @@ from funct.log import text_to_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS \ FELTÖLTÉS"
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
+BG_C = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -21,8 +24,6 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
-BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
 
 # Popup
 def sgpop(text):

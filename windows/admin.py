@@ -10,6 +10,9 @@ from funct.log import text_to_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "RENDSZERGAZDA MÓD"
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
+BG_C = "red"
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -19,8 +22,6 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
-BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
 
 def main():
     '''Main definition, runs the GUI'''
@@ -28,20 +29,20 @@ def main():
     text_to_log(HEADER + " started")
     
     admin_layout = [
-        [sg.VPush(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Text("Jelszó:", font = MEDIUM_BOLD, background_color = "red"), sg.Push(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Input("", k = "-admin_data-", font = SMALL_F, size = ISIZE, password_char = "*", background_color = "white"), sg.Push(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE, bind_return_key = True, mouseover_colors = "white"), sg.Push(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Text("", k = "-info-", font = MEDIUM_BOLD, background_color = "red"), sg.Push(background_color = "red")],
-        [sg.VPush(background_color = "red")],
-        [sg.Push(background_color = "red"), sg.Text("CTRL+S = RENDSZERGAZDA MÓD", font = SMALL_F, background_color = "red"), sg.Push(background_color = "red")]
+        [sg.VPush(background_color = BG_C)],
+        [sg.Push(background_color = BG_C), sg.Text("Jelszó:", font = MEDIUM_BOLD, background_color = BG_C), sg.Push(background_color = BG_C)],
+        [sg.Push(background_color = BG_C), sg.Input("", k = "-admin_data-", font = SMALL_F, size = ISIZE, password_char = "*", background_color = "white"), sg.Push(background_color = BG_C)],
+        [sg.Push(background_color = BG_C), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE, bind_return_key = True, mouseover_colors = "white"), sg.Push(background_color = BG_C)],
+        [sg.Push(background_color = BG_C), sg.Text("", k = "-info-", font = MEDIUM_BOLD, background_color = BG_C), sg.Push(background_color = BG_C)],
+        [sg.VPush(background_color = BG_C)],
+        [sg.Push(background_color = BG_C), sg.Text("CTRL+S = RENDSZERGAZDA MÓD", font = SMALL_F, background_color = BG_C), sg.Push(background_color = BG_C)]
     ]
 
     layout = [
-        [sg.Frame(HEADER, admin_layout, font = MEDIUM_BOLD, expand_x = True, expand_y = True, background_color = "red")]
+        [sg.Frame(HEADER, admin_layout, font = MEDIUM_BOLD, expand_x = True, expand_y = True, background_color = BG_C)]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = "red")
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = BG_C)
     window.bind("<Escape>", "-ESCAPE-")
     window.Maximize()
 

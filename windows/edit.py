@@ -9,6 +9,9 @@ from funct.log import text_to_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS \ MÓDOSÍTÁS"
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
+B_GC = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -18,8 +21,6 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
-BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
 
 # Popup
 def sgpop(text):
@@ -42,9 +43,9 @@ def main(selected_item):
     ]
 
     package_layout = [
-        [sg.Text("ID: ", font = SMALL_F), sg.Push(), sg.Input(package_id, font = SMALL_F, size = ISIZE, readonly = True, disabled_readonly_background_color = windows.gui_theme.BG_C)],
+        [sg.Text("ID: ", font = SMALL_F), sg.Push(), sg.Input(package_id, font = SMALL_F, size = ISIZE, readonly = True, disabled_readonly_background_color = B_GC)],
         [sg.Text("Csomagszám: ", font = SMALL_F), sg.Push(), sg.Input(package_no, k = "-package_no-", font = SMALL_F, size = ISIZE)],
-        [sg.Text("Rögzítő: ", font = SMALL_F), sg.Push(), sg.Input(package_user, font = SMALL_F, size = ISIZE, readonly = True, disabled_readonly_background_color = windows.gui_theme.BG_C)]
+        [sg.Text("Rögzítő: ", font = SMALL_F), sg.Push(), sg.Input(package_user, font = SMALL_F, size = ISIZE, readonly = True, disabled_readonly_background_color = B_GC)]
     ]
 
     button_layout = [

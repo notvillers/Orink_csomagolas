@@ -11,6 +11,9 @@ from funct.log import text_to_log, delete_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS \ ADATOK"
+BSIZE = windows.gui_theme.BUTTON_SIZE
+ISIZE = windows.gui_theme.INPUT_SIZE
+B_GC = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -20,8 +23,6 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
-BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
 
 # Popup
 def sgpop(text: str):
@@ -52,7 +53,7 @@ def main(admin_mode):
 
     setting_layout = [
         [sg.Text("Választott felhasználó azonosító:", font = SMALL_F)],
-        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = windows.gui_theme.BG_C)],
+        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = B_GC)],
         [
             sg.Listbox(
                 values = users_list,
@@ -60,7 +61,7 @@ def main(admin_mode):
                 font = SMALL_F,
                 expand_y = True,
                 enable_events = True,
-                sbar_trough_color = windows.gui_theme.BG_C
+                sbar_trough_color = B_GC
             )
         ],
         [sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, bind_return_key = True)]
