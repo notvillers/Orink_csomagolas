@@ -11,6 +11,7 @@ def copy(source_file: str, destination_file: str):
         return source_file + " -> " + destination_file
     except Exception as e:
         text_to_log(str(e))
+        return False
 
 def clean_dir(directory_path: str):
     '''removes files from a dir'''
@@ -21,8 +22,12 @@ def clean_dir(directory_path: str):
                 if os.path.isfile(file_path):
                     os.remove(file_path)
                     text_to_log(file_path + " removed")
+                    return True
+                return False
             except Exception as e:
                 text_to_log(str(e))
+                return False
+    return False
 
 def read_csv(file_name: str):
     '''reads a csv'''
