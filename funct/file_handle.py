@@ -50,6 +50,6 @@ def csv_tuple(csv_list: list):
     '''creates a tuple from the csv'''
     new_list = []
     for row in csv_list:
-        row_split = row.split(";")
+        row_split = row.split(",")
         new_list.append(row_split)
     return new_list
