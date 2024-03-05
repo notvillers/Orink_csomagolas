@@ -53,3 +53,11 @@ def csv_tuple(csv_list: list):
         row_split = row.split(",")
         new_list.append(row_split)
     return new_list
+
+def read_file_content(file_path: str):
+    '''reads a file and return its content in string'''
+    if os.path.exists(file_path):
+        with open(file_path, "r", encoding = "utf-8") as file:
+            content = "\n".join(file.readlines())
+        return content
+    return False

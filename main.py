@@ -15,6 +15,7 @@ from windows.edit import main as edit_main
 from windows.settings import main as settings_main
 from windows.upload import main as upload_main
 from windows.admin import main as admin_main
+from windows.event_viewer import main as event_main
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -144,6 +145,7 @@ def main():
     ]
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
+    # 'esc' event
     window.bind("<Escape>", "-ESCAPE-")
     # 'ctrl' event
     window.bind("<Control-Key>", "-ctrl-")
@@ -153,9 +155,12 @@ def main():
     # 'ctrl+a' event
     window.bind("<Control-a>", "-ctrl_a-")
     window.bind("<Control-A>", "-ctrl_a-")
-    # 'ctrl+f' event 
+    # 'ctrl+f' event
     window.bind("<Control-f>", "-ctrl_f-")
     window.bind("<Control-F>", "-ctrl_f-")
+    # 'ctrl+e' event
+    window.bind("<Control-e>", "-ctrl_e-")
+    window.bind("<Control-E>", "-ctrl_e-")
 
     window.Maximize()
 
@@ -175,7 +180,7 @@ def main():
                 window["-UPLOAD-"].update("CTRL + F")
                 ctrl_event = not ctrl_event
                 if admin_mode:
-                    window["-hostname-"].update("KIKAPCSOLÁS: CTRL + S")
+                    window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E")
             else:
                 window["-SETTINGS-"].update("ADATOK")
                 window["-UPLOAD-"].update("FELTÖLTÉS")
@@ -195,7 +200,7 @@ def main():
                     if not ctrl_event:
                         window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
                     else:
-                        window["-hostname-"].update("KIKAPCSOLÁSA: CTRL + S", background_color = "red", font = SMALL_BOLD)
+                        window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
             else:
                 event = "-DISABLE_ADMIN-"
 
@@ -287,7 +292,7 @@ def main():
             usercode = config_json["usercode"]
 
         # Upload
-        elif event in ["-UPLOAD-", "-ctrl_f-"]:
+        if event in ["-UPLOAD-", "-ctrl_f-"]:
             text_to_log("-UPLOAD-")
             succ_upload = upload_main()
             if succ_upload:
@@ -297,6 +302,10 @@ def main():
                     local_db.close()
                     funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))
                     return True
+                
+        # Event viewer
+        if event == "-ctrl_e-" and admin_mode:
+            event_main()
 
     window.close()
     return False
