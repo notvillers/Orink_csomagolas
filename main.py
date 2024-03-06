@@ -241,11 +241,13 @@ def main():
                 exit_try_without_admin = 0
             if admin_mode:
                 text_to_log("EXIT")
+                window.Close()
                 return False
             if not admin_mode:
-                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(exit_try_without_admin))
                 exit_try_without_admin += 1
+                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(exit_try_without_admin))
             if event == sg.WIN_CLOSED:
+                window.Close()
                 return True
 
         # Restart
