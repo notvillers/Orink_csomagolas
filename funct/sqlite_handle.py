@@ -1,5 +1,6 @@
 '''Sqlite3 handler'''
 
+import os
 import sqlite3
 from funct.log import text_to_log
 import config_path
@@ -9,6 +10,8 @@ class Connection:
     '''sqlite3 connection'''
 
     def __init__(self, name: str = config_path.db_path):
+        if not os.path.exists(name):
+            text_to_log(name + " generated")
         self.name = name
         self.connection = sqlite3.connect(self.name, detect_types = sqlite3.PARSE_DECLTYPES)
         self.cursor = self.connection.cursor()
@@ -16,7 +19,7 @@ class Connection:
 
     def __str__(self):
         return self.name
-    
+
     # Select query
     def select(self, query: str):
         '''selects from db and returns columns, results'''
@@ -24,7 +27,7 @@ class Connection:
         result = self.cursor.fetchall()
         columns = [description[0] for description in self.cursor.description]
         return columns, result
-    
+
     # Executes query with value argument
     def execute(self, query: str, values = None):
         '''executes a query on the db'''

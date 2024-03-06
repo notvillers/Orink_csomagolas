@@ -228,10 +228,14 @@ def main():
             window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
 
         # Exit
-        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
+        if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED]:
             if admin_mode:
                 text_to_log("EXIT")
-                return not admin_mode
+                return False
+            if not admin_mode:
+                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE")
+                return True
+
 
         # Timeout event
         if event == "__TIMEOUT__":
