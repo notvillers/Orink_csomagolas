@@ -9,6 +9,8 @@ import funct.xlsx_handle
 import funct.json_handle
 import funct.octopus_handle
 import funct.data_config
+import funct.ftp_handle
+from funct.slave import current_datetime_to_string
 
 # sqlite query
 CSOMAG_TABLE_CREATE = funct.db_config.CSOMAG_TABLE_CREATE
@@ -23,12 +25,26 @@ OSSZESITO_SELECT_BY_USER = funct.db_config.OSSZESITO_SELECT_BY_USER
 O8_SELECT_USERNAME_BY_USERCODE = funct.data_config.O8_SELECT_USERNAME_BY_USERCODE
 O8_SELECT_INFO_BY_CSOMAGSZAM = funct.data_config.O8_SELECT_INFO_BY_CSOMAGSZAM
 
+FTP_INFO = funct.json_handle.ftp_read()
+OCTOPUS_INFO = funct.json_handle.json_read(config_path.login_path)
+LOGS_PATH = config_path.logs_path
+BACKUP_PATH = config_path.backup_path
+
 def main():
     '''main'''
 
+    ftp_client = funct.ftp_handle.Client(
+        hostname = FTP_INFO["hostname"],
+        username = FTP_INFO["username"],
+        password = FTP_INFO["password"]
+    )
+    
+    dl_paths = [LOGS_PATH, BACKUP_PATH]
+    for path in dl_paths:
+        ftp_client.download_all_db_files("csomagolas", path)
+
     # Octopus 8 connection
-    octopus_info = funct.json_handle.json_read(config_path.login_path)
-    o8_client = funct.octopus_handle.Octopus8_sql(octopus_info)
+    o8_client = funct.octopus_handle.Octopus8_sql(OCTOPUS_INFO)
     
     # main db connection
     db_client = sqlite_connection()
@@ -73,6 +89,8 @@ def main():
             )
             worksheets.append(worksheet)
 
+        o8_client.close()
+
         # creating workbook
         if worksheets:
             workbook = funct.xlsx_handle.workbook(
@@ -81,7 +99,9 @@ def main():
             )
 
             # Exports to xlsx
-            workbook.xlsx_create(file_path = config_path.temp_path)
+            xlsx_path = workbook.xlsx_create(file_path = config_path.temp_path, file_name = current_datetime_to_string() + "_" + workbook.name)
+            xlsx_name = funct.file_handle.get_filename_from_path(xlsx_path)
+            ftp_client.upload(xlsx_path, None, xlsx_name)
 
 
 if __name__ == "__main__":

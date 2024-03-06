@@ -11,3 +11,5 @@ if __name__ == "__main__":
         1 - ellenőrzött, nem talált
         2 - ellenőrzött talált
 '''
+
+# TODO kész .xlsx visszamásolása subfolderbe

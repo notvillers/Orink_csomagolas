@@ -39,6 +39,9 @@ LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 HOSTNAME = config_path.hostname
 BP_INTERVAL_S = config_path.BP_INTERVAL_S
 
+# Variable(s)
+exit_try_without_admin = 0
+
 # Popup
 def sgpop(text: str):
     '''Drops a popup'''
@@ -166,6 +169,9 @@ def main():
     # 'ctrl+e' event
     window.bind("<Control-e>", "-ctrl_e-")
     window.bind("<Control-E>", "-ctrl_e-")
+    # 'ctrl+r' event
+    window.bind("<Control-r>", "-ctrl_r-")
+    window.bind("<Control-R>", "-ctrl_r-")
 
     window.Maximize()
 
@@ -175,8 +181,8 @@ def main():
 
     while True:
         event, value = window.read(timeout = 1000)
-        #print("event: ", end = "\t"); print(event)
-        #print("value: ", end = "\t"); print(value)
+        print("event: ", end = "\t"); print(event)
+        print("value: ", end = "\t"); print(value)
 
         # ctrl event
         if event == "-ctrl-":
@@ -229,13 +235,22 @@ def main():
 
         # Exit
         if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED]:
+            global exit_try_without_admin
+            if exit_try_without_admin > 4:
+                sgpop("Nincs jogosultságod kilépni!")
+                exit_try_without_admin = 0
             if admin_mode:
                 text_to_log("EXIT")
                 return False
             if not admin_mode:
-                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE")
+                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(exit_try_without_admin))
+                exit_try_without_admin += 1
+            if event == sg.WIN_CLOSED:
                 return True
 
+        # Restart
+        if event == "-ctrl_r-" and admin_mode:
+            return True
 
         # Timeout event
         if event == "__TIMEOUT__":
@@ -248,11 +263,12 @@ def main():
                     backup_countdown = BP_INTERVAL_S
 
         # Checking for table click
-        if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
-            selected_item = results[event[2][0]]
-            selected_item_id = selected_item[0]
-            #print(selected_item)
-            #print(selected_item_id)
+        if event is not None:
+            if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
+                selected_item = results[event[2][0]]
+                selected_item_id = selected_item[0]
+                #print(selected_item)
+                #print(selected_item_id)
 
         # Add
         if event == "-ADD-":

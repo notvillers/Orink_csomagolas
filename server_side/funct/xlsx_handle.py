@@ -138,7 +138,8 @@ class workbook:
 
             # If header is available, then adding an aoutfilter
             if wsheet.header:
-                if last_col != 0: last_col -= 1
+                if last_col != 0:
+                    last_col -= 1
                 sheet.autofilter(0, 0, last_row, last_col)
 
         # Closing the .xlsx

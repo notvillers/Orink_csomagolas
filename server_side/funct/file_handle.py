@@ -12,6 +12,7 @@ def copy(source_file: str, destination_file: str):
     except Exception as e:
         text_to_log(str(e))
 
+
 def clean_dir(directory_path: str):
     '''cleans a dir'''
     if os.path.exists(directory_path) and os.path.isdir(directory_path):
@@ -24,10 +25,12 @@ def clean_dir(directory_path: str):
             except Exception as e:
                 text_to_log(str(e))
 
+
 def ls(directory_path: str):
     '''lists files in dir'''
     files = os.listdir(directory_path)
     return files
+
 
 def ls_with_path(directory_path: str):
     '''lists files in dir with absolute path'''
@@ -36,3 +39,8 @@ def ls_with_path(directory_path: str):
     for file in files:
         files_with_path.append(os.path.join(directory_path, file))
     return files_with_path
+
+
+def get_filename_from_path(file_path: str):
+    '''returns the filename from a full path'''
+    return os.path.basename(file_path)

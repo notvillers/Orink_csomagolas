@@ -28,7 +28,7 @@ CSOMAG_DISTINCT_SELECT = """
     ;
 """
 
-# # # # # 
+# # # # #
 
 OSSZESITO_TABLE_CREATE = """
     CREATE TABLE IF NOT EXISTS osszesito
@@ -38,19 +38,20 @@ OSSZESITO_TABLE_CREATE = """
 
 OSSZESITO_TABLE_INSERT = """
     INSERT OR IGNORE INTO osszesito
-        (csomagszam, user, hostname, crdti)
+        (csomagszam, user, hostname, crdti, o8_confirm)
         values
-        (?, ?, ?, ?)
+        (?, ?, ?, ?, 0)
 ;
 """
 
 OSSZESITO_TABLE_INSERT_FROM_CSOMAG = """
-    INSERT or IGNORE INTO osszesito (csomagszam, user, hostname, crdti)
+    INSERT or IGNORE INTO osszesito (csomagszam, user, hostname, crdti, o8_confirm)
     SELECT DISTINCT
         csomag.csomagszam csomagszam,
         (SELECT cs.user FROM csomag cs WHERE cs.csomagszam = csomag.csomagszam ORDER by cs.crdti ASC LIMIT 1)  user,
         (SELECT cs.hostname FROM csomag cs WHERE cs.csomagszam = csomag.csomagszam ORDER by cs.crdti ASC LIMIT 1)  hostname,
-        (SELECT cs.crdti FROM csomag cs WHERE cs.csomagszam = csomag.csomagszam ORDER by cs.crdti ASC LIMIT 1)  crdti
+        (SELECT cs.crdti FROM csomag cs WHERE cs.csomagszam = csomag.csomagszam ORDER by cs.crdti ASC LIMIT 1)  crdti,
+        0 o8_confirm
     FROM 
         csomag
     WHERE 
@@ -77,5 +78,15 @@ OSSZESITO_SELECT_BY_USER = """
     SELECT id as 'ID', csomagszam as 'Csomagszám', replace(replace(hostname, '.db', ''), '_log', '') as 'Host', crdti as 'Rögzítés ideje'
     FROM osszesito 
     WHERE user = ?
+    ;
+"""
+
+O8_SELECT_USERNAME_BY_USERCODE = """
+    SELECT username FROM users WHERE usercode = ?
+    ;
+"""
+
+O8_SELECT_INFO_BY_CSOMAGSZAM = """
+    SELECT CASE WHEN 'ORH1041398_1' IN (SELECT csomagszam FROM wcsomag) THEN 2 ELSE 1 END
     ;
 """

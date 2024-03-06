@@ -14,8 +14,14 @@ if not os.path.exists(os.path.join(path, DB_USBPATH)):
 LOGS_SUBPATH = "logs"
 logs_path = os.path.join(path, LOGS_SUBPATH)
 
-if not os.path.exists(os.path.join(path, LOGS_SUBPATH)):
-    os.makedirs(os.path.join(path, LOGS_SUBPATH))
+if not os.path.exists(logs_path):
+    os.makedirs(logs_path)
+
+BACKUP_SUBPATH = "logs_backup"
+backup_path = os.path.join(path, BACKUP_SUBPATH)
+
+if not os.path.exists(backup_path):
+    os.makedirs(backup_path)
 
 TEMP_SUBPATH = "temp"
 temp_path = os.path.join(path, TEMP_SUBPATH)
@@ -25,3 +31,6 @@ if not os.path.exists(os.path.join(path, TEMP_SUBPATH)):
 
 LOGIN_JSON = "login.json"
 login_path = os.path.join(path, LOGIN_JSON)
+
+FTP_JSON = "ftp.json"
+ftp_path = os.path.join(path, FTP_JSON)
