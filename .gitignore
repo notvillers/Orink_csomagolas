@@ -6,3 +6,4 @@ event.txt
 .venv/
 cli_log.txt
 .xlsx
+*.xlsx
