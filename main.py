@@ -1,11 +1,10 @@
-# Main
+'''Main'''
 
 import os
-from datetime import datetime
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
-from funct.slave import get_time
+from funct.slave import get_time, get_datetime
 import config_path
 import funct.json_handle
 import funct.file_handle
@@ -33,6 +32,8 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
+HOSTNAME = config_path.hostname
+BP_INTERVAL_S = config_path.BP_INTERVAL_S
 
 # Popup
 def sgpop(text: str):
@@ -53,7 +54,7 @@ def sgpop_yn(text: str = "Biztos?", color: str = "red"):
 def backup_db():
     '''Backups the db to temp path'''
 
-    datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    datetime_string = get_datetime()
     backup_db_name = datetime_string + "_" + config_path.db_name
     backup_db_path = os.path.join(config_path.temp_path, backup_db_name)
     funct.file_handle.copy(config_path.db_path, backup_db_path)
@@ -65,7 +66,7 @@ def place(elem):
 
     return sg.Column([[elem]], pad = (0, 0))
 
-# Main
+
 def main():
     '''Main definition, runs the GUI'''
 
@@ -83,7 +84,7 @@ def main():
     local_db.execute(CSOMAG_TABLE_CREATE)
     columns, results = local_db.select(CSOMAG_TABLE_SELECT)
 
-    backup_countdown = config_path.BP_INTERVAL_S
+    backup_countdown = BP_INTERVAL_S
 
     header_layout = [
         [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
@@ -133,7 +134,7 @@ def main():
     ]
 
     footer_layout = [
-        [sg.Text(config_path.hostname, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
+        [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
     ]
 
     layout = [
@@ -210,7 +211,7 @@ def main():
             admin_mode = False
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
-            window["-hostname-"].update(config_path.hostname, background_color = B_GC, font = FOOTER_F)
+            window["-hostname-"].update(HOSTNAME, background_color = B_GC, font = FOOTER_F)
 
         # Admin mode
         if event == "-QUICK_BACKUP-":
@@ -227,6 +228,7 @@ def main():
             if admin_mode:
                 text_to_log("EXIT")
                 return not admin_mode
+
         # Timeout event
         if event == "__TIMEOUT__":
             window["-time-"].update(get_time())
@@ -235,7 +237,7 @@ def main():
             else:
                 if not admin_mode:
                     backup_db()
-                    backup_countdown = config_path.BP_INTERVAL_S
+                    backup_countdown = BP_INTERVAL_S
 
         # Checking for table click
         if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
