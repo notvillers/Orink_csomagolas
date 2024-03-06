@@ -65,6 +65,7 @@ def main():
         columns, result = cache_db.select(CSOMAG_TABLE_SELECT)
         for row in result:
             db_client.insert(CSOMAG_TABLE_INSERT, (row[0], row[1], os.path.basename(file), row[2]))
+        cache_db.close()
         os.remove(file)
 
     # creating distinct packages in main db
@@ -86,7 +87,6 @@ def main():
         csomagszam = row[1]
         csomagszam_o8_lookup = o8_client.one_value_select(O8_SELECT_INFO_BY_CSOMAGSZAM, (csomagszam,))
         db_client.execute(OSSZESITO_UPDATE_O8_CONFIRM, (csomagszam_o8_lookup, row_id))
-        print(csomagszam_o8_lookup)
 
     # Adding date for found Octopus 8 packages
     columns, result = db_client.select(OSSZESITO_SELECT_CONFIRMED)
