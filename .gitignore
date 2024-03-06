@@ -5,3 +5,4 @@ event.txt
 *.db
 .venv/
 cli_log.txt
+.xlsx

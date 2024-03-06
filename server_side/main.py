@@ -20,10 +20,15 @@ CSOMAG_TABLE_INSERT = funct.db_config.CSOMAG_TABLE_INSERT
 OSSZESITO_TABLE_INSERT_FROM_CSOMAG = funct.db_config.OSSZESITO_TABLE_INSERT_FROM_CSOMAG
 OSSZESITO_TABLE_SELECT_DISTINCT_USERS = funct.db_config.OSSZESITO_TABLE_SELECT_DISTINCT_USERS
 OSSZESITO_SELECT_BY_USER = funct.db_config.OSSZESITO_SELECT_BY_USER
+OSSZESITO_TABLE_SELECT = funct.db_config.OSSZESITO_TABLE_SELECT
+OSSZESITO_UPDATE_O8_CONFIRM = funct.db_config.OSSZESITO_UPDATE_O8_CONFIRM
+OSSZESITO_SELECT_CONFIRMED = funct.db_config.OSSZESITO_SELECT_CONFIRMED
+OSSZESITO_UPDATE_O8_CRDTI = funct.db_config.OSSZESITO_UPDATE_O8_CRDTI
 
 # octopus query
-O8_SELECT_USERNAME_BY_USERCODE = funct.data_config.O8_SELECT_USERNAME_BY_USERCODE
-O8_SELECT_INFO_BY_CSOMAGSZAM = funct.data_config.O8_SELECT_INFO_BY_CSOMAGSZAM
+O8_SELECT_USERNAME_BY_USERCODE = funct.db_config.O8_SELECT_USERNAME_BY_USERCODE
+O8_SELECT_INFO_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_INFO_BY_CSOMAGSZAM
+O8_SELECT_CRDTI_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_CRDTI_BY_CSOMAGSZAM
 
 FTP_INFO = funct.json_handle.ftp_read()
 OCTOPUS_INFO = funct.json_handle.json_read(config_path.login_path)
@@ -74,12 +79,29 @@ def main():
         for cell in row:
             users.append(cell)
 
+    # checking packages by Octopus 8
+    columns, result = db_client.select(OSSZESITO_TABLE_SELECT)
+    for row in result:
+        row_id = row[0]
+        csomagszam = row[1]
+        csomagszam_o8_lookup = o8_client.one_value_select(O8_SELECT_INFO_BY_CSOMAGSZAM, (csomagszam,))
+        db_client.execute(OSSZESITO_UPDATE_O8_CONFIRM, (csomagszam_o8_lookup, row_id))
+        print(csomagszam_o8_lookup)
+
+    # Adding date for found Octopus 8 packages
+    columns, result = db_client.select(OSSZESITO_SELECT_CONFIRMED)
+    for row in result:
+        row_id = row[0]
+        csomagszam = row[1]
+        csomagszam_o8_crdti = o8_client.one_value_select(O8_SELECT_CRDTI_BY_CSOMAGSZAM, (csomagszam,))
+        db_client.execute(OSSZESITO_UPDATE_O8_CRDTI, (csomagszam_o8_crdti, row_id))
+
     # creating worksheets
     if users:
         worksheets = []
         for user in users:
             columns, result = db_client.select_with_arg(OSSZESITO_SELECT_BY_USER, (user,))
-            # fetchin username for usercode
+            # fetching username for usercode
             username = o8_client.one_value_select(query = O8_SELECT_USERNAME_BY_USERCODE, insert = int(user))
 
             worksheet = funct.xlsx_handle.worksheet(

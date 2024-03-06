@@ -61,11 +61,11 @@ class Octopus8_sql:
         text_to_log("connection to " + self.server + "\\" + self.database + " is now closed")
 
     # Executing query
-    def execute(self, query: str, insert = ""):
+    def execute(self, query: str, insert = None):
         '''executes query and return columns, results of result'''
 
         if query:
-            if insert:
+            if insert is not None:
                 self.cursor.execute(query, insert)
             else:
                 self.cursor.execute(query)

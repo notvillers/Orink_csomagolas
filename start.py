@@ -1,6 +1,8 @@
+'''starts main.main()'''
+
 from main import main
 
 if __name__ == "__main__":
-    main_open = True
-    while main_open:
-        main_open = main()
+    MAIN_OPEN = True
+    while MAIN_OPEN:
+        MAIN_OPEN = main()

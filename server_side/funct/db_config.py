@@ -65,7 +65,7 @@ OSSZESITO_TABLE_DELETE = """
 """
 
 OSSZESITO_TABLE_SELECT = """
-    SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő', crdti as 'Rögzítése dátuma' FROM osszesito
+    SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő', crdti as 'Rögzítése dátuma', o8_confirm as 'O8 ellenőrzés' FROM osszesito
     ;
 """
 
@@ -75,9 +75,30 @@ OSSZESITO_TABLE_SELECT_DISTINCT_USERS = """
 """
 
 OSSZESITO_SELECT_BY_USER = """
-    SELECT id as 'ID', csomagszam as 'Csomagszám', replace(replace(hostname, '.db', ''), '_log', '') as 'Host', crdti as 'Rögzítés ideje'
+    SELECT id as 'ID', csomagszam as 'Csomagszám', replace(replace(hostname, '.db', ''), '_log', '') as 'Host', crdti as 'Rögzítés ideje', 
+        case o8_confirm 
+            when 0 then 'Nem volt ellenőrzés' 
+            when 1 then 'Nem létező csomagszám'
+            when 2 then 'Létező csomagszám'
+        end as 'O8 ellenőrzés',
+        o8_date as 'O8 rögzítés dátuma'
     FROM osszesito 
     WHERE user = ?
+    ;
+"""
+
+OSSZESITO_UPDATE_O8_CONFIRM = """
+    UPDATE osszesito SET o8_confirm = ? WHERE id = ?
+    ;
+"""
+
+OSSZESITO_UPDATE_O8_CRDTI = """
+    UPDATE osszesito SET o8_date = ? WHERE id = ?
+    ;
+"""
+
+OSSZESITO_SELECT_CONFIRMED = """
+    SELECT id, csomagszam from osszesito WHERE o8_confirm = 2
     ;
 """
 
@@ -87,6 +108,11 @@ O8_SELECT_USERNAME_BY_USERCODE = """
 """
 
 O8_SELECT_INFO_BY_CSOMAGSZAM = """
-    SELECT CASE WHEN 'ORH1041398_1' IN (SELECT csomagszam FROM wcsomag) THEN 2 ELSE 1 END
+    SELECT CASE WHEN ? IN (SELECT csomagszam FROM wcsomag) THEN 2 ELSE 1 END
+    ;
+"""
+
+O8_SELECT_CRDTI_BY_CSOMAGSZAM = """
+    SELECT CONVERT(VARCHAR, wcsomag.crdti, 120) FROM wcsomag WHERE wcsomag.csomagszam = ?
     ;
 """

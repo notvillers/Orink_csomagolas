@@ -44,7 +44,7 @@ class Connection:
             self.cursor.execute(query)
             self.connection.commit()
             return
-        self.cursor.execute(query, (values,))
+        self.cursor.execute(query, values)
         self.connection.commit()
         return 
 
