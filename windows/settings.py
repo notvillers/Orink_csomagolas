@@ -23,6 +23,7 @@ MEDIUM_F = windows.gui_theme.FONT_ARIAL_KOZEPES
 MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
+HOSTNAME = config_path.hostname
 
 # Popup
 def sgpop(text: str):
@@ -90,7 +91,7 @@ def main(admin_mode):
     ]
 
     footer_layout = [
-        [sg.Push(), sg.Text(config_path.hostname, k = "-hostname-", font = FOOTER_F), sg.Push()]
+        [sg.Push(), sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push()]
     ]
 
     layout = [
