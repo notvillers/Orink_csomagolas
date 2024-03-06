@@ -1,4 +1,4 @@
-# Upload
+'''Upload'''
 
 import PySimpleGUI as sg
 import windows.gui_theme
@@ -12,9 +12,12 @@ from funct.log import text_to_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS \ FELTÖLTÉS"
+SGSIZE = windows.gui_theme.main_sgisze
+ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
 BG_C = windows.gui_theme.BG_C
+TXT_C = windows.gui_theme.TXT_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -70,7 +73,7 @@ def main():
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
     window.bind("<Escape>", "-ESCAPE-")
     window.Maximize()
 

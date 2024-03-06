@@ -1,4 +1,4 @@
-# Settings
+'''Settings'''
 
 import PySimpleGUI as sg
 import windows.gui_theme
@@ -11,9 +11,11 @@ from funct.log import text_to_log, delete_log
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS \ ADATOK"
+SGSIZE = windows.gui_theme.main_sgisze
+ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
-B_GC = windows.gui_theme.BG_C
+BG_C = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -54,7 +56,7 @@ def main(admin_mode):
 
     setting_layout = [
         [sg.Text("Választott felhasználó azonosító:", font = SMALL_F)],
-        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = B_GC)],
+        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = BG_C)],
         [
             sg.Listbox(
                 values = users_list,
@@ -62,7 +64,7 @@ def main(admin_mode):
                 font = SMALL_F,
                 expand_y = True,
                 enable_events = True,
-                sbar_trough_color = B_GC
+                sbar_trough_color = BG_C
             )
         ],
         [sg.Button("FRISSÍTÉS", k = "-UPDATE-", font = SMALL_F, bind_return_key = True)]
@@ -103,7 +105,7 @@ def main(admin_mode):
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
     window.bind("<Escape>", "-ESCAPE-")
     window.Maximize()
 

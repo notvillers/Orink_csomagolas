@@ -11,6 +11,8 @@ import funct.slave
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "ESEMÉNY NAPLÓ"
+SGSIZE = windows.gui_theme.main_sgisze
+ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
 BG_C = "red"
@@ -52,7 +54,7 @@ def main():
         [sg.Frame(HEADER, event_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, background_color = BG_C)]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = "red")
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, background_color = "red")
     # 'esc' event
     window.bind("<Escape>", "-ESCAPE-")
 

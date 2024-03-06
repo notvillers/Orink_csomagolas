@@ -20,9 +20,13 @@ from windows.event_viewer import main as event_main
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS"
+SGSIZE = windows.gui_theme.main_sgisze
+ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
 B_GC = windows.gui_theme.BG_C
+TXT_C = windows.gui_theme.TXT_C
+OK_C = windows.gui_theme.OK_COLOR
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
 FOOTER_BOLD = windows.gui_theme.FONT_ARIAL_FOOTER_BOLD
@@ -116,12 +120,12 @@ def main():
                 expand_x = True,
                 expand_y = True,
                 header_text_color = B_GC,
-                header_background_color = windows.gui_theme.TXT_C,
-                sbar_background_color = windows.gui_theme.TXT_C,
+                header_background_color = TXT_C,
+                sbar_background_color = TXT_C,
                 sbar_frame_color = B_GC,
                 sbar_trough_color = B_GC,
                 vertical_scroll_only = False,
-                alternating_row_color = windows.gui_theme.OK_COLOR,
+                alternating_row_color = OK_C,
             )
         ]
     ]
@@ -145,7 +149,7 @@ def main():
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
     # 'esc' event
     window.bind("<Escape>", "-ESCAPE-")
     # 'ctrl' event
