@@ -7,6 +7,7 @@ import pyodbc
 import funct.data_config
 import funct.json_handle
 from funct.log import text_to_log
+from funct.odbc import get_driver
 
 # Class for the Octopus 8 SQL connection
 class Octopus8_sql:
@@ -44,7 +45,11 @@ class Octopus8_sql:
 
         if not self.ping_srvr(server):
             sys.exit()
-        connection_string = 'DRIVER={ODBC Driver '+ funct.data_config.ODBC_DRIVER + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
+        driver_version = get_driver()
+        if driver_version is None:
+            text_to_log("odbc driver not found")
+            sys.exit()
+        connection_string = 'DRIVER={ODBC Driver '+ driver_version + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
         connection = pyodbc.connect(connection_string)
         cursor = connection.cursor()
         text_to_log("connected to " + server + "\\" + database)
@@ -71,7 +76,7 @@ class Octopus8_sql:
                 self.cursor.execute(query)
             result = self.cursor.fetchall()
             columns = [column[0] for column in self.cursor.description]
-            text_to_log("returned " + str(len(result)) + " lines with " + str(len(columns)) + (" columns" if len(columns) > 1 else " column"))
+            # text_to_log("returned " + str(len(result)) + " lines with " + str(len(columns)) + (" columns" if len(columns) > 1 else " column"))
             return columns, result
         return False, False
     

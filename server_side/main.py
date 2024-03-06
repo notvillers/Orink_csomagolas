@@ -125,6 +125,9 @@ def main():
             xlsx_name = funct.file_handle.get_filename_from_path(xlsx_path)
             ftp_client.upload(xlsx_path, None, xlsx_name)
 
+    newest_xlsx = ftp_client.get_newest_file(".xlsx")
+    print(newest_xlsx)
+
 
 if __name__ == "__main__":
     main()
