@@ -1,5 +1,9 @@
 '''slave functions/definitions'''
+
 from datetime import datetime
+import platform
+
+IS_WINDOWS = platform.system() == "Windows"
 
 def get_time():
     '''returns time in hh:mm:ss format'''

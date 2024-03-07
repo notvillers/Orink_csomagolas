@@ -4,7 +4,7 @@ import os
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
-from funct.slave import get_time, get_datetime
+from funct.slave import IS_WINDOWS, get_time, get_datetime
 import config_path
 import funct.json_handle
 import funct.file_handle
@@ -40,7 +40,7 @@ HOSTNAME = config_path.hostname
 BP_INTERVAL_S = config_path.BP_INTERVAL_S
 
 # Variable(s)
-exit_try_without_admin = 0
+EXIT_TRY_WITHOUT_ADMIN = 0
 
 # Popup
 def sgpop(text: str):
@@ -181,8 +181,8 @@ def main():
 
     while True:
         event, value = window.read(timeout = 1000)
-        # print("event: ", end = "\t"); print(event)
-        # print("value: ", end = "\t"); print(value)
+        print("event: ", end = "\t"); print(event)
+        print("value: ", end = "\t"); print(value)
 
         # ctrl event
         if event == "-ctrl-":
@@ -235,17 +235,17 @@ def main():
 
         # Exit
         if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED]:
-            global exit_try_without_admin
-            if exit_try_without_admin > 4:
+            global EXIT_TRY_WITHOUT_ADMIN
+            if EXIT_TRY_WITHOUT_ADMIN > 4:
                 sgpop("Nincs jogosultságod kilépni!")
-                exit_try_without_admin = 0
+                EXIT_TRY_WITHOUT_ADMIN = 0
             if admin_mode:
                 text_to_log("EXIT")
                 window.Close()
                 return False
             if not admin_mode:
-                exit_try_without_admin += 1
-                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(exit_try_without_admin))
+                EXIT_TRY_WITHOUT_ADMIN += 1
+                text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(EXIT_TRY_WITHOUT_ADMIN))
             if event == sg.WIN_CLOSED:
                 window.Close()
                 return True
