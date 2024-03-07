@@ -279,7 +279,7 @@ def main():
                 if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
                     window["-info-"].update("")
                     local_db.insert(CSOMAG_TABLE_INSERT, (value["-new_package-"], usercode, hostname))
-                    text_to_log(value["-new_package-"] + " PACK NO. ADDED")
+                    text_to_log("package no. " + value["-new_package-"] + " added")
                     columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                     window["-new_package-"].update("")
                     window["-packages-"].update(values = results)
