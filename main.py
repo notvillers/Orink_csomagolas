@@ -181,8 +181,8 @@ def main():
 
     while True:
         event, value = window.read(timeout = 1000)
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        # print("event: ", end = "\t"); print(event)
+        # print("value: ", end = "\t"); print(value)
 
         # ctrl event
         if event == "-ctrl-":
