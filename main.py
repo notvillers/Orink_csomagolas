@@ -269,8 +269,6 @@ def main():
             if event[0] == "-packages-" and event[1] == "+CLICKED+" and event[2][0] not in (None, -1) and event[2][1] not in (None, -1):
                 selected_item = results[event[2][0]]
                 selected_item_id = selected_item[0]
-                #print(selected_item)
-                #print(selected_item_id)
 
         # Add
         if event == "-ADD-":
