@@ -4,7 +4,7 @@ import os
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
-from funct.slave import IS_WINDOWS, get_time, get_datetime
+from funct.slave import get_time, get_datetime
 import config_path
 import funct.json_handle
 import funct.file_handle
@@ -93,6 +93,9 @@ def main():
 
     backup_countdown = BP_INTERVAL_S
 
+    menu_def = [["&Fájl", ["&Importálás::-import-", "&Exportálás::-export-"]]]
+    menu_def_admin = [["&Fájl", ["&Importálás::-import-", "&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
+
     header_layout = [
         [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
     ]
@@ -145,6 +148,7 @@ def main():
     ]
 
     layout = [
+        [sg.Menu(menu_def, font = SMALL_F, k = "-menu-")],
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
@@ -208,6 +212,7 @@ def main():
                     text_to_log("ADMIN MODE ENABLED")
                     window["-QUICK_BACKUP-"].update(visible = True)
                     window["-DELETE_BACKUP-"].update(visible = True)
+                    window["-menu-"].update(menu_def_admin)
                     if not ctrl_event:
                         window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
                     else:
@@ -222,6 +227,7 @@ def main():
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
             window["-hostname-"].update(HOSTNAME, background_color = B_GC, font = FOOTER_F)
+            window["-menu-"].update(menu_def)
 
         # Admin mode
         if event == "-QUICK_BACKUP-":
@@ -332,6 +338,15 @@ def main():
         # Event viewer
         if event == "-ctrl_e-" and admin_mode:
             event_main()
+
+        # Menu handling
+        if "::" in event:
+            if "::-import-" in event:
+                sgpop("Fejlesztés alatt")
+            if "::-export-" in event:
+                sgpop("Fejlesztés alatt")
+            if "::-event_view-" in event and admin_mode:
+                event_main()
 
     window.close()
     return False
