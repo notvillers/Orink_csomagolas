@@ -2,6 +2,8 @@
 
 from datetime import datetime
 import platform
+import random
+import string
 
 IS_WINDOWS = platform.system() == "Windows"
 
@@ -18,3 +20,19 @@ def get_datetime():
 def reverse_list(list_to_reverse: list):
     '''reversing list'''
     return list_to_reverse[::-1]
+
+def generate_random_string(length: int = 32):
+    '''generates a random uppercase string of given length'''
+
+    characters = string.ascii_uppercase
+    return ''.join(random.choice(characters) for _ in range(length))
+
+def generate_random_string_list(length: int = 100, string_length: int = 32):
+    '''generates a list of unique random strings of given length'''
+
+    random_strings = []
+    while len(random_strings) < length:
+        random_string = generate_random_string(string_length)
+        if random_string not in random_strings:
+            random_strings.append(random_string)
+    return random_strings

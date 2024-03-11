@@ -8,6 +8,7 @@ from funct.slave import get_time, get_datetime
 import config_path
 import funct.json_handle
 import funct.file_handle
+import funct.slave
 from funct.sqlite_handle import Connection as sqlite_connection
 from funct.db_config import CSOMAG_TABLE_CREATE, CSOMAG_TABLE_SELECT, CSOMAG_TABLE_INSERT, CSOMAG_TABLE_DELETE, CSOMAG_TABLE_UPDATE_BY_ID
 from windows.edit import main as edit_main
@@ -67,39 +68,55 @@ def backup_db():
     funct.file_handle.copy(config_path.db_path, backup_db_path)
     text_to_log(backup_db_path + " saved")
 
-
 def place(elem):
     '''places element'''
 
     return sg.Column([[elem]], pad = (0, 0))
 
 
-def main():
+def del_db(connection):
+    '''closes connection and deletes db'''
+
+    connection.close()
+    funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))
+
+def main(admin_mode = False):
     '''Main definition, runs the GUI'''
 
     text_to_log(HEADER + " started")
 
+    # Check for json files
+    json_text = ""
     if funct.json_handle.create_config():
-        sgpop("Kérlek töltsd ki a felhasználó adatokat!")
+        json_text += "Kérlek töltsd ki a felhasználó adatokat!\n"
     if funct.json_handle.create_ftp():
-        sgpop("Kérlek töltsd ki az FTP adatokat!")
+        json_text += "Kérlek töltsd ki az FTP adatokat!"
+    if json_text:
+        sgpop(json_text)
+
+    # Configs
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
     hostname = config_path.hostname
 
+    # DB
     local_db = sqlite_connection()
     local_db.execute(CSOMAG_TABLE_CREATE)
     columns, results = local_db.select(CSOMAG_TABLE_SELECT)
 
+    # Backup countdown
     backup_countdown = BP_INTERVAL_S
 
-    menu_def = [["&Fájl", ["&Importálás::-import-", "&Exportálás::-export-"]]]
-    menu_def_admin = [["&Fájl", ["&Importálás::-import-", "&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
+    # Menu
+    menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]]]
+    menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
 
+    # Header layout
     header_layout = [
         [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
     ]
 
+    # Option layout
     option_layout = [
         [
             sg.Input("", k = "-new_package-", font = SMALL_F),
@@ -112,6 +129,7 @@ def main():
         ]
     ]
 
+    # Packages layout
     packages_layout = [
         [
             sg.Table(
@@ -136,6 +154,7 @@ def main():
         ]
     ]
 
+    # Settings layout
     settings_layout = [
         [
             sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F),
@@ -143,12 +162,14 @@ def main():
         ]
     ]
 
+    # Footer layout
     footer_layout = [
         [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
     ]
 
+    # Layout
     layout = [
-        [sg.Menu(menu_def, font = SMALL_F, k = "-menu-")],
+        [sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")],
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
@@ -156,7 +177,10 @@ def main():
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")]
     ]
 
+    # Window
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
+
+    # Events
     # 'esc' event
     window.bind("<Escape>", "-ESCAPE-")
     # 'ctrl' event
@@ -177,13 +201,29 @@ def main():
     window.bind("<Control-r>", "-ctrl_r-")
     window.bind("<Control-R>", "-ctrl_r-")
 
+    # Maximize
     window.Maximize()
 
+    # ctrl event
     ctrl_event = False
-    selected_item_id = False
-    admin_mode = False
 
+    # Selected items ID
+    selected_item_id = False
+
+    # Run
     while True:
+
+        # Changing to admin mode, if necessary
+        if admin_mode:
+            text_to_log("ADMIN MODE ENABLED")
+            window["-QUICK_BACKUP-"].update(visible = True)
+            window["-DELETE_BACKUP-"].update(visible = True)
+            window["-menu-"].update(menu_def_admin)
+            if not ctrl_event:
+                window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
+            else:
+                window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
+
         event, value = window.read(timeout = 1000)
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
@@ -208,15 +248,6 @@ def main():
             text_to_log("-ctrl_s-")
             if not admin_mode:
                 admin_mode = admin_main()
-                if admin_mode:
-                    text_to_log("ADMIN MODE ENABLED")
-                    window["-QUICK_BACKUP-"].update(visible = True)
-                    window["-DELETE_BACKUP-"].update(visible = True)
-                    window["-menu-"].update(menu_def_admin)
-                    if not ctrl_event:
-                        window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
-                    else:
-                        window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
             else:
                 event = "-DISABLE_ADMIN-"
 
@@ -240,25 +271,25 @@ def main():
             window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
 
         # Exit
-        if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED]:
+        if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED] or "::-ESCAPE-" in event:
             global EXIT_TRY_WITHOUT_ADMIN
             if EXIT_TRY_WITHOUT_ADMIN > 4:
-                sgpop("Nincs jogosultságod kilépni!")
+                sgpop("Kérlek ne zárj be!")
                 EXIT_TRY_WITHOUT_ADMIN = 0
             if admin_mode:
                 text_to_log("EXIT")
                 window.Close()
-                return False
+                return False, True
             if not admin_mode:
                 EXIT_TRY_WITHOUT_ADMIN += 1
                 text_to_log("TRYING TO EXIT WITHOUT ADMIN_MODE " + str(EXIT_TRY_WITHOUT_ADMIN))
             if event == sg.WIN_CLOSED:
                 window.Close()
-                return True
+                return True, False
 
         # Restart
         if event == "-ctrl_r-" and admin_mode:
-            return True
+            return True, True
 
         # Timeout event
         if event == "__TIMEOUT__":
@@ -331,9 +362,10 @@ def main():
                 if sgpop_yn("Törli a helyi adatokat?"):
                     text_to_log("DB DELETE")
                     window.close()
-                    local_db.close()
-                    funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))
-                    return True
+                    del_db(local_db)
+                    if admin_mode:
+                        return True, True
+                    return True, False
                 
         # Event viewer
         if event == "-ctrl_e-" and admin_mode:
@@ -341,18 +373,46 @@ def main():
 
         # Menu handling
         if "::" in event:
+            # Import
             if "::-import-" in event:
-                sgpop("Fejlesztés alatt")
+                pass
+            # Export
             if "::-export-" in event:
-                sgpop("Fejlesztés alatt")
-            if "::-event_view-" in event and admin_mode:
-                event_main()
+                pass
+
+            # Admin mode
+            if admin_mode:
+                # Event view
+                if "::-event_view-" in event:
+                    event_main()
+                # Load demo data
+                if "::-demo_load-" in event:
+                    if results:
+                        window["-info-"].update("Már vannak adatok!")
+                    else:
+                        if sgpop_yn():
+                            random_strings = funct.slave.generate_random_string_list(length = 100, string_length = 50)
+                            for random_string in random_strings:
+                                local_db.insert(CSOMAG_TABLE_INSERT, (random_string, usercode, hostname))
+                                columns, results = local_db.select(CSOMAG_TABLE_SELECT)
+                                window["-packages-"].update(values = results)
+                                window["-info-"].update("Demo betöltve!")
+                # Clear table
+                if "::-table_clear-" in event:
+                    if sgpop_yn():
+                        window.Close()
+                        del_db(local_db)
+                        return True, True
 
     window.close()
-    return False
+    return False, False
 
 
 if __name__ == "__main__":
-    main_open = True
-    while main_open:
-        main_open = main()
+    MAIN_OPEN = True
+    IS_ADMIN = False
+    while MAIN_OPEN:
+        if not IS_ADMIN:
+            MAIN_OPEN, IS_ADMIN = main(admin_mode = False)
+        else:
+            MAIN_OPEN, IS_ADMIN = main(admin_mode = True)

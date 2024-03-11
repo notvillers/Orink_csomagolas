@@ -4,5 +4,9 @@ from main import main
 
 if __name__ == "__main__":
     MAIN_OPEN = True
+    IS_ADMIN = False
     while MAIN_OPEN:
-        MAIN_OPEN = main()
+        if not IS_ADMIN:
+            MAIN_OPEN, IS_ADMIN = main(admin_mode = False)
+        else:
+            MAIN_OPEN, IS_ADMIN = main(admin_mode = True)
