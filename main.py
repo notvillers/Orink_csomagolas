@@ -108,8 +108,8 @@ def main(admin_mode = False):
     backup_countdown = BP_INTERVAL_S
 
     # Menu
-    menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]]]
-    menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
+    menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Esemény napló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
+    menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "---", "&Mentés::-backup-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
 
     # Header layout
     header_layout = [
@@ -264,11 +264,11 @@ def main(admin_mode = False):
         if event == "-QUICK_BACKUP-":
             text_to_log("-QUICK_BACKUP-")
             backup_db()
-            window["-header-"].update("SIKERES MENTÉS", background_color = "green")
+            window["-info-"].update("Sikeres mentés!", text_color = "green")
         if event == "-DELETE_BACKUP-":
             text_to_log("-DELETE_BACKUP-")
             funct.file_handle.clean_dir(config_path.temp_path)
-            window["-header-"].update("MENTÉSEK TÖRÖLVE", background_color = "green")
+            window["-info-"].update("Mentések törölve!", text_color = "green")
 
         # Exit
         if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED] or "::-ESCAPE-" in event:
@@ -319,10 +319,10 @@ def main(admin_mode = False):
                     window["-new_package-"].update("")
                     window["-packages-"].update(values = results)
                 else:
-                    window["-info-"].update("Ismétlődés!")
+                    window["-info-"].update("Ismétlődés!", text_color = "red")
                     window["-new_package-"].update("")
             else:
-                window["-info-"].update("Üres csomagszám!")
+                window["-info-"].update("Üres csomagszám!", text_color = "red")
 
         # Edit
         if event == "-EDIT-":
@@ -337,7 +337,7 @@ def main(admin_mode = False):
                         columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                         window["-packages-"].update(values = results)
                     else:
-                        window["-info-"].update("Ismétlődés!")
+                        window["-info-"].update("Ismétlődés!", text_color = "red")
 
         # Delete
         if event == "-DELETE-" and selected_item_id:
@@ -396,13 +396,16 @@ def main(admin_mode = False):
                                 local_db.insert(CSOMAG_TABLE_INSERT, (random_string, usercode, hostname))
                                 columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                                 window["-packages-"].update(values = results)
-                                window["-info-"].update("Demo betöltve!")
+                                window["-info-"].update("Demo betöltve!", text_color = "green")
                 # Clear table
                 if "::-table_clear-" in event:
                     if sgpop_yn():
                         window.Close()
                         del_db(local_db)
                         return True, True
+                if "::-backup-" in event:
+                    backup_db()
+                    window["-info-"].update("Sikeres mentés!", text_color = "green")
 
     window.close()
     return False, False
