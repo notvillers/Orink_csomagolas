@@ -13,7 +13,7 @@ def text_to_log(text, path = LOG_PATH):
     datetime_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     result = datetime_string + "\t" + text
     print(result)
-    with open(path, "a", encoding = "utf-8") as file:
+    with open(path, "a", encoding = "utf-8-sig") as file:
         file.write(result + "\n")
 
 # Deletes log

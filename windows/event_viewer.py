@@ -10,7 +10,7 @@ import funct.slave
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
-HEADER = "ESEMÉNY NAPLÓ"
+HEADER = "ESEMÉNYNAPLÓ"
 SGSIZE = windows.gui_theme.main_sgisze
 ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''Main'''
 
 import os
@@ -21,6 +22,11 @@ from windows.event_viewer import main as event_main
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
 sg.theme("O8")
 HEADER = "OCTOPY - CSOMAGOLÁS"
+# Set process title
+if config_path.IS_MACOS:
+    import setproctitle
+    setproctitle.setproctitle(HEADER)
+    setproctitle.setthreadtitle(HEADER)
 SGSIZE = windows.gui_theme.main_sgisze
 ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
@@ -43,7 +49,6 @@ BP_INTERVAL_S = config_path.BP_INTERVAL_S
 # Variable(s)
 EXIT_TRY_WITHOUT_ADMIN = 0
 
-# Popup
 def sgpop(text: str):
     '''Drops a popup'''
 
@@ -80,6 +85,7 @@ def del_db(connection):
     connection.close()
     funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))
 
+
 def main(admin_mode = False):
     '''Main definition, runs the GUI'''
 
@@ -108,8 +114,8 @@ def main(admin_mode = False):
     backup_countdown = BP_INTERVAL_S
 
     # Menu
-    menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Esemény napló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
-    menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Esemény napló::-event_view-", "---", "&Mentés::-backup-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
+    menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Eseménynapló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
+    menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Eseménynapló::-event_view-", "---", "&Mentés::-backup-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
 
     # Header layout
     header_layout = [
@@ -235,7 +241,7 @@ def main(admin_mode = False):
                 window["-UPLOAD-"].update("CTRL + F")
                 ctrl_event = not ctrl_event
                 if admin_mode:
-                    window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E")
+                    window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNYNAPLÓ: CTRL+E")
             else:
                 window["-SETTINGS-"].update("ADATOK")
                 window["-UPLOAD-"].update("FELTÖLTÉS")

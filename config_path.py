@@ -3,6 +3,8 @@
 import os
 import socket
 
+IS_MACOS = (os.name == 'posix' and os.uname().sysname == 'Darwin')
+
 path = os.path.dirname(__file__)
 
 CONFIG_JSON_SUBPATH = "config"
