@@ -26,13 +26,13 @@ LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 def pop_esc_yn(header: str = "Figyelmeztetés!", text: str = "Biztos?", buttons: list = []):
     '''pops a popup which closes on <Escape> event'''
 
-    text_to_log("pop: " + header + " started")
+    text_to_log("pop_esc_yn: " + header + " started")
     
     text_layout = [
         [sg.Push(), sg.Text(text, font = SMALL_F), sg.Push()]
     ]
 
-    events_for_buttons = ["-" + button + "-" for button in buttons]
+    events = ["-" + button + "-" for button in buttons]
     button_layout = [
         [sg.Button(button, k = "-" + button + "-", font = SMALL_F) for button in buttons]
     ]
@@ -49,9 +49,54 @@ def pop_esc_yn(header: str = "Figyelmeztetés!", text: str = "Biztos?", buttons:
         event, value = window.read()
         if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
             window.close()
-            text_to_log("pop: " + header + " closed")
+            text_to_log("pop_esc_yn: " + header + " closed")
             return None
-        if event in events_for_buttons:
+        if event in events:
             window.close()
-            text_to_log("pop: " + header + " closed")
+            text_to_log("pop_esc_yn: " + header + " closed")
             return event
+
+
+def pop_esc_input(header: str = "Bevitel", text: str = "Bevitel", is_password: bool = False):
+    '''pops an input popup which closes on <Escape> event'''
+
+    text_to_log("pop_esc_input: " + header + " started")
+
+    text_layout = [
+        [sg.Push(), sg.Text(text, font = SMALL_F), sg.Push()]
+    ]
+
+    if not is_password:
+        input_layout = [
+            [sg.Push(), sg.Input(input, k = "-input-", font = SMALL_F, expand_x = True), sg.Push()]
+        ]
+    else:
+        input_layout = [
+            [sg.Push(), sg.Input(input, k = "-input-", font = SMALL_F, expand_x = True, password_char = "*"), sg.Push()]
+        ]
+
+    button_layout = [
+        [sg.Push(), sg.Button("OK", k = "-OK-", font = SMALL_F, size = BSIZE), sg.Push()]
+    ]
+
+    layout = [
+        [sg.Frame("", text_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-text_frame-")],
+        [sg.Frame("", input_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-input_frame-")],
+        [sg.Frame("", button_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-button_frame-")]
+    ]
+
+    window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH)
+    window.bind("<Escape>", "-ESCAPE-")
+
+    while True:
+        event, value = window.read()
+        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
+            window.close()
+            text_to_log("pop_esc_input: " + header + " closed")
+            return None
+        if event == "-OK-":
+            window.close()
+            text_to_log("pop_esc_input: " + header + " closed")
+            if value["-input-"]:
+                return value["-input-"]
+            return None

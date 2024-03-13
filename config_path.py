@@ -39,6 +39,8 @@ ICON_NAME = "icon.ico"
 icon_path = os.path.join(path, ICON_SUBPATH, ICON_NAME)
 USERS_NAME = "users.csv"
 users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)
+INFO_ICON = "info.png"
+info_path = os.path.join(path, ICON_SUBPATH, INFO_ICON)
 
 # Others
 

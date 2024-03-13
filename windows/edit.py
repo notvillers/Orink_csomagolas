@@ -4,6 +4,7 @@ import PySimpleGUI as sg
 import windows.gui_theme
 import config_path
 from funct.log import text_to_log
+from windows.popup import pop_esc_yn
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -24,12 +25,6 @@ MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 HOSTNAME = config_path.hostname
-
-# Popup
-def sgpop(text):
-    '''Drops a popup'''
-    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
-
 
 # Main
 def main(selected_item):
@@ -87,6 +82,6 @@ def main(selected_item):
                 text_to_log(HEADER + " closed")
                 text_to_log("UPDATE")
                 return [package_id, value["-package_no-"], package_user]
-            sgpop("Üres csomagszám nem rögzítehető!")
+            pop_esc_yn(text = "Üres csomagszám nem rögzítehető!")
 
     window.close()

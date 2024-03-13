@@ -30,6 +30,7 @@ if config_path.IS_MACOS:
     setproctitle.setthreadtitle(HEADER)
 SGSIZE = windows.gui_theme.main_sgisze
 ICON_PATH = config_path.icon_path
+INFO_PATH = config_path.info_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
 B_GC = windows.gui_theme.BG_C
@@ -169,7 +170,7 @@ def main(admin_mode = False):
 
     # Footer layout
     footer_layout = [
-        [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
+        [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F), sg.Push(), sg.Button("", k = "-INFO-", image_filename = INFO_PATH)]
     ]
 
     menu_layout = [[sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")]]
@@ -214,7 +215,7 @@ def main(admin_mode = False):
             if not ctrl_event:
                 window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
             else:
-                window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNYNAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
+                window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | GYORSGOMBOK: CTRL+I", background_color = "red", font = SMALL_BOLD)
 
         event, value = window.read(timeout = 1000)
         print("event: ", end = "\t"); print(event)
@@ -236,7 +237,7 @@ def main(admin_mode = False):
                 ctrl_event = not ctrl_event
 
         # Shortcut events:
-        if event == "-ctrl_i-":
+        if event in ["-ctrl_i-", "-INFO-"]:
             pop_esc_yn(header = "Gyorsgombok",text = shortcut_info(), buttons = [])
 
         # Toggle admin mode

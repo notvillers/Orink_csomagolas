@@ -30,12 +30,6 @@ LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 HOSTNAME = config_path.hostname
 
-# Popup
-def sgpop(text):
-    '''Drops a popup'''
-    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
-
-
 # Main
 def main():
     '''Main definition, runs the GUI'''
