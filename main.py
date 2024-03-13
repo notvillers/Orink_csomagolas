@@ -89,6 +89,16 @@ def del_db(connection):
     funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.DB_SUBPATH))
 
 
+def shortcut_info():
+    '''return shortcut info list'''
+    info = []
+    for event_key in EVENT_KEYS:
+        if event_key["info"] not in info and event_key["info"] is not None:
+            info.append(event_key["info"])
+    info_txt = "\n".join(info)
+    return info_txt
+
+
 def main(admin_mode = False):
     '''Main definition, runs the GUI'''
 
@@ -237,6 +247,10 @@ def main(admin_mode = False):
                 if admin_mode:
                     window["-hostname-"].update("RENDSZERGAZDA MÓD")
                 ctrl_event = not ctrl_event
+
+        # Shortcut events:
+        if event == "-ctrl_i-":
+            sgpop(shortcut_info())
 
         # Toggle admin mode
         if event == "-ctrl_s-":

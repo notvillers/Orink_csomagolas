@@ -48,17 +48,18 @@ users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)
     "event": "event it generates"
 '''
 EVENT_KEYS = [
-    {"key": "<Escape>", "event": "-ESCAPE-"}, # esc
-    {"key": "<Control-Key>", "event": "-ctrl-"}, # ctrl
-    {"key": "<Control-a>", "event": "-ctrl_a-"}, # ctrl+a
-    {"key": "<Control-A>", "event": "-ctrl_a-"}, # ctrl+A
-    {"key": "<Control-e>", "event": "-ctrl_e-"}, # ctrl+e
-    {"key": "<Control-f>", "event": "-ctrl_f-"}, # ctrl+f
-    {"key": "<Control-F>", "event": "-ctrl_f-"}, # ctrl+F
-    {"key": "<Control-e>", "event": "-ctrl_e-"}, # ctrl+e
-    {"key": "<Control-E>", "event": "-ctrl_e-"}, # ctrl+E
-    {"key": "<Control-r>", "event": "-ctrl_r-"}, # ctrl+r
-    {"key": "<Control-R>", "event": "-ctrl_r-"}, # ctrl+R
-    {"key": "<Control-s>", "event": "-ctrl_s-"}, # ctrl+s
-    {"key": "<Control-S>", "event": "-ctrl_s-"} # ctrl+S
+    {"key": "<Escape>", "event": "-ESCAPE-", "info": None}, # esc
+    {"key": "<Control-Key>", "event": "-ctrl-", "info": "CTRL: Gyorsgombok (Kizárólag MacOS)"}, # ctrl
+    {"key": "<Control-a>", "event": "-ctrl_a-", "info": "CTRL+A: Adatok"}, # ctrl+a
+    {"key": "<Control-A>", "event": "-ctrl_a-", "info": None}, # ctrl+A
+    {"key": "<Control-e>", "event": "-ctrl_e-", "info": "CTRL+E: Eseménynapló"}, # ctrl+e
+    {"key": "<Control-E>", "event": "-ctrl_e-", "info": None}, # ctrl+E
+    {"key": "<Control-f>", "event": "-ctrl_f-", "info": "CTRL+F: Feltöltés"}, # ctrl+f
+    {"key": "<Control-F>", "event": "-ctrl_f-", "info": None}, # ctrl+F
+    {"key": "<Control-i>", "event": "-ctrl_i-", "info": "CTRL+I: Infó (ez az ablak)"}, # ctrl+i
+    {"key": "<Control-I>", "event": "-ctrl_i-", "info": None}, # ctrl+I
+    {"key": "<Control-r>", "event": "-ctrl_r-", "info": "CTRL+R: Újratöltés (rendszergazda mód)"}, # ctrl+r
+    {"key": "<Control-R>", "event": "-ctrl_r-", "info": None}, # ctrl+R
+    {"key": "<Control-s>", "event": "-ctrl_s-", "info": "CTRL+S: Rendszergazda mód"}, # ctrl+s
+    {"key": "<Control-S>", "event": "-ctrl_s-", "info": None} # ctrl+S
 ]
