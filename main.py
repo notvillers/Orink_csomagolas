@@ -118,11 +118,6 @@ def main(admin_mode = False):
     menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Eseménynapló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
     menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Eseménynapló::-event_view-", "---", "&Mentés::-backup-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
 
-    # Header layout
-    header_layout = [
-        [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
-    ]
-
     # Option layout
     option_layout = [
         [
@@ -178,7 +173,6 @@ def main(admin_mode = False):
 
     # Layout
     layout = [
-        #[sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True, k = "-settings_frame-")],
