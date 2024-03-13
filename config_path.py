@@ -39,3 +39,26 @@ ICON_NAME = "icon.ico"
 icon_path = os.path.join(path, ICON_SUBPATH, ICON_NAME)
 USERS_NAME = "users.csv"
 users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)
+
+# Others
+
+# Events
+'''
+    "key": "key to press",
+    "event": "event it generates"
+'''
+EVENT_KEYS = [
+    {"key": "<Escape>", "event": "-ESCAPE-"}, # esc
+    {"key": "<Control-Key>", "event": "-ctrl-"}, # ctrl
+    {"key": "<Control-a>", "event": "-ctrl_a-"}, # ctrl+a
+    {"key": "<Control-A>", "event": "-ctrl_a-"}, # ctrl+A
+    {"key": "<Control-e>", "event": "-ctrl_e-"}, # ctrl+e
+    {"key": "<Control-f>", "event": "-ctrl_f-"}, # ctrl+f
+    {"key": "<Control-F>", "event": "-ctrl_f-"}, # ctrl+F
+    {"key": "<Control-e>", "event": "-ctrl_e-"}, # ctrl+e
+    {"key": "<Control-E>", "event": "-ctrl_e-"}, # ctrl+E
+    {"key": "<Control-r>", "event": "-ctrl_r-"}, # ctrl+r
+    {"key": "<Control-R>", "event": "-ctrl_r-"}, # ctrl+R
+    {"key": "<Control-s>", "event": "-ctrl_s-"}, # ctrl+s
+    {"key": "<Control-S>", "event": "-ctrl_s-"} # ctrl+S
+]

@@ -49,6 +49,8 @@ BP_INTERVAL_S = config_path.BP_INTERVAL_S
 # Variable(s)
 EXIT_TRY_WITHOUT_ADMIN = 0
 IS_LINUX = config_path.IS_LINUX
+IS_MACOS = config_path.IS_MACOS
+EVENT_KEYS = config_path.EVENT_KEYS
 
 def sgpop(text: str):
     '''Drops a popup'''
@@ -191,25 +193,9 @@ def main(admin_mode = False):
     window = sg.Window(HEADER, final_layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
 
     # Events
-    # 'esc' event
-    window.bind("<Escape>", "-ESCAPE-")
-    # 'ctrl' event
-    window.bind("<Control-Key>", "-ctrl-")
-    # 'ctrl+s' event
-    window.bind("<Control-s>", "-ctrl_s-")
-    window.bind("<Control-S>", "-ctrl_s-")
-    # 'ctrl+a' event
-    window.bind("<Control-a>", "-ctrl_a-")
-    window.bind("<Control-A>", "-ctrl_a-")
-    # 'ctrl+f' event
-    window.bind("<Control-f>", "-ctrl_f-")
-    window.bind("<Control-F>", "-ctrl_f-")
-    # 'ctrl+e' event
-    window.bind("<Control-e>", "-ctrl_e-")
-    window.bind("<Control-E>", "-ctrl_e-")
-    # 'ctrl+r' event
-    window.bind("<Control-r>", "-ctrl_r-")
-    window.bind("<Control-R>", "-ctrl_r-")
+    # Bind events
+    for event_key in EVENT_KEYS:
+        window.bind(event_key["key"], event_key["event"])
 
     # Maximize
     window.Maximize()
@@ -222,7 +208,6 @@ def main(admin_mode = False):
 
     # Run
     while True:
-
         # Changing to admin mode, if necessary
         if admin_mode:
             text_to_log("ADMIN MODE ENABLED")
@@ -232,14 +217,14 @@ def main(admin_mode = False):
             if not ctrl_event:
                 window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
             else:
-                window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNY NAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
+                window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | ESEMÉNYNAPLÓ: CTRL+E", background_color = "red", font = SMALL_BOLD)
 
         event, value = window.read(timeout = 1000)
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
 
         # ctrl event
-        if event == "-ctrl-":
+        if event == "-ctrl-" and IS_MACOS:
             if not ctrl_event:
                 window["-SETTINGS-"].update("CTRL + A")
                 window["-UPLOAD-"].update("CTRL + F")
@@ -268,7 +253,6 @@ def main(admin_mode = False):
             window["-QUICK_BACKUP-"].update(visible = False)
             window["-DELETE_BACKUP-"].update(visible = False)
             window["-hostname-"].update(HOSTNAME, background_color = B_GC, font = FOOTER_F)
-            window["-menu-"].update(menu_def)
 
         # Admin mode
         if event == "-QUICK_BACKUP-":
