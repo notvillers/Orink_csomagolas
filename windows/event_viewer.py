@@ -58,7 +58,7 @@ def main():
     # 'esc' event
     window.bind("<Escape>", "-ESCAPE-")
     
-    # window.Maximize()
+    window.Maximize()
 
     while True:
         event, values = window.read()

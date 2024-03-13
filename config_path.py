@@ -3,7 +3,9 @@
 import os
 import socket
 
+# OS check
 IS_MACOS = (os.name == 'posix' and os.uname().sysname == 'Darwin')
+IS_LINUX = (os.name == 'posix' and os.uname().sysname == 'Linux')
 
 path = os.path.dirname(__file__)
 

@@ -48,6 +48,7 @@ BP_INTERVAL_S = config_path.BP_INTERVAL_S
 
 # Variable(s)
 EXIT_TRY_WITHOUT_ADMIN = 0
+IS_LINUX = config_path.IS_LINUX
 
 def sgpop(text: str):
     '''Drops a popup'''
@@ -173,9 +174,10 @@ def main(admin_mode = False):
         [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F)]
     ]
 
+    menu_layout = [[sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")]]
+
     # Layout
     layout = [
-        [sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")],
         [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
@@ -183,8 +185,10 @@ def main(admin_mode = False):
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")]
     ]
 
+    final_layout = ((menu_layout + layout) if not IS_LINUX else layout)
+
     # Window
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
+    window = sg.Window(HEADER, final_layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
 
     # Events
     # 'esc' event
@@ -208,7 +212,7 @@ def main(admin_mode = False):
     window.bind("<Control-R>", "-ctrl_r-")
 
     # Maximize
-    # window.Maximize()
+    window.Maximize()
 
     # ctrl event
     ctrl_event = False

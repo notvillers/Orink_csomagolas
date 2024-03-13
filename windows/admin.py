@@ -44,7 +44,7 @@ def main():
 
     window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = windows.gui_theme.main_sgisze, icon = config_path.icon_path, background_color = BG_C, location = (0, 0))
     window.bind("<Escape>", "-ESCAPE-")
-    # window.Maximize()
+    window.Maximize()
 
     passwd_encoded = "a29sYmFjZQ=="
     passwd = base64.b64decode(passwd_encoded).decode("utf-8")
