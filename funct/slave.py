@@ -8,8 +8,8 @@ import string
 IS_WINDOWS = platform.system() == "Windows"
 
 def get_time():
-    '''returns time in hh:mm:ss format'''
-    return datetime.now().strftime('%H:%M:%S')
+    '''returns time in hh:mm format'''
+    return datetime.now().strftime('%H:%M')
 
 
 def get_datetime():

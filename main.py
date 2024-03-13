@@ -2,6 +2,7 @@
 '''Main'''
 
 import os
+import base64
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
@@ -29,7 +30,7 @@ if config_path.IS_MACOS:
     setproctitle.setproctitle(HEADER)
     setproctitle.setthreadtitle(HEADER)
 SGSIZE = windows.gui_theme.main_sgisze
-ICON_PATH = config_path.icon_path
+ICON_PATH = config_path.icon_path if not config_path.IS_MACOS else base64.b64encode(open(os.path.join(config_path.icon_macos_path), "rb").read())
 INFO_PATH = config_path.info_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
@@ -46,7 +47,7 @@ MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 HOSTNAME = config_path.hostname
-BP_INTERVAL_S = config_path.BP_INTERVAL_S
+BP_INTERVAL_M = config_path.BP_INTERVAL_M
 
 # Variable(s)
 EXIT_TRY_WITHOUT_ADMIN = 0
@@ -111,7 +112,7 @@ def main(admin_mode = False):
     columns, results = local_db.select(CSOMAG_TABLE_SELECT)
 
     # Backup countdown
-    backup_countdown = BP_INTERVAL_S
+    backup_countdown = BP_INTERVAL_M
 
     # Menu
     menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Eseménynapló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
@@ -177,7 +178,7 @@ def main(admin_mode = False):
 
     # Layout
     layout = [
-        [sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
+        #[sg.Frame("", header_layout, font = SMALL_BOLD, expand_x = True, k = "-header_frame-")],
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True, k = "-settings_frame-")],
@@ -187,7 +188,7 @@ def main(admin_mode = False):
     final_layout = ((menu_layout + layout) if not IS_LINUX else layout)
 
     # Window
-    window = sg.Window(HEADER, final_layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
+    window = sg.Window(HEADER, final_layout, resizable = True, finalize = True, size = SGSIZE, location = (0, 0), icon = ICON_PATH)
 
     # Events
     # Bind events
@@ -217,7 +218,7 @@ def main(admin_mode = False):
             else:
                 window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | GYORSGOMBOK: CTRL+I", background_color = "red", font = SMALL_BOLD)
 
-        event, value = window.read(timeout = 1000)
+        event, value = window.read(timeout = 60000)
         print("event: ", end = "\t"); print(event)
         print("value: ", end = "\t"); print(value)
 
@@ -295,7 +296,7 @@ def main(admin_mode = False):
             else:
                 if not admin_mode:
                     backup_db()
-                    backup_countdown = BP_INTERVAL_S
+                    backup_countdown = BP_INTERVAL_M
 
         # Checking for table click
         if event is not None:
@@ -342,6 +343,7 @@ def main(admin_mode = False):
                 columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                 text_to_log("ID: " + str(selected_item_id) + " DELETED")
                 window["-packages-"].update(values = results)
+                window["-info-"].update("Csomag törölve!", text_color = "red")
 
         # Settings
         if event in ["-SETTINGS-", "-ctrl_a-"]:

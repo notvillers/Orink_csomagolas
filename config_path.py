@@ -29,7 +29,7 @@ if not os.path.exists(os.path.join(path, DB_SUBPATH)):
 
 TEMP_DIR = "temp"
 temp_path = os.path.join(path, TEMP_DIR)
-BP_INTERVAL_S = 120
+BP_INTERVAL_M = 5
 
 if not os.path.exists(os.path.join(path, TEMP_DIR)):
     os.makedirs(os.path.join(path, TEMP_DIR))
@@ -37,6 +37,8 @@ if not os.path.exists(os.path.join(path, TEMP_DIR)):
 ICON_SUBPATH = "src"
 ICON_NAME = "icon.ico"
 icon_path = os.path.join(path, ICON_SUBPATH, ICON_NAME)
+ICON_MACOS_NAME = "icon.png"
+icon_macos_path = os.path.join(path, ICON_SUBPATH, ICON_MACOS_NAME)
 USERS_NAME = "users.csv"
 users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)
 INFO_ICON = "info.png"
