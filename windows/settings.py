@@ -6,6 +6,7 @@ import config_path
 import funct.json_handle
 import funct.file_handle
 from funct.log import text_to_log, delete_log
+from windows.popup import pop_esc_yn
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -26,11 +27,6 @@ MEDIUM_BOLD = windows.gui_theme.FONT_ARIAL_KOZEPES_BOLD
 LARGE_F = windows.gui_theme.FONT_ARIAL_NAGY
 LARGE_BOLD = windows.gui_theme.FONT_ARIAL_NAGY_BOLD
 HOSTNAME = config_path.hostname
-
-# Popup
-def sgpop(text: str):
-    '''Drops a popup'''
-    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER)
 
 def place(elem):
     '''places element'''
@@ -145,7 +141,7 @@ def main(admin_mode):
                 text_to_log(HEADER + " closed")
                 window.close()
                 break
-            sgpop("Üres azonosító nem rögzíthető!")
+            pop_esc_yn(text = "Üres azonosító nem rögzíthető!")
         
         # FTP UPDATE
         if event == "-FTP_UPDATE-":

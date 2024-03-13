@@ -7,6 +7,7 @@ import funct.json_handle
 import funct.ftp_handle
 import funct.file_handle
 from funct.log import text_to_log
+from windows.popup import pop_esc_yn
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -95,7 +96,7 @@ def main():
                 password = ftp_json["password"]
             )
             if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name):
-                sgpop("Sikeres feltöltés!")
+                pop_esc_yn(text = "Sikeres feltöltés!")
                 #funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 window.close()
                 text_to_log(HEADER + " closed")

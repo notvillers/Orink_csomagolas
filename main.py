@@ -17,6 +17,7 @@ from windows.settings import main as settings_main
 from windows.upload import main as upload_main
 from windows.admin import main as admin_main
 from windows.event_viewer import main as event_main
+from windows.popup import pop_esc_yn
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -51,21 +52,6 @@ EXIT_TRY_WITHOUT_ADMIN = 0
 IS_LINUX = config_path.IS_LINUX
 IS_MACOS = config_path.IS_MACOS
 EVENT_KEYS = config_path.EVENT_KEYS
-
-def sgpop(text: str):
-    '''Drops a popup'''
-
-    sg.popup_no_buttons(text, font = SMALL_F, title = HEADER, keep_on_top = True)
-
-
-def sgpop_yn(text: str = "Biztos?", color: str = "red"):
-    '''Drops a yes or no popup
-    returns True if Yes'''
-
-    if sg.popup_yes_no(text, font = SMALL_F, keep_on_top = True, no_titlebar = True, background_color = color) == "Yes":
-        return True
-    return False
-
 
 def backup_db():
     '''Backups the db to temp path'''
@@ -111,7 +97,7 @@ def main(admin_mode = False):
     if funct.json_handle.create_ftp():
         json_text += "Kérlek töltsd ki az FTP adatokat!"
     if json_text:
-        sgpop(json_text)
+        pop_esc_yn(text = json_text)
 
     # Configs
     config_json = funct.json_handle.config_read()
@@ -205,7 +191,8 @@ def main(admin_mode = False):
     # Events
     # Bind events
     for event_key in EVENT_KEYS:
-        window.bind(event_key["key"], event_key["event"])
+        for key in event_key["key"]:
+            window.bind(key, event_key["event"])
 
     # Maximize
     window.Maximize()
@@ -250,7 +237,7 @@ def main(admin_mode = False):
 
         # Shortcut events:
         if event == "-ctrl_i-":
-            sgpop(shortcut_info())
+            pop_esc_yn(header = "Gyorsgombok",text = shortcut_info(), buttons = [])
 
         # Toggle admin mode
         if event == "-ctrl_s-":
@@ -282,7 +269,7 @@ def main(admin_mode = False):
         if event in ["Exit", "-ESCAPE-", sg.WIN_CLOSED] or "::-ESCAPE-" in event:
             global EXIT_TRY_WITHOUT_ADMIN
             if EXIT_TRY_WITHOUT_ADMIN > 4:
-                sgpop("Kérlek ne zárj be!")
+                pop_esc_yn(text = "Kérlek ne zárj be!")
                 EXIT_TRY_WITHOUT_ADMIN = 0
             if admin_mode:
                 text_to_log("EXIT")
@@ -349,7 +336,7 @@ def main(admin_mode = False):
 
         # Delete
         if event == "-DELETE-" and selected_item_id:
-            if sgpop_yn("Biztosan törli?"):
+            if pop_esc_yn(text = "Biztosan törli?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
                 local_db.execute(CSOMAG_TABLE_DELETE, (selected_item_id))
                 columns, results = local_db.select(CSOMAG_TABLE_SELECT)
                 text_to_log("ID: " + str(selected_item_id) + " DELETED")
@@ -367,7 +354,7 @@ def main(admin_mode = False):
             text_to_log("-UPLOAD-")
             succ_upload = upload_main()
             if succ_upload:
-                if sgpop_yn("Törli a helyi adatokat?"):
+                if pop_esc_yn(text = "Törli a helyi adatokat?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
                     text_to_log("DB DELETE")
                     window.close()
                     del_db(local_db)
@@ -398,7 +385,7 @@ def main(admin_mode = False):
                     if results:
                         window["-info-"].update("Már vannak adatok!")
                     else:
-                        if sgpop_yn():
+                        if pop_esc_yn(buttons = ["IGEN", "NEM"]) == "-IGEN-":
                             random_strings = funct.slave.generate_random_string_list(length = 100, string_length = 50)
                             for random_string in random_strings:
                                 local_db.insert(CSOMAG_TABLE_INSERT, (random_string, usercode, hostname))
@@ -407,7 +394,7 @@ def main(admin_mode = False):
                                 window["-info-"].update("Demo betöltve!", text_color = "green")
                 # Clear table
                 if "::-table_clear-" in event:
-                    if sgpop_yn():
+                    if pop_esc_yn(buttons = ["IGEN", "NEM"]) == "-IGEN-":
                         window.Close()
                         del_db(local_db)
                         return True, True
