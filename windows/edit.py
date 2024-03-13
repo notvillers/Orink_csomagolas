@@ -67,9 +67,9 @@ def main(selected_item):
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True)]
     ]
 
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
     window.bind("<Escape>", "-ESCAPE-")
-    window.Maximize()
+    # window.Maximize()
 
     while True:
         event, value = window.read()

@@ -184,7 +184,7 @@ def main(admin_mode = False):
     ]
 
     # Window
-    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH)
+    window = sg.Window(HEADER, layout, resizable = True, finalize = True, size = SGSIZE, icon = ICON_PATH, location = (0, 0))
 
     # Events
     # 'esc' event
@@ -208,12 +208,12 @@ def main(admin_mode = False):
     window.bind("<Control-R>", "-ctrl_r-")
 
     # Maximize
-    window.Maximize()
+    # window.Maximize()
 
     # ctrl event
     ctrl_event = False
 
-    # Selected items ID
+  # Selected items ID
     selected_item_id = False
 
     # Run
