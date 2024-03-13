@@ -42,7 +42,7 @@ def pop_esc_yn(header: str = "Figyelmeztetés!", text: str = "Biztos?", buttons:
         [sg.Frame("", button_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-button_frame-")]
     ]
 
-    window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH)
+    window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH, keep_on_top = True)
     window.bind("<Escape>", "-ESCAPE-")
 
     while True:
@@ -85,7 +85,7 @@ def pop_esc_input(header: str = "Bevitel", text: str = "Bevitel", is_password: b
         [sg.Frame("", button_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-button_frame-")]
     ]
 
-    window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH)
+    window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH, keep_on_top = True)
     window.bind("<Escape>", "-ESCAPE-")
 
     while True:
