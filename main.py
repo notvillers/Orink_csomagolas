@@ -206,7 +206,8 @@ def main(admin_mode = False):
             text_to_log("ADMIN MODE ENABLED")
             window["-QUICK_BACKUP-"].update(visible = True)
             window["-DELETE_BACKUP-"].update(visible = True)
-            window["-menu-"].update(menu_def_admin)
+            if not IS_LINUX:
+                window["-menu-"].update(menu_def_admin)
             if not ctrl_event:
                 window["-hostname-"].update("RENDSZERGAZDA MÓD", background_color = "red", font = SMALL_BOLD)
             else:
