@@ -104,6 +104,7 @@ def main():
     for row in result:
         row_id = row[0]
         csomagszam = row[1]
+        print(csomagszam)
         csomagszam_o8_lookup = o8_client.one_value_select(O8_SELECT_INFO_BY_CSOMAGSZAM, (csomagszam,))
         db_client.execute(OSSZESITO_UPDATE_O8_CONFIRM, (csomagszam_o8_lookup, row_id))
 
@@ -112,6 +113,7 @@ def main():
     for row in result:
         row_id = row[0]
         csomagszam = row[1]
+        print(csomagszam)
         csomagszam_o8_crdti = o8_client.one_value_select(O8_SELECT_CRDTI_BY_CSOMAGSZAM, (csomagszam,))
         db_client.execute(OSSZESITO_UPDATE_O8_CRDTI, (csomagszam_o8_crdti, row_id))
 

@@ -48,12 +48,9 @@ def pop_esc_yn(header: str = "Figyelmeztetés!", text: str = "Biztos?", buttons:
     window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH, keep_on_top = True)
     window.bind("<Escape>", "-ESCAPE-")
 
-    if IS_LINUX:
-        window.Maximize()
-
     while True:
-        event, value = window.read()
-        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
+        event, value = window.read(timeout = 15000)
+        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-", "__TIMEOUT__"]:
             window.close()
             text_to_log("pop_esc_yn: " + header + " closed")
             return None
@@ -94,12 +91,9 @@ def pop_esc_input(header: str = "Bevitel", text: str = "Bevitel", is_password: b
     window = sg.Window(header, layout, resizable = True, finalize = True, icon = ICON_PATH, keep_on_top = True)
     window.bind("<Escape>", "-ESCAPE-")
 
-    if IS_LINUX:
-        window.Maximize()
-
     while True:
-        event, value = window.read()
-        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-"]:
+        event, value = window.read(timeout = 15000)
+        if event in ["Exit", sg.WIN_CLOSED, "-ESCAPE-", "__TIMEOUT__"]:
             window.close()
             text_to_log("pop_esc_input: " + header + " closed")
             return None

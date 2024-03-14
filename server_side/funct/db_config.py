@@ -135,12 +135,29 @@ O8_SELECT_USERNAME_BY_USERCODE = """
 """
 
 O8_SELECT_INFO_BY_CSOMAGSZAM = """
-    SELECT CASE WHEN ? IN (SELECT csomagszam FROM wcsomag) THEN 2 ELSE 1 END
+    declare @csomagszam varchar(max) = ?
+
+    SELECT 
+        CASE 
+            WHEN @csomagszam like '[%]%' THEN 
+                CASE
+                    WHEN exists (select * from WCSOMAG with (nolock) where CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%') THEN 2
+                    else 1
+                END
+            WHEN @csomagszam IN (SELECT csomagszam FROM wcsomag with (nolock)) THEN 2 
+            ELSE 1
+        END
     ;
 """
 
 O8_SELECT_CRDTI_BY_CSOMAGSZAM = """
-    SELECT CONVERT(VARCHAR, wcsomag.crdti, 120) FROM wcsomag WHERE wcsomag.csomagszam = ?
+    declare @csomagszam varchar(max) = ?
+
+    select
+        CASE
+            WHEN @csomagszam LIKE '[%]%' then (select convert(varchar, CRDTI, 120) from WCSOMAG where CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%')
+            else (select convert(varchar, CRDTI, 120) from WCSOMAG where CSOMAGSZAM = @csomagszam)
+        end
     ;
 """
 
