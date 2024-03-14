@@ -6,11 +6,12 @@ import base64
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
-from funct.slave import get_time, get_datetime
+from funct.slave import get_datetime
 import config_path
 import funct.json_handle
 import funct.file_handle
 import funct.slave
+import funct.ftp_handle
 from funct.sqlite_handle import Connection as sqlite_connection
 from funct.db_config import CSOMAG_TABLE_CREATE, CSOMAG_TABLE_SELECT, CSOMAG_TABLE_INSERT, CSOMAG_TABLE_DELETE, CSOMAG_TABLE_UPDATE_BY_ID
 from windows.edit import main as edit_main
@@ -19,7 +20,6 @@ from windows.upload import main as upload_main
 from windows.admin import main as admin_main
 from windows.event_viewer import main as event_main
 from windows.popup import pop_esc_yn
-import funct.ftp_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -32,6 +32,7 @@ if config_path.IS_MACOS:
     setproctitle.setthreadtitle(HEADER)
 SGSIZE = windows.gui_theme.main_sgisze
 ICON_PATH = config_path.icon_path if not config_path.IS_MACOS else base64.b64encode(open(os.path.join(config_path.icon_macos_path), "rb").read())
+ICON_IN_PATH = config_path.icon_in_path
 INFO_PATH = config_path.info_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
 ISIZE = windows.gui_theme.INPUT_SIZE
@@ -146,7 +147,7 @@ def main(admin_mode = False):
             sg.Button("TÖRLÉS", k = "-DELETE-", font = SMALL_F, button_color = "red"),
             sg.Push(), sg.Text("", k = "-info-", font = MEDIUM_BOLD, text_color = "red"), sg.Push(),
             place(sg.Button("TEMP MENT", k = "-QUICK_BACKUP-", font = SMALL_F, button_color = "green", visible = False)),
-            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "red", visible = False))
+            place(sg.Button("TEMP TÖRÖL", k = "-DELETE_BACKUP-", font = SMALL_F, button_color = "red", visible = False)),
         ]
     ]
 
@@ -185,7 +186,7 @@ def main(admin_mode = False):
 
     # Footer layout
     footer_layout = [
-        [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Text(get_time(), k = "-time-", font = FOOTER_F), sg.Push(), sg.Button("", k = "-INFO-", image_filename = INFO_PATH)]
+        [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Button("", k = "-INFO-", image_filename = INFO_PATH)]
     ]
 
     menu_layout = [[sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")]]
@@ -195,7 +196,8 @@ def main(admin_mode = False):
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True, k = "-settings_frame-")],
-        [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")]
+        [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")],
+        [sg.Push(), sg.Image(ICON_IN_PATH, k = "-icon-"), sg.Push()]
     ]
 
     final_layout = ((menu_layout + layout) if not IS_LINUX else layout)
@@ -304,7 +306,6 @@ def main(admin_mode = False):
 
         # Timeout event
         if event == "__TIMEOUT__":
-            window["-time-"].update(get_time())
             if backup_countdown > 0:
                 backup_countdown -= 1
             else:

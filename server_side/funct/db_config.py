@@ -150,7 +150,7 @@ O8_SELECT_USERS_FOR_CSV = """
 """
 
 XLSX_OSSZESITO_SELECT = """
-    SELECT DISTINCT
+SELECT DISTINCT
 	strftime('%Y.%m.%d', osszesito.o8_date) as 'Dátum',
 	users.username as 'Felhasználó',
 	(
@@ -158,6 +158,7 @@ XLSX_OSSZESITO_SELECT = """
 		FROM osszesito as osszesito_inner
 		WHERE
 			osszesito_inner.user = osszesito.user
+			and osszesito_inner.o8_confirm = 2
 			and strftime('%Y.%m.%d', osszesito.o8_date) = strftime('%Y.%m.%d', osszesito_inner.o8_date)
 	) as 'Ellenőrzött csomagok száma'
     FROM
@@ -166,5 +167,5 @@ XLSX_OSSZESITO_SELECT = """
         osszesito.o8_confirm = 2
         and osszesito.o8_date is not NULL
     order by strftime('%Y.%m.%d', osszesito.o8_date) DESC
-;
+    ;
 """

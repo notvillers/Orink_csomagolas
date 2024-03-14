@@ -15,7 +15,7 @@ HEADER = "OCTOPY - CSOMAGOLÁS \ ADATOK"
 SGSIZE = windows.gui_theme.main_sgisze
 ICON_PATH = config_path.icon_path
 BSIZE = windows.gui_theme.BUTTON_SIZE
-ISIZE = windows.gui_theme.INPUT_SIZE
+ISIZE = int(windows.gui_theme.INPUT_SIZE * 0.8)
 BG_C = windows.gui_theme.BG_C
 # Font
 FOOTER_F = windows.gui_theme.FONT_ARIAL_FOOTER
@@ -41,18 +41,27 @@ def main(admin_mode):
 
     ftp = funct.json_handle.ftp_read()
 
-    users_list = funct.file_handle.csv_user_format(funct.file_handle.read_csv(config_path.users_path))
+    user_csv = funct.file_handle.read_csv(config_path.users_path)
+    users_list = funct.file_handle.csv_user_format(user_csv)
 
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
+
+    curr_username = ""
+    for row in users_list:
+        row_split = row.split(" - ")
+        if row_split[0] == usercode:
+            curr_username = row_split[1]
+            break
 
     header_layout = [
         [sg.Push(), sg.Text(HEADER, k = "-header-", font = MEDIUM_BOLD), sg.Push()]
     ]
 
     setting_layout = [
-        [sg.Text("Választott felhasználó azonosító:", font = SMALL_F)],
-        [sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = BG_C)],
+        [sg.Text("Választott felhasználó azonosító:", font = SMALL_BOLD)],
+        [sg.Text("Felhasználó kód:", font = SMALL_F), sg.Input(usercode, k = "-usercode-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = BG_C)],
+        [sg.Text("Felhasználó név:", font = SMALL_F), sg.Input(curr_username, k = "-curr_username-", font = SMALL_F, size = ISIZE, readonly = not admin_mode, disabled_readonly_background_color = BG_C)],
         [
             sg.Listbox(
                 values = users_list,
@@ -134,6 +143,8 @@ def main(admin_mode):
         if event == "-userlist-":
             user = value["-userlist-"][0].split(" - ")[0]
             window["-usercode-"].update(user)
+            curr_username = value["-userlist-"][0].split(" - ")[1]
+            window["-curr_username-"].update(curr_username)
         if event == "-UPDATE-":
             if value["-usercode-"]:
                 funct.json_handle.config_update(usercode = value["-usercode-"])
