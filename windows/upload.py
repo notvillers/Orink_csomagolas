@@ -8,6 +8,7 @@ import funct.ftp_handle
 import funct.file_handle
 from funct.log import text_to_log
 from windows.popup import pop_esc_yn
+from funct.slave import get_datetime
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -89,7 +90,7 @@ def main():
                 username = ftp_json["username"],
                 password = ftp_json["password"]
             )
-            if ftp_client.upload(config_path.db_path, ftp_json["directory"], config_path.db_name):
+            if ftp_client.upload(config_path.db_path, ftp_json["directory"], get_datetime() + config_path.db_name):
                 pop_esc_yn(text = "Sikeres feltöltés!")
                 #funct.file_handle.clean_dir(os.path.join(config_path.path, config_path.db_subpath))
                 window.close()

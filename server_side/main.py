@@ -11,6 +11,7 @@ import funct.octopus_handle
 import funct.data_config
 import funct.ftp_handle
 from funct.slave import current_datetime_to_string
+from funct.log import text_to_log
 
 # sqlite query
 CSOMAG_TABLE_CREATE = funct.db_config.CSOMAG_TABLE_CREATE
@@ -104,7 +105,7 @@ def main():
     for row in result:
         row_id = row[0]
         csomagszam = row[1]
-        print(csomagszam)
+        text_to_log("searching for package no. '" + csomagszam + "' in Octopus 8...")
         csomagszam_o8_lookup = o8_client.one_value_select(O8_SELECT_INFO_BY_CSOMAGSZAM, (csomagszam,))
         db_client.execute(OSSZESITO_UPDATE_O8_CONFIRM, (csomagszam_o8_lookup, row_id))
 
@@ -113,7 +114,7 @@ def main():
     for row in result:
         row_id = row[0]
         csomagszam = row[1]
-        print(csomagszam)
+        text_to_log("searching for CRDTI '" + csomagszam + "' in Octopus 8...")
         csomagszam_o8_crdti = o8_client.one_value_select(O8_SELECT_CRDTI_BY_CSOMAGSZAM, (csomagszam,))
         db_client.execute(OSSZESITO_UPDATE_O8_CRDTI, (csomagszam_o8_crdti, row_id))
 
@@ -122,6 +123,7 @@ def main():
         worksheets = []
 
         # Summary
+        text_to_log("creating summary...")
         columns, results = db_client.select(XLSX_OSSZESITO_SELECT)
         worksheet = funct.xlsx_handle.worksheet(
             name = "Összesítő",
@@ -130,10 +132,12 @@ def main():
         )
         worksheets.append(worksheet)
 
+        # Users
         for user in users:
             columns, results = db_client.select_with_arg(OSSZESITO_SELECT_BY_USER, (user,))
             # fetching username for usercode
             username = o8_client.one_value_select(query = USER_SELECT_BY_USERCODE, insert = int(user))
+            text_to_log("creating worksheet for user: " + username)                
 
             worksheet = funct.xlsx_handle.worksheet(
                 name = username,

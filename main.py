@@ -374,7 +374,7 @@ def main(admin_mode = False):
         if event in ["-UPLOAD-", "-ctrl_f-"]:
             text_to_log("-UPLOAD-")
             succ_upload = upload_main()
-            if succ_upload and False: #TODO: tiltva üres visszatöltés miatt
+            if succ_upload: #TODO: tiltva üres visszatöltés miatt
                 if pop_esc_yn(text = "Törli a helyi adatokat?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
                     text_to_log("DB DELETE")
                     window.close()
