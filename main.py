@@ -110,16 +110,19 @@ def main(admin_mode = False):
 
     text_to_log(HEADER + " started")
 
-    download_users()
-
     # Check for json files
     json_text = ""
     if funct.json_handle.create_config():
         json_text += "Kérlek töltsd ki a felhasználó adatokat!\n"
+
     if funct.json_handle.create_ftp():
         json_text += "Kérlek töltsd ki az FTP adatokat!"
+    else:
+        download_users()
+        
     if json_text:
         pop_esc_yn(text = json_text)
+
 
     # Configs
     config_json = funct.json_handle.config_read()
