@@ -46,7 +46,7 @@ class Connection:
             return
         self.cursor.execute(query, values)
         self.connection.commit()
-        return 
+        return
 
     # Inserts query with inserter
     def insert(self, inserter: str, insert: str):

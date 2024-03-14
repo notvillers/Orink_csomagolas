@@ -102,6 +102,33 @@ OSSZESITO_SELECT_CONFIRMED = """
     ;
 """
 
+# # # # #
+USER_TABLE_CREATE = """
+    CREATE TABLE IF NOT EXISTS users
+        (usercode INTEGER, username TEXT)
+    ;
+"""
+
+USER_TABLE_INSERT = """
+    INSERT or IGNORE INTO users
+        (usercode, username)
+        values
+        (?, ?)
+    ;
+"""
+
+USER_TABLE_DELETE_ALL = """
+    DELETE FROM users WHERE 1 = 1
+    ;
+"""
+
+USER_SELECT_BY_USERCODE = """
+    SELECT username FROM users WHERE usercode = ?
+    ;
+"""
+
+# O8
+
 O8_SELECT_USERNAME_BY_USERCODE = """
     SELECT username FROM users WHERE usercode = ?
     ;
@@ -120,4 +147,24 @@ O8_SELECT_CRDTI_BY_CSOMAGSZAM = """
 O8_SELECT_USERS_FOR_CSV = """
     SELECT usercode, username FROM users WHERE users.usertipus = 1 and users.useractive = 1
     ;
+"""
+
+XLSX_OSSZESITO_SELECT = """
+    SELECT DISTINCT
+	strftime('%Y.%m.%d', osszesito.o8_date) as 'Dátum',
+	users.username as 'Felhasználó',
+	(
+		SELECT count(*) 
+		FROM osszesito as osszesito_inner
+		WHERE
+			osszesito_inner.user = osszesito.user
+			and strftime('%Y.%m.%d', osszesito.o8_date) = strftime('%Y.%m.%d', osszesito_inner.o8_date)
+	) as 'Ellenőrzött csomagok száma'
+    FROM
+        osszesito LEFT JOIN users ON osszesito.user = users.usercode
+    WHERE
+        osszesito.o8_confirm = 2
+        and osszesito.o8_date is not NULL
+    order by strftime('%Y.%m.%d', osszesito.o8_date) DESC
+;
 """

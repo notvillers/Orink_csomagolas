@@ -24,6 +24,11 @@ OSSZESITO_TABLE_SELECT = funct.db_config.OSSZESITO_TABLE_SELECT
 OSSZESITO_UPDATE_O8_CONFIRM = funct.db_config.OSSZESITO_UPDATE_O8_CONFIRM
 OSSZESITO_SELECT_CONFIRMED = funct.db_config.OSSZESITO_SELECT_CONFIRMED
 OSSZESITO_UPDATE_O8_CRDTI = funct.db_config.OSSZESITO_UPDATE_O8_CRDTI
+USER_TABLE_CREATE = funct.db_config.USER_TABLE_CREATE
+USER_TABLE_DELETE_ALL = funct.db_config.USER_TABLE_DELETE_ALL
+USER_TABLE_INSERT = funct.db_config.USER_TABLE_INSERT
+XLSX_OSSZESITO_SELECT = funct.db_config.XLSX_OSSZESITO_SELECT
+USER_SELECT_BY_USERCODE = funct.db_config.USER_SELECT_BY_USERCODE
 
 # octopus query
 O8_SELECT_USERNAME_BY_USERCODE = funct.db_config.O8_SELECT_USERNAME_BY_USERCODE
@@ -56,6 +61,19 @@ def main():
     db_client = sqlite_connection()
     db_client.execute(CSOMAG_TABLE_CREATE)
     db_client.execute(OSSZESITO_TABLE_CREATE)
+    db_client.execute(USER_TABLE_CREATE)
+
+    # Importing users from Octopus 8
+    columns, results = o8_client.execute(O8_SELECT_USERS_FOR_CSV)
+    for result in results:
+        db_client.execute(USER_TABLE_INSERT, result)
+
+    # Creating users.csv
+    if results:
+        sort_results = funct.file_handle.reorder_matrix(results, 1)
+        results_csv = funct.file_handle.matrix_to_list(sort_results)
+        user_csv_path = funct.file_handle.write_list_to_file(os.path.join(config_path.temp_path, "users.csv"), results_csv)
+        ftp_client.upload(user_csv_path, "src", "users.csv")
 
     # getting .db files
     files = funct.file_handle.ls_with_path(os.path.join(config_path.path, config_path.LOGS_SUBPATH))
@@ -100,15 +118,25 @@ def main():
     # creating worksheets
     if users:
         worksheets = []
+
+        # Summary
+        columns, results = db_client.select(XLSX_OSSZESITO_SELECT)
+        worksheet = funct.xlsx_handle.worksheet(
+            name = "Összesítő",
+            header = columns,
+            data = results
+        )
+        worksheets.append(worksheet)
+
         for user in users:
-            columns, result = db_client.select_with_arg(OSSZESITO_SELECT_BY_USER, (user,))
+            columns, results = db_client.select_with_arg(OSSZESITO_SELECT_BY_USER, (user,))
             # fetching username for usercode
-            username = o8_client.one_value_select(query = O8_SELECT_USERNAME_BY_USERCODE, insert = int(user))
+            username = o8_client.one_value_select(query = USER_SELECT_BY_USERCODE, insert = int(user))
 
             worksheet = funct.xlsx_handle.worksheet(
                 name = username,
                 header = columns,
-                data = result
+                data = results
             )
             worksheets.append(worksheet)
 
@@ -124,16 +152,9 @@ def main():
             xlsx_name = funct.file_handle.get_filename_from_path(xlsx_path)
             ftp_client.upload(xlsx_path, "kimutatas", xlsx_name)
 
-    newest_xlsx = ftp_client.get_newest_file(".xlsx")
-    print(newest_xlsx)
-
-    # Creating users.csv
-    columns, result = o8_client.execute(O8_SELECT_USERS_FOR_CSV)
-    if result:
-        sort_result = funct.file_handle.reorder_matrix(result, 1)
-        result_csv = funct.file_handle.matrix_to_list(sort_result)
-        user_csv_path = funct.file_handle.write_list_to_file(os.path.join(config_path.temp_path, "users.csv"), result_csv)
-        ftp_client.upload(user_csv_path, "src", "users.csv")
+    # closing connections
+    o8_client.close()
+    db_client.close()
 
 
 if __name__ == "__main__":
