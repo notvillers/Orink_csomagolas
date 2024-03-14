@@ -29,6 +29,7 @@ OSSZESITO_UPDATE_O8_CRDTI = funct.db_config.OSSZESITO_UPDATE_O8_CRDTI
 O8_SELECT_USERNAME_BY_USERCODE = funct.db_config.O8_SELECT_USERNAME_BY_USERCODE
 O8_SELECT_INFO_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_INFO_BY_CSOMAGSZAM
 O8_SELECT_CRDTI_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_CRDTI_BY_CSOMAGSZAM
+O8_SELECT_USERS_FOR_CSV = funct.db_config.O8_SELECT_USERS_FOR_CSV
 
 FTP_INFO = funct.json_handle.ftp_read()
 OCTOPUS_INFO = funct.json_handle.json_read(config_path.login_path)
@@ -111,8 +112,6 @@ def main():
             )
             worksheets.append(worksheet)
 
-        o8_client.close()
-
         # creating workbook
         if worksheets:
             workbook = funct.xlsx_handle.workbook(
@@ -123,10 +122,18 @@ def main():
             # Exports to xlsx
             xlsx_path = workbook.xlsx_create(file_path = config_path.temp_path, file_name = current_datetime_to_string() + "_" + workbook.name)
             xlsx_name = funct.file_handle.get_filename_from_path(xlsx_path)
-            ftp_client.upload(xlsx_path, None, xlsx_name)
+            ftp_client.upload(xlsx_path, "kimutatas", xlsx_name)
 
     newest_xlsx = ftp_client.get_newest_file(".xlsx")
     print(newest_xlsx)
+
+    # Creating users.csv
+    columns, result = o8_client.execute(O8_SELECT_USERS_FOR_CSV)
+    if result:
+        sort_result = funct.file_handle.reorder_matrix(result, 1)
+        result_csv = funct.file_handle.matrix_to_list(sort_result)
+        user_csv_path = funct.file_handle.write_list_to_file(os.path.join(config_path.temp_path, "users.csv"), result_csv)
+        ftp_client.upload(user_csv_path, "src", "users.csv")
 
 
 if __name__ == "__main__":

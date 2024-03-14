@@ -116,3 +116,8 @@ O8_SELECT_CRDTI_BY_CSOMAGSZAM = """
     SELECT CONVERT(VARCHAR, wcsomag.crdti, 120) FROM wcsomag WHERE wcsomag.csomagszam = ?
     ;
 """
+
+O8_SELECT_USERS_FOR_CSV = """
+    SELECT usercode, username FROM users WHERE users.usertipus = 1 and users.useractive = 1
+    ;
+"""

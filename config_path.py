@@ -14,7 +14,7 @@ CONFIG_JSON_NAME = "config.json"
 config_json_path = os.path.join(path, CONFIG_JSON_SUBPATH, CONFIG_JSON_NAME)
 FTP_JSON_SUBPATH = os.path.join(".venv")
 FTP_JSON_NAME = "ftp.json"
-ftp_json_path = os.path.join(path, FTP_JSON_SUBPATH, FTP_JSON_NAME)
+ftp_json_path = os.path.join(FTP_JSON_SUBPATH, FTP_JSON_NAME)
 
 if not os.path.exists(os.path.join(path, CONFIG_JSON_SUBPATH)):
     os.makedirs(os.path.join(path, CONFIG_JSON_SUBPATH))
@@ -35,6 +35,7 @@ if not os.path.exists(os.path.join(path, TEMP_DIR)):
     os.makedirs(os.path.join(path, TEMP_DIR))
 
 ICON_SUBPATH = "src"
+SRC_PATH = os.path.join(path, ICON_SUBPATH)
 ICON_NAME = "icon.ico"
 icon_path = os.path.join(path, ICON_SUBPATH, ICON_NAME)
 ICON_MACOS_NAME = "icon.png"
@@ -43,6 +44,11 @@ USERS_NAME = "users.csv"
 users_path = os.path.join(path, ICON_SUBPATH, USERS_NAME)
 INFO_ICON = "info.png"
 info_path = os.path.join(path, ICON_SUBPATH, INFO_ICON)
+
+# FTP
+FTP_USERS_NAME = "users.csv"
+FTP_USERS_SUBPATH = "src"
+FTP_USERS_PATH = os.path.join(FTP_USERS_SUBPATH, FTP_USERS_NAME)
 
 # Others
 

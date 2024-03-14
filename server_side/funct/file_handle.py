@@ -44,3 +44,31 @@ def ls_with_path(directory_path: str):
 def get_filename_from_path(file_path: str):
     '''returns the filename from a full path'''
     return os.path.basename(file_path)
+
+
+def reorder_matrix(matrix, column):
+    '''reorders the matrix based on a specified column'''
+    matrix.sort(key=lambda row: row[column])
+    text_to_log("matrix reordered")
+    return matrix
+
+
+def matrix_to_list(matrix, separator: str = ","):
+    '''creates a list from a matrix by joining row elements with ","'''
+    result = []
+    for row in matrix:
+        if isinstance(row, int):
+            result.append(str(row))
+        else:
+            result.append(separator.join(str(item) for item in row))
+    text_to_log("matrix converted to list")
+    return result
+
+
+def write_list_to_file(file_path, data):
+    '''writes a list into a file'''
+    with open(file_path, "w", encoding = "utf-8") as file:
+        for item in data:
+            file.write(str(item) + "\n")
+    text_to_log("list written to " + file_path)
+    return file_path

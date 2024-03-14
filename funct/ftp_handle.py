@@ -1,5 +1,6 @@
 '''FTP handler'''
 
+import os
 from ftplib import FTP
 from funct.log import text_to_log
 
@@ -36,7 +37,7 @@ class Client:
 
             ftp.cwd(remote_file_path)
 
-            with open(local_directory + local_filename, "wb") as local_file:
+            with open(os.path.join(local_directory, local_filename), "wb") as local_file:
                 ftp.retrbinary(f'RETR {local_filename}', local_file.write)
 
             text_to_log(f"File '{remote_file_path}/{local_filename}' downloaded to '{local_directory}'")

@@ -4,6 +4,8 @@ from datetime import datetime
 import platform
 import random
 import string
+from time import sleep
+from ping3 import ping
 
 IS_WINDOWS = platform.system() == "Windows"
 
@@ -36,3 +38,15 @@ def generate_random_string_list(length: int = 100, string_length: int = 32):
         if random_string not in random_strings:
             random_strings.append(random_string)
     return random_strings
+
+def ping_srvr(server, retry_attempt: int = 1):
+        '''pings with retry'''
+
+        if retry_attempt != 0:
+            response_time = ping(server)
+            if response_time:
+                return True
+            else:
+                sleep(5)
+                ping_srvr(server, retry_attempt - 1)
+        return False

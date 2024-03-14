@@ -7,3 +7,4 @@ event.txt
 cli_log.txt
 .xlsx
 *.xlsx
+*.csv

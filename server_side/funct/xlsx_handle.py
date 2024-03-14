@@ -96,7 +96,7 @@ class workbook:
 
         # Creating the worksheet(s)
         for wsheet in worksheets:
-            text_to_log("\t" + wsheet.name)
+            text_to_log(wsheet.name)
             sheet = file.add_worksheet(wsheet.name)
             row, col = 0, 0
             last_row = row

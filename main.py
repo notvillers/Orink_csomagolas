@@ -19,6 +19,7 @@ from windows.upload import main as upload_main
 from windows.admin import main as admin_main
 from windows.event_viewer import main as event_main
 from windows.popup import pop_esc_yn
+import funct.ftp_handle
 
 # Theme
 sg.theme_add_new("O8", windows.gui_theme.o8_theme)
@@ -87,10 +88,28 @@ def shortcut_info():
     return info_txt
 
 
+def download_users():
+    '''Downloads users.csv from ftp server'''
+
+    ftp_json = funct.json_handle.ftp_read()
+    if funct.slave.ping_srvr(ftp_json["hostname"], 5):
+        text_to_log(ftp_json["hostname"] + " is up")
+        ftp_client = funct.ftp_handle.Client(
+            hostname = ftp_json["hostname"],
+            username = ftp_json["username"],
+            password = ftp_json["password"]
+        )
+        ftp_client.download(config_path.FTP_USERS_SUBPATH, config_path.SRC_PATH, "users.csv")
+    else:
+        text_to_log(ftp_json["hostname"] + " is down")
+
+
 def main(admin_mode = False):
     '''Main definition, runs the GUI'''
 
     text_to_log(HEADER + " started")
+
+    download_users()
 
     # Check for json files
     json_text = ""
