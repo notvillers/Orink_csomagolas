@@ -93,7 +93,7 @@ def download_users():
     '''Downloads users.csv from ftp server'''
 
     ftp_json = funct.json_handle.ftp_read()
-    if funct.slave.ping_srvr(ftp_json["hostname"], 5):
+    if funct.slave.ping_srvr(ftp_json["hostname"], 1):
         text_to_log(ftp_json["hostname"] + " is up")
         ftp_client = funct.ftp_handle.Client(
             hostname = ftp_json["hostname"],
