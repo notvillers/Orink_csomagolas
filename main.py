@@ -123,7 +123,6 @@ def main(admin_mode = False):
     if json_text:
         pop_esc_yn(text = json_text)
 
-
     # Configs
     config_json = funct.json_handle.config_read()
     usercode = config_json["usercode"]
