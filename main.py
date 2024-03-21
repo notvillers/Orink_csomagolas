@@ -303,8 +303,13 @@ def main(admin_mode = False):
                 return True, False
 
         # Restart
-        if event == "-ctrl_r-" and admin_mode:
-            return True, True
+        if event == "-ctrl_r-":
+            if pop_esc_yn(text = "Biztosan újraindítja?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
+                window.Close()
+                local_db.close()
+                if admin_mode:
+                    return True, True
+                return True, False
 
         # Timeout event
         if event == "__TIMEOUT__":

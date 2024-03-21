@@ -10,4 +10,4 @@ if __name__ == "__main__":
         if not IS_ADMIN:
             MAIN_OPEN, IS_ADMIN = main(admin_mode = False)
         else:
-            MAIN_OPEN, IS_ADMIN = main(admin_mode = True)    
+            MAIN_OPEN, IS_ADMIN = main(admin_mode = True)
