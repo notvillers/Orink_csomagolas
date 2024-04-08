@@ -74,7 +74,7 @@ class Octopus8_sql:
                 self.cursor.execute(query, insert)
             else:
                 self.cursor.execute(query)
-            text_to_log("executed query")
+            print("executed query")
             result = self.cursor.fetchall()
             columns = [column[0] for column in self.cursor.description]
             # text_to_log("returned " + str(len(result)) + " lines with " + str(len(columns)) + (" columns" if len(columns) > 1 else " column"))

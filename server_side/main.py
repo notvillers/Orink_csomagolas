@@ -7,9 +7,9 @@ import funct.db_config
 import funct.file_handle
 import funct.xlsx_handle
 import funct.json_handle
-import funct.octopus_handle
+from funct.octopus_handle import Octopus8_sql as octopus_client_class
 import funct.data_config
-import funct.ftp_handle
+from funct.ftp_handle import Client as ftp_client_class
 from funct.slave import current_datetime_to_string
 from funct.log import text_to_log
 
@@ -37,29 +37,52 @@ O8_SELECT_INFO_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_INFO_BY_CSOMAGSZAM
 O8_SELECT_CRDTI_BY_CSOMAGSZAM = funct.db_config.O8_SELECT_CRDTI_BY_CSOMAGSZAM
 O8_SELECT_USERS_FOR_CSV = funct.db_config.O8_SELECT_USERS_FOR_CSV
 
+# config
 FTP_INFO = funct.json_handle.ftp_read()
 OCTOPUS_INFO = funct.json_handle.json_read(config_path.login_path)
 LOGS_PATH = config_path.logs_path
 BACKUP_PATH = config_path.backup_path
+DL_PATH = [LOGS_PATH, BACKUP_PATH]
+
+def create_ftp_client(hostname: str, username: str, password: str):
+    '''creates ftp client'''
+    return ftp_client_class(hostname, username, password)
+
+def download_all_db_files(ftp_client: ftp_client_class, namelike: str, path: str):
+    '''downloads all db files from ftp'''
+    ftp_client.download_all_db_files(namelike, path)
+    return True
+
+def download_all_db_files_by_path(ftp_client: ftp_client_class, dl_path: list, namelike: str):
+    '''downloads all db files from ftp'''
+    if dl_path:
+        for path in dl_path:
+            download_all_db_files(ftp_client, namelike, path)
+        return True
+    return False
+
+def create_o8_client(octopus_info: dict):
+    '''creates octopus client'''
+    return octopus_client_class(octopus_info)
+
+def create_db_client():
+    '''creates db client'''
+    return sqlite_connection()
 
 def main():
     '''main'''
 
-    ftp_client = funct.ftp_handle.Client(
-        hostname = FTP_INFO["hostname"],
-        username = FTP_INFO["username"],
-        password = FTP_INFO["password"]
-    )
-    
-    dl_paths = [LOGS_PATH, BACKUP_PATH]
-    for path in dl_paths:
-        ftp_client.download_all_db_files("csomagolas", path)
+    # FTP connection
+    ftp_client = create_ftp_client(FTP_INFO["hostname"], FTP_INFO["username"], FTP_INFO["password"])
+
+    # Downloading db files
+    download_all_db_files_by_path(ftp_client, DL_PATH, "csomagolas")
 
     # Octopus 8 connection
-    o8_client = funct.octopus_handle.Octopus8_sql(OCTOPUS_INFO)
-    
+    o8_client = create_o8_client(OCTOPUS_INFO)
+
     # main db connection
-    db_client = sqlite_connection()
+    db_client = create_db_client()
     db_client.execute(CSOMAG_TABLE_CREATE)
     db_client.execute(OSSZESITO_TABLE_CREATE)
     db_client.execute(USER_TABLE_CREATE)
