@@ -237,8 +237,8 @@ def main(admin_mode = False):
                 window["-hostname-"].update("KIKAPCSOLÁSA: CTRL+S | GYORSGOMBOK: CTRL+I", background_color = "red", font = SMALL_BOLD)
 
         event, value = window.read(timeout = 60000)
-        print("event: ", end = "\t"); print(event)
-        print("value: ", end = "\t"); print(value)
+        #print("event: ", end = "\t"); print(event)
+        #print("value: ", end = "\t"); print(value)
 
         # ctrl event
         if event == "-ctrl-" and IS_MACOS:
