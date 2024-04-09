@@ -19,7 +19,13 @@ fi
 # Read names from file
 names=($(cat $to_ping))
 
-echo "Log path: $script_dir/ping_test.log"
+echo "log path: $script_dir/ping_test.log"
+
+# Ping start
+datetime=$(date +"%Y-%m-%d %H:%M:%S")
+echo "$datetime - ping start"
+echo "$datetime - ping start" >> $log_path
+
 # Loop through each name in the list
 for name in "${names[@]}"; do
     # Get the current datetime
@@ -34,3 +40,8 @@ for name in "${names[@]}"; do
         echo "$datetime - $name is not available" >> $log_path
     fi
 done
+
+# Ping end
+datetime=$(date +"%Y-%m-%d %H:%M:%S")
+echo "$datetime - ping end"
+echo "$datetime - ping end" >> $log_path
