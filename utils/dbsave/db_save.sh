@@ -18,19 +18,17 @@ sh_files=$(ls *.sh)
 
 # Loop through each .sh file
 for file in $sh_files; do
-    # Skip the current script file
-    if [ "$file" != "$(basename "$0")" ]; then
+    # Skip the current script file and example.sh
+    if [ "$file" != "$(basename "$0")" ] && [ "$file" != "example.sh" ]; then
         # Remove the .sh extension
         file_name=$(basename "$file" .sh)
         # Print the file name without the .sh extension
         datetime=$(date +"%Y-%m-%d %H:%M:%S")
         echo "$datetime - fetching $file_name"
         echo "$datetime - fetching $file_name" >> $log_file
+        # Execute the script and redirect the output to the log file
         bash $file
-        datetime=$(date +"%Y-%m-%d %H:%M:%S")
-        echo "$datetime - %file_name fetched"
-        echo "$datetime - %file_name fetched" >> $log_file
-fi
+    fi
 done
 
 datetime=$(date +"%Y-%m-%d %H:%M:%S")
