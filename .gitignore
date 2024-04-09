@@ -9,3 +9,4 @@ cli_log.txt
 *.xlsx
 *.csv
 to_ping.txt
+raspi5-*
