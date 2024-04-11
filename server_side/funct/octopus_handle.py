@@ -49,7 +49,7 @@ class Octopus8_sql:
         if driver_version is None:
             text_to_log("odbc driver not found")
             sys.exit()
-        connection_string = 'DRIVER={ODBC Driver '+ driver_version + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password
+        connection_string = 'DRIVER={ODBC Driver '+ driver_version + ' for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password + ";TrustServerCertificate=yes;"
         connection = pyodbc.connect(connection_string)
         cursor = connection.cursor()
         text_to_log("connected to " + server + "\\" + database)
