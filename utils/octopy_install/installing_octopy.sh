@@ -5,7 +5,7 @@ username=$(whoami)
 cd
 mkdir App
 cd App
-rm -r Orink_csomagolas
+sudo rm -r Orink_csomagolas
 git clone https://github.com/notvillers/Orink_csomagolas.git
 cd
 rm /Desktop/csomagolas.sh
