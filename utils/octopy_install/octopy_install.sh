@@ -24,6 +24,7 @@ echo "Removing csomagolas.sh from Desktop"
 rm /Desktop/csomagolas.sh
 
 echo "Creating csomagolas.sh on Desktop"
+touch /Desktop/csomagolas.sh
 echo "#!/bin/bash" > /Desktop/csomagolas.sh
 echo "sudo bash /home/$username/App/Orink_csomagolas/start_raspi.sh" >> /Desktop/csomagolas.sh
 
@@ -37,6 +38,7 @@ echo "Removing octopy.desktop from autostart"
 rm /.config/autostart/octopy.desktop
 
 echo "Creating octopy.desktop in autostart"
+touch /.config/autostart/octopy.desktop
 echo "[Desktop Entry]" > /.config/autostart/octopy.desktop
 echo "Type=Application" >> /.config/autostart/octopy.desktop
 echo "Name=Octopy" >> /.config/autostart/octopy.desktop
