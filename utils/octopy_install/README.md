@@ -1,5 +1,8 @@
-# Automatic install for Octopy
+# Installer for Octopy
 
+Creates necessary directories and files.
+
+## What does it do
 - Creates App directory
 - Removes old version of the repository
 - Cloning Octopy repository from Github
