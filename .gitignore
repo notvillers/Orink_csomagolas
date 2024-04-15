@@ -10,3 +10,5 @@ cli_log.txt
 *.csv
 to_ping.txt
 raspi5-*
+tui.py
+*.tcss
