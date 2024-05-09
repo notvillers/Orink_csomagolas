@@ -39,7 +39,7 @@ def generate_random_string_list(length: int = 100, string_length: int = 32):
             random_strings.append(random_string)
     return random_strings
 
-def ping_srvr(server, retry_attempt: int = 0):
+def ping_srvr(server: str, retry_attempt: int = 0) -> bool:
         '''pings with retry'''
 
         if retry_attempt != 0:
