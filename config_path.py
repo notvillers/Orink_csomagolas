@@ -29,7 +29,7 @@ if not os.path.exists(os.path.join(path, DB_SUBPATH)):
 
 TEMP_DIR = "temp"
 temp_path = os.path.join(path, TEMP_DIR)
-BP_INTERVAL_M = 5
+BP_INTERVAL_M = 60
 
 if not os.path.exists(os.path.join(path, TEMP_DIR)):
     os.makedirs(os.path.join(path, TEMP_DIR))

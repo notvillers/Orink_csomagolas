@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''starts main.main()'''
 
-from octopy_gui import main
+from start import main
 
 if __name__ == "__main__":
     MAIN_OPEN = True
