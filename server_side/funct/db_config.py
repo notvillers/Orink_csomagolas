@@ -130,7 +130,7 @@ USER_SELECT_BY_USERCODE = """
 # O8
 
 O8_SELECT_USERNAME_BY_USERCODE = """
-    SELECT username FROM users WHERE usercode = ?
+    SELECT username FROM users with (nolock) WHERE usercode = ?
     ;
 """
 
@@ -155,14 +155,14 @@ O8_SELECT_CRDTI_BY_CSOMAGSZAM = """
 
     select
         CASE
-            WHEN @csomagszam LIKE '[%]%' then (select convert(varchar, CRDTI, 120) from WCSOMAG where CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%')
-            else (select convert(varchar, CRDTI, 120) from WCSOMAG where CSOMAGSZAM = @csomagszam)
+            WHEN @csomagszam LIKE '[%]%' then (select convert(varchar, CRDTI, 120) from WCSOMAG with (nolock) where CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%')
+            else (select convert(varchar, CRDTI, 120) from WCSOMAG with (nolock) where CSOMAGSZAM = @csomagszam)
         end
     ;
 """
 
 O8_SELECT_USERS_FOR_CSV = """
-    SELECT usercode, username FROM users WHERE users.usertipus = 1 and users.useractive = 1
+    SELECT usercode, username FROM users with (nolock) WHERE users.usertipus = 1 and users.useractive = 1
     ;
 """
 
