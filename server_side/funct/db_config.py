@@ -137,16 +137,19 @@ O8_SELECT_USERNAME_BY_USERCODE = """
 O8_SELECT_INFO_BY_CSOMAGSZAM = """
     declare @csomagszam varchar(max) = ?
 
-    SELECT 
-        CASE 
-            WHEN @csomagszam like '[%]%' THEN 
-                CASE
-                    WHEN exists (select * from WCSOMAG with (nolock) where CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%') THEN 2
-                    else 1
-                END
-            WHEN @csomagszam IN (SELECT csomagszam FROM wcsomag with (nolock)) THEN 2 
-            ELSE 1
-        END
+    select
+        case
+            when exists (
+                select top 1
+                    COUNT(*) db
+                from
+                    WCSOMAG wcs with (nolock)
+                where
+                    wcs.CSOMAGSZAM = @csomagszam
+                    or (@csomagszam like '[%]%' and wcs.CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%')
+                ) then 2
+            else 1
+        end
     ;
 """
 

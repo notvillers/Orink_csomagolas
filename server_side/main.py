@@ -160,7 +160,7 @@ def main():
             columns, results = db_client.select_with_arg(OSSZESITO_SELECT_BY_USER, (user,))
             # fetching username for usercode
             username = o8_client.one_value_select(query = USER_SELECT_BY_USERCODE, insert = int(user))
-            text_to_log("creating worksheet for user: " + username)                
+            text_to_log("creating worksheet for user: " + username)
 
             worksheet = funct.xlsx_handle.worksheet(
                 name = username,
