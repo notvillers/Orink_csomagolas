@@ -76,7 +76,7 @@ def main():
     ftp_client = create_ftp_client(FTP_INFO["hostname"], FTP_INFO["username"], FTP_INFO["password"])
 
     # Downloading db files
-    download_all_db_files_by_path(ftp_client, DL_PATH, "csomagolas")
+    download_all_db_files_by_path(ftp_client, DL_PATH, FTP_INFO["directory"])
 
     # Octopus 8 connection
     o8_client = create_o8_client(OCTOPUS_INFO)
@@ -185,6 +185,7 @@ def main():
     o8_client.close()
     db_client.close()
 
+    ftp_client.delete_all_db_files(FTP_INFO["directory"])
 
 if __name__ == "__main__":
     main()

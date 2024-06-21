@@ -1,0 +1,5 @@
+#!/bin/bash
+
+param="$1"
+tsc $param.ts
+node $param.js

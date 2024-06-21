@@ -61,7 +61,7 @@ class Client:
                     ftp.retrbinary(f'RETR {db_file}', local_file.write)
                 text_to_log(f"File '{db_file}' downloaded to '{local_file_path}'")
             return True
-        
+
     def get_newest_file(self, extension):
         '''gets the newest file with the specified extension from the FTP root directory'''
         with FTP(self.hostname) as ftp:
@@ -74,3 +74,14 @@ class Client:
                 return newest_file
             else:
                 return None
+
+    def delete_all_db_files(self, remote_directory) -> None:
+        '''deletes all .db files from the remote directory'''
+        with FTP(self.hostname) as ftp:
+            ftp.login(user=self.username, passwd=self.password)
+            ftp.cwd(remote_directory)
+            file_list = ftp.nlst()
+            db_files = [file for file in file_list if file.endswith('.db')]
+            for db_file in db_files:
+                ftp.delete(db_file)
+                text_to_log(f"File '{db_file}' deleted")

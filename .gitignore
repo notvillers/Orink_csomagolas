@@ -12,3 +12,4 @@ to_ping.txt
 raspi5-*
 tui.py
 *.tcss
+*node_modules/
