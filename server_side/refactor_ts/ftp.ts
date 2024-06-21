@@ -1,6 +1,4 @@
-import { log } from "console";
-
-const { Client } = require("basic-ftp");
+const { Client } = require("basic-ftp"); // FTP module
 
 /**
 * Class for handling FTP connections
@@ -24,6 +22,7 @@ export class ftp {
     }
 
     /**
+    * Lists the files in the directory
     * @param directory 
     * @returns the list of files in the directory
     */
@@ -53,6 +52,7 @@ export class ftp {
     }
 
     /**
+    * Lists the directories in the directory
     * @param directory 
     * @returns the list of directories in the directory
     */
@@ -82,9 +82,9 @@ export class ftp {
     }
 
     /**
+    * Downloads a file from the FTP server
     * @param remoteFileName
     * @param localFileName
-    * Downloads a file from the FTP server
     */
     async downloadFile(remoteFileName: string, localFileName: string) {
         const client = new Client();
@@ -106,9 +106,9 @@ export class ftp {
     }
 
     /**
+    * Uploads a file to the FTP server
     * @param localFileName
     * @param remoteFileName
-    * Uploads a file to the FTP server
     */
     async uploadFile(localFileName: string, remoteFileName: string) {
         const client = new Client();
