@@ -28,7 +28,7 @@ class Octopus8_sql:
 
         if retry_attempt != 0:
             response_time = ping(server)
-            if response_time:
+            if response_time or response_time == 0.0:
                 text_to_log(server + " reached")
                 return True
             else:

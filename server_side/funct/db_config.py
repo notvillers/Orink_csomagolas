@@ -66,6 +66,7 @@ OSSZESITO_TABLE_DELETE = """
 
 OSSZESITO_TABLE_SELECT = """
     SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő', crdti as 'Rögzítése dátuma', o8_confirm as 'O8 ellenőrzés' FROM osszesito
+    where o8_date is null
     ;
 """
 
@@ -98,7 +99,7 @@ OSSZESITO_UPDATE_O8_CRDTI = """
 """
 
 OSSZESITO_SELECT_CONFIRMED = """
-    SELECT id, csomagszam from osszesito WHERE o8_confirm = 2
+    SELECT id, csomagszam from osszesito WHERE o8_confirm = 2 and o8_date is null
     ;
 """
 

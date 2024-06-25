@@ -69,12 +69,6 @@ Write-Host "...script end" -ForegroundColor Green
 deactivate
 Write-Host "venv deactivated" -ForegroundColor Green
 
-#Removing odbc_ver_ps.py
-if (Test-Path $odbc_file) {
-    Write-Host "removing $odbc_file" -ForegroundColor Yellow
-    Remove-Item -Path $odbc_file -Force
-}
-
 $currentDateTime = Get-Date
 $formattedDateTime = $currentDateTime.ToString("yyyy-MM-dd HH:mm:ss")
 Write-Host "finished: $formattedDateTime" -ForegroundColor Yellow
