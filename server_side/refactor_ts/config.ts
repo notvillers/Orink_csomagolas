@@ -1,6 +1,9 @@
 const fs = require('fs'); // File system module
 const path = require('path'); // Path module
 
+// Debug
+export const debug: boolean = true;
+
 // The directory of the script
 export const pathDirectory: string = __dirname;
 
