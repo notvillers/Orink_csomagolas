@@ -147,7 +147,7 @@ O8_SELECT_INFO_BY_CSOMAGSZAM = """
                     WCSOMAG wcs with (nolock)
                 where
                     wcs.CSOMAGSZAM = @csomagszam
-                    or (@csomagszam like '[%]%' and wcs.CSOMAGSZAM like SUBSTRING(@csomagszam, 9, 14) + '%')
+                    or (@csomagszam like '[%]%' and wcs.CSOMAGSZAM like '[%]%' + SUBSTRING(@csomagszam, 9, 14) + '%')
                 ) then 2
             else 1
         end

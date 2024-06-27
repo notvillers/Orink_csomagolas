@@ -1,0 +1,2003 @@
+﻿2024.06.27 14:46:50	start
+2024.06.27 14:46:50	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 14:46:50	Files found in csomagolas
+2024.06.27 14:46:50	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 14:46:50	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 14:46:51	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 14:46:51	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 14:46:51	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 14:46:51	osql.local reached
+2024.06.27 14:46:51	Connecting to osql.local@o_orink
+2024.06.27 14:46:57	Connected to osql.local@o_orink
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3174165823
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174761377
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174761391
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174787834
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174787889
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331749920
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3176118179
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033176519082
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033174250345
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331742012
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 03317439
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 03317450
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3175252652
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3182358026
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033182531542
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331762928
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 03317644
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331765418
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3172735332
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033172744099
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3181891975
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331819674
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3177473895
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3180800756
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 03
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3181967427
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 0331
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 033172770098
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for   033173589989
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3177485867
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 3182108287
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for   033176484045
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for  033181730373
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for 010039459273
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 14:46:57	Not found
+2024.06.27 14:46:57	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 14:46:58	Not found
+2024.06.27 14:46:58	Updating users from o8
+2024.06.27 14:46:58	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 14:46:58	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 14:46:58	Connection to osql.local closed
+2024.06.27 15:24:36	start
+2024.06.27 15:24:36	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:24:37	Files found in csomagolas
+2024.06.27 15:24:37	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:24:37	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:24:38	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:24:38	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:24:38	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:24:38	osql.local reached
+2024.06.27 15:24:38	Connecting to osql.local@o_orink
+2024.06.27 15:24:44	Connected to osql.local@o_orink
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 03
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 0331
+2024.06.27 15:24:44	Not found
+2024.06.27 15:24:44	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:24:45	Not found
+2024.06.27 15:24:45	Updating users from o8
+2024.06.27 15:24:45	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:24:45	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 15:24:45	Connection to osql.local closed
+2024.06.27 15:32:07	start
+2024.06.27 15:32:07	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:32:07	Files found in csomagolas
+2024.06.27 15:32:07	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:32:07	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:32:08	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:32:08	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:32:08	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:32:09	osql.local reached
+2024.06.27 15:32:09	Connecting to osql.local@o_orink
+2024.06.27 15:32:14	Connected to osql.local@o_orink
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:32:14	Not found
+2024.06.27 15:32:14	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 03
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 0331
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:32:15	Not found
+2024.06.27 15:32:15	Updating users from o8
+2024.06.27 15:32:15	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:32:15	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 15:32:15	Connection to osql.local closed
+2024.06.27 15:36:24	start
+2024.06.27 15:36:24	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:36:24	Files found in csomagolas
+2024.06.27 15:36:24	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:36:24	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:36:25	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:36:25	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:36:25	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:36:25	osql.local reached
+2024.06.27 15:36:25	Connecting to osql.local@o_orink
+2024.06.27 15:36:31	Connected to osql.local@o_orink
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 03
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 0331
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:36:31	Not found
+2024.06.27 15:36:31	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:36:32	Not found
+2024.06.27 15:36:32	Updating users from o8
+2024.06.27 15:36:32	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:36:32	Uploaded <_io.BufferedReader name='/Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/Csomagolás kimutatás.xlsx'> to kimutatas/Csomagolás kimutatás
+2024.06.27 15:36:32	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 15:36:32	Connection to osql.local closed
+2024.06.27 15:39:40	start
+2024.06.27 15:39:40	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:39:40	Files found in csomagolas
+2024.06.27 15:39:40	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:39:40	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:39:41	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:39:41	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:39:41	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:39:42	osql.local reached
+2024.06.27 15:39:42	Connecting to osql.local@o_orink
+2024.06.27 15:39:47	Connected to osql.local@o_orink
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:39:47	Not found
+2024.06.27 15:39:47	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 03
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 0331
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:39:48	Not found
+2024.06.27 15:39:48	Updating users from o8
+2024.06.27 15:39:48	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:39:48	Uploaded <_io.BufferedReader name='/Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/Csomagolás kimutatás.xlsx'> to kimutatas/Csomagolás kimutatás.xlsx
+2024.06.27 15:39:48	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 15:39:48	Connection to osql.local closed
+2024.06.27 15:52:53	start
+2024.06.27 15:52:53	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:52:53	Files found in csomagolas
+2024.06.27 15:52:53	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:52:53	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:52:54	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:52:54	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:52:54	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:52:54	osql.local reached
+2024.06.27 15:52:54	Connecting to osql.local@o_orink
+2024.06.27 15:53:00	Connected to osql.local@o_orink
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 03
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 0331
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:53:00	Not found
+2024.06.27 15:53:00	Updating users from o8
+2024.06.27 15:53:00	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:53:42	start
+2024.06.27 15:53:42	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db
+2024.06.27 15:53:42	Files found in csomagolas
+2024.06.27 15:53:42	Downloaded 2024-06-17_16-23-39raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-17_19-54-35raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-17_20-04-37raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-18_08-06-07raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-18_08-06-34raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-18_08-09-07raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-18_08-41-23raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:53:42	Downloaded 2024-06-18_11-38-46raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-18_16-28-32raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-18_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-18_19-44-15raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-18_19-52-18raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-19_08-22-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-19_16-28-21raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-19_17-53-29raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-19_19-59-57raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-19_20-01-24raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-20_16-28-34raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-20_17-57-50raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-20_19-55-39raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-20_19-57-10raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-24_16-59-14raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-24_17-55-33raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-24_18-52-38raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-24_19-56-09raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-25_17-58-28raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-25_18-53-47raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-25_19-40-43raspi5-1_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-25_19-42-14raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-26_17-55-14raspi5-3_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-26_18-50-25raspi5-4_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:53:43	Downloaded 2024-06-26_20-11-11raspi5-2_log.db to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_19-54-35raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-55-39raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-52-18raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_16-28-32raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-41-23raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_18-52-38raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_20-01-24raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_08-22-14raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_17-55-14raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_17-55-14raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_17-53-29raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-09-07raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_19-59-57raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-40-43raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_16-28-34raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-07raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_17-55-33raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_19-42-14raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_16-23-39raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_19-57-10raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-17_20-04-37raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_17-58-28raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_16-59-14raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-19_16-28-21raspi5-1_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_18-50-25raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_11-38-46raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-25_18-53-47raspi5-4_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-20_17-57-50raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_08-06-34raspi5-3_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-24_19-56-09raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-26_20-11-11raspi5-2_log.db closed
+2024.06.27 15:53:43	Connected to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db
+2024.06.27 15:53:43	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/logs/2024-06-18_19-44-15raspi5-4_log.db closed
+2024.06.27 15:53:43	osql.local reached
+2024.06.27 15:53:43	Connecting to osql.local@o_orink
+2024.06.27 15:53:49	Connected to osql.local@o_orink
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001217180038157000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001217210038157000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001217340038157000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003604830017458000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for -%003620016408055045239101246
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003604960031077000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003605000031077000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003605130031077000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for sxsxsxs%001445216408055045243101300
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3174165823
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174761377
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174761391
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174787834
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174787889
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331749920
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557570
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557571
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557572
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557573
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557574
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557575
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557576
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557577
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557578
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for JJD014600011563557579
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for  %000111816408055116907101348
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218220035100000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218190035100000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218060035100000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218510036400000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218350036400000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218480036400000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3176118179
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033176519082
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033174250345
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331742012
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 03317439
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 03317450
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3175252652
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3182358026
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033182531542
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331762928
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 03317644
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331765418
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3172735332
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033172744099
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001216750045000000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001216880045000000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001216910045000000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001217050045000000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PBNAT003604670022365027282
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003604700022365000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3181891975
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331819674
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3177473895
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3180800756
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 03
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3181967427
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 0331
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 033172770098
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for   033173589989
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3177485867
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PBNAT003604120012713010590
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 3182108287
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 00340258762490566368
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 00340258762490507941
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for   033176484045
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PBNAT003605680012461010590
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001219070041116000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001219100041116000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001219230041116000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001219360041116000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 00340258762487513573
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for  033181730373
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218770041105000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218640041105000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218800041105000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT001218930041105000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for 010039459273
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for o0pl;.%000108816408055116750101348
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for                                                                      %000590016408055116731101348
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003604250045125000000
+2024.06.27 15:53:49	Not found
+2024.06.27 15:53:49	Searching Octopus 8 crdti for PNNAT003604380045125000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for PNNAT003604410045125000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for PNNAT003604540045125000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for PNNAT001216460035400000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for PNNAT001216620035400000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for PNNAT001216590035400000000
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Searching Octopus 8 crdti for wq2033175352994
+2024.06.27 15:53:50	Not found
+2024.06.27 15:53:50	Updating users from o8
+2024.06.27 15:53:50	user.csv created at /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/users.csv
+2024.06.27 15:53:50	Uploaded <_io.BufferedReader name='/Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/result/Csomagolás kimutatás.xlsx'> to kimutatas/Csomagolás kimutatás.xlsx
+2024.06.27 15:53:50	Connection to /Users/villerskrisztian/Documents/GitHub/Orink_csomagolas/server_side/refactor/db/csomagolas.db closed
+2024.06.27 15:53:50	Connection to osql.local closed
