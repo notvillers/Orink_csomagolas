@@ -1,5 +1,6 @@
 '''main script'''
 
+import os
 from datetime import datetime
 from config.ConfigDroid import ConfigDroid
 from src.classes.slave import Slave
@@ -79,8 +80,13 @@ def main(droideka: ConfigDroid) -> None:
                 for result in results:
                     sqlite_main.execute(slave.sqlite.csomag_insert, result)
                 sqlite_log.close()
+                file_name: str = os.path.basename(file)
+                droideka.log(slave.copy_file(file, os.path.join(droideka.get_backup_path(), file_name)))
+                droideka.log(slave.remove_file(file))
+                ftp.delete_file(ftp_json.content["directory"], file_name)
             # create oszesito
             sqlite_main.execute(slave.sqlite.osszesito_insert_from_csomag)
+
     else:
         droideka.log(f"{ftp_dir} is empty")
 
@@ -144,5 +150,6 @@ def main(droideka: ConfigDroid) -> None:
         xlsx_path: str = xlsx.xlsx_create(file_path = droideka.result_path)
         xlsx_name: str = xlsx.name if xlsx.name.lower().endswith(".xlsx") else f"{xlsx.name}.xlsx"
         ftp.upload(xlsx_path, "kimutatas", xlsx_name)
+        ftp.upload(droideka.user_csv_path, "src", os.path.basename(droideka.user_csv_path))
     sqlite_main.close()
     mssql.close()

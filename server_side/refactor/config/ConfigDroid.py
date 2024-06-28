@@ -20,7 +20,8 @@ class ConfigDroid:
         o8_login_dir: str = None,
         result_dir: str = None,
         user_csv_name: str = None,
-        xlsx_name: str = None
+        xlsx_name: str = None,
+        backup_dir: str = None
     ) -> None:
         # root path
         self.path: str = root_path
@@ -81,6 +82,13 @@ class ConfigDroid:
             self.xlsx_path = os.path.join(self.result_path, xlsx_name)
         else:
             self.xlsx_path = os.path.join(self.result_path, "users.xlsx")
+        # backup directory
+        if backup_dir:
+            self.backup_path = os.path.join(self.path, backup_dir)
+        else:
+            self.backup_path = os.path.join(self.path, "backup")
+        if not os.path.exists(self.backup_path):
+            os.makedirs(self.backup_path)
 
     def get_db_path(self) -> str:
         '''get db path'''
@@ -93,11 +101,11 @@ class ConfigDroid:
     def get_event_path(self) -> str:
         '''get event path'''
         return self.event_name
-    
+
     def get_ftp_path(self) -> str:
         '''get ftp path'''
         return self.ftp_path
-    
+
     def get_o8_login_path(self) -> str:
         '''get o8 login path'''
         return self.o8_login_path
@@ -105,10 +113,14 @@ class ConfigDroid:
     def get_csv_path(self) -> str:
         '''get csv path'''
         return self.user_csv_path
-    
+
     def get_xlsx_path(self) -> str:
         '''get xlsx path'''
         return self.xlsx_path
+
+    def get_backup_path(self) -> str:
+        '''get backup path'''
+        return self.backup_path
 
     def log(self, content: str) -> None:
         '''log content'''

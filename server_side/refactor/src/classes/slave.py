@@ -49,3 +49,9 @@ class Slave:
     def copy_file(self, source: str, destination: str) -> None:
         '''copy file'''
         shutil.copy(source, destination)
+        return f"File copied from {source} to {destination}"
+
+    def remove_file(self, file: str) -> None:
+        '''remove file'''
+        os.remove(file)
+        return f"{file} removed"
