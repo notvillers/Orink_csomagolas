@@ -104,7 +104,6 @@ def download_users():
     else:
         text_to_log(ftp_json["hostname"] + " is down")
 
-
 def main(admin_mode = False):
     '''Main definition, runs the GUI'''
 
@@ -247,7 +246,7 @@ def main(admin_mode = False):
             if work_state == state["name"]:
                 window[state["button"]].update(button_color = "green")
                 if first_run:
-                    local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+                    local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_start", usercode, hostname))
         
         # Changing to admin mode, if necessary
         if admin_mode:
@@ -393,7 +392,7 @@ def main(admin_mode = False):
                     text_to_log("ID: " + str(selected_item_id) + " DELETED")
                     window["-packages-"].update(values = results)
                     window["-info-"].update("Csomag törölve!", text_color = "red")
-        elif work_state != "pack":
+        else:
             window["-info-"].update("Csak csomagolásnál lehet módosítani!", text_color = "red")
 
         # Settings
@@ -419,23 +418,26 @@ def main(admin_mode = False):
         # Change work state
         if "_WORK-" in event:
             if event == "-PACK_WORK-" and work_state != "pack":
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_end", usercode, hostname))
                 work_state = "pack"
                 window["-PACK_WORK-"].update(button_color = "green")
                 window["-FORKLIFT_WORK-"].update(button_color = TXT_C)
                 window["-OTHER_WORK-"].update(button_color = TXT_C)
-                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_start", usercode, hostname))
             elif event == "-FORKLIFT_WORK-" and work_state != "forklift":
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_end", usercode, hostname))
                 work_state = "forklift"
                 window["-PACK_WORK-"].update(button_color = TXT_C)
                 window["-FORKLIFT_WORK-"].update(button_color = "green")
                 window["-OTHER_WORK-"].update(button_color = TXT_C)
-                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_start", usercode, hostname))
             elif event == "-OTHER_WORK-" and work_state != "other":
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_end", usercode, hostname))
                 work_state = "other"
                 window["-PACK_WORK-"].update(button_color = TXT_C)
                 window["-FORKLIFT_WORK-"].update(button_color = TXT_C)
                 window["-OTHER_WORK-"].update(button_color = "green")
-                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}_start", usercode, hostname))
 
         # Event viewer
         if event == "-ctrl_e-" and admin_mode:

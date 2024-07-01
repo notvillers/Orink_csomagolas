@@ -58,7 +58,9 @@ OSSZESITO_TABLE_INSERT_FROM_CSOMAG: str = """
 """
 
 OSSZESITO_SELECT_CSOMAGSZAM_WITHOUT_O8DATE: str = """
-    SELECT csomagszam FROM osszesito WHERE o8_date IS NULL;
+    SELECT csomagszam 
+    FROM osszesito 
+    WHERE o8_date IS NULL and csomagszam like '%_work_state_%';
 """
 
 OSSZESITO_UPDATE_CRDTI: str = """
