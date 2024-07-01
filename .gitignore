@@ -1,7 +1,8 @@
 *.pyc
 log.txt
 event.txt
-*.json
+ftp.json
+login.json
 *.db
 .venv/
 cli_log.txt
