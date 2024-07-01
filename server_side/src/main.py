@@ -49,6 +49,10 @@ def result_to_csv(result: list[list], path: str , encoding: str = "utf-8-sig") -
             file.write(line + '\n')
     return path
 
+def datetime_to_str(date: datetime) -> str:
+    '''datetime to str'''
+    return date.strftime("%Y-%m-%d %H:%M:%S")
+
 def main(droideka: ConfigDroid) -> None:
     '''main function'''
 
@@ -150,6 +154,7 @@ def main(droideka: ConfigDroid) -> None:
         xlsx_path: str = xlsx.xlsx_create(file_path = droideka.result_path)
         xlsx_name: str = xlsx.name if xlsx.name.lower().endswith(".xlsx") else f"{xlsx.name}.xlsx"
         ftp.upload(xlsx_path, "kimutatas", xlsx_name)
-        ftp.upload(droideka.user_csv_path, "src", os.path.basename(droideka.user_csv_path))
+        ftp.upload(droideka.user_csv_path, "result", os.path.basename(droideka.user_csv_path))
     sqlite_main.close()
+    # TODO csomagolas.db feltöltése az ftp-re
     mssql.close()

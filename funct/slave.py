@@ -4,6 +4,7 @@ from datetime import datetime
 import platform
 import random
 import string
+import uuid
 from time import sleep
 from ping3 import ping
 
@@ -40,13 +41,17 @@ def generate_random_string_list(length: int = 100, string_length: int = 32):
     return random_strings
 
 def ping_srvr(server: str, retry_attempt: int = 0) -> bool:
-        '''pings with retry'''
+    '''pings with retry'''
 
-        if retry_attempt != 0:
-            response_time = ping(server)
-            if response_time:
-                return True
-            else:
-                sleep(5)
-                ping_srvr(server, retry_attempt - 1)
-        return False
+    if retry_attempt != 0:
+        response_time = ping(server)
+        if response_time or response_time == 0.0:
+            return True
+        else:
+            sleep(5)
+            ping_srvr(server, retry_attempt - 1)
+    return False
+
+def generate_uuid(length: int = 8):
+    '''generates a UUID with the specified length'''
+    return str(uuid.uuid4())[:length]

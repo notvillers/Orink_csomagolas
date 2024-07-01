@@ -20,7 +20,10 @@ CSOMAG_TABLE_DELETE = """
 """
 
 CSOMAG_TABLE_SELECT = """
-    SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő' FROM csomag ORDER BY id DESC
+    SELECT id as 'ID', csomagszam as 'Csomagszám', user as 'Rögzítő' 
+    FROM csomag 
+    WHERE csomagszam NOT LIKE '%_work_state_%'
+    ORDER BY id DESC
     ;
 """
 

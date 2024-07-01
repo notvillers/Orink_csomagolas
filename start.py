@@ -6,7 +6,7 @@ import base64
 import PySimpleGUI as sg
 import windows.gui_theme
 from funct.log import text_to_log
-from funct.slave import get_datetime
+from funct.slave import get_datetime, generate_uuid
 import config_path
 import funct.json_handle
 import funct.file_handle
@@ -139,6 +139,7 @@ def main(admin_mode = False):
     # Menu
     menu_def = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["!&Eseménynapló::-event_view-", "---", "!&Mentés::-backup-", "---", "!&Tábla ürítése::-table_clear-", "!&Demo betöltése::-demo_load-", "---", "!&Kilépés::-ESCAPE-"]]]
     menu_def_admin = [["&Fájl", ["!&Importálás::-import-", "!&Exportálás::-export-"]], ["&Rendszergazda", ["&Eseménynapló::-event_view-", "---", "&Mentés::-backup-", "---", "&Tábla ürítése::-table_clear-", "&Demo betöltése::-demo_load-", "---", "&Kilépés::-ESCAPE-"]]]
+    menu_layout = [[sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")]]
 
     # Option layout
     option_layout = [
@@ -157,7 +158,7 @@ def main(admin_mode = False):
     packages_layout = [
         [
             sg.Table(
-                values = results, 
+                values = results,
                 headings = columns,
                 key = "-packages-",
                 font = SMALL_F,
@@ -181,8 +182,16 @@ def main(admin_mode = False):
     # Settings layout
     settings_layout = [
         [
-            sg.Push(), sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F),
-            sg.Push(), sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F), sg.Push(),
+            sg.Button("ADATOK", k = "-SETTINGS-", font = SMALL_F),
+            sg.Button("FELTÖLTÉS", k = "-UPLOAD-", font = SMALL_F)
+        ]
+    ]
+
+    work_state_layout = [
+        [
+            sg.Button("CSOMAGOLÁS", k = "-PACK_WORK-", font = SMALL_F),
+            sg.Button("TARGONCÁZÁS", k = "-FORKLIFT_WORK-", font = SMALL_F),
+            sg.Button("EGYÉB", k = "-OTHER_WORK-", font = SMALL_F)
         ]
     ]
 
@@ -191,13 +200,12 @@ def main(admin_mode = False):
         [sg.Text(HOSTNAME, k = "-hostname-", font = FOOTER_F), sg.Push(), sg.Button("", k = "-INFO-", image_filename = INFO_PATH)]
     ]
 
-    menu_layout = [[sg.Menu(menu_def, font = FOOTER_F, k = "-menu-")]]
-
     # Layout
     layout = [
         [sg.Frame("RÖGZÍTÉS", option_layout, font = SMALL_BOLD, expand_x = True, k = "-option_frame-")],
         [sg.Frame("CSOMAGOK", packages_layout, font = SMALL_BOLD, expand_x = True, expand_y = True, k = "-packages_frame-")],
         [sg.Frame("BEÁLLÍTÁSOK", settings_layout, font = SMALL_BOLD, expand_x = True, k = "-settings_frame-")],
+        [sg.Frame("EGYÉB MUNKAVÉGZÉS", work_state_layout, font = SMALL_BOLD, expand_x = True, k = "-work_state_frame-")],
         [sg.Frame("", footer_layout, font = SMALL_BOLD, expand_x = True, k = "-footer_frame-")],
         [sg.Push(), sg.Image(ICON_IN_PATH, k = "-icon-"), sg.Push()]
     ]
@@ -219,11 +227,28 @@ def main(admin_mode = False):
     # ctrl event
     ctrl_event = False
 
-  # Selected items ID
+    # Selected items ID
     selected_item_id = False
 
+    # Work state
+    work_state: str = "pack"
+    work_states: list[dict] = [
+        {"name": "pack", "button": "-PACK_WORK-"},
+        {"name": "forklift", "button": "-FORKLIFT_WORK-"},
+        {"name": "other", "button": "-OTHER_WORK-"}
+    ]
+
     # Run
+    first_run: bool = True
     while True:
+
+        # Checking work state
+        for state in work_states:
+            if work_state == state["name"]:
+                window[state["button"]].update(button_color = "green")
+                if first_run:
+                    local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+        
         # Changing to admin mode, if necessary
         if admin_mode:
             text_to_log("ADMIN MODE ENABLED")
@@ -326,46 +351,50 @@ def main(admin_mode = False):
                 selected_item = results[event[2][0]]
                 selected_item_id = selected_item[0]
 
-        # Add
-        if event == "-ADD-":
-            if value["-new_package-"]:
-                # If not repeatable package no.
-                if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
-                    window["-info-"].update("")
-                    local_db.insert(CSOMAG_TABLE_INSERT, (value["-new_package-"], usercode, hostname))
-                    text_to_log("package no. " + value["-new_package-"] + " added")
-                    columns, results = local_db.select(CSOMAG_TABLE_SELECT)
-                    window["-new_package-"].update("")
-                    window["-packages-"].update(values = results)
-                else:
-                    window["-info-"].update("Ismétlődés!", text_color = "red")
-                    window["-new_package-"].update("")
-            else:
-                window["-info-"].update("Üres csomagszám!", text_color = "red")
-
-        # Edit
-        if event == "-EDIT-":
-            if selected_item_id:
-                update_item = edit_main(selected_item)
-                if update_item is not None:
-                    if not local_db.is_value_there(columns, results, "Csomagszám", update_item[1]):
+        # Only in "pack" work_state
+        if work_state == "pack" and event in ["-ADD-", "-EDIT-", "-DELETE-"]:
+            # Add
+            if event == "-ADD-":
+                if value["-new_package-"]:
+                    # If not repeatable package no.
+                    if not local_db.is_value_there(columns, results, "Csomagszám", value["-new_package-"]):
                         window["-info-"].update("")
-                        update_val = (update_item[1], update_item[0])
-                        local_db.insert(CSOMAG_TABLE_UPDATE_BY_ID, (update_val))
-                        text_to_log("UPDATE: " + str(update_item[0]) + " - " + str(update_item[1]))
+                        local_db.insert(CSOMAG_TABLE_INSERT, (value["-new_package-"], usercode, hostname))
+                        text_to_log("package no. " + value["-new_package-"] + " added")
                         columns, results = local_db.select(CSOMAG_TABLE_SELECT)
+                        window["-new_package-"].update("")
                         window["-packages-"].update(values = results)
                     else:
                         window["-info-"].update("Ismétlődés!", text_color = "red")
+                        window["-new_package-"].update("")
+                else:
+                    window["-info-"].update("Üres csomagszám!", text_color = "red")
 
-        # Delete
-        if event == "-DELETE-" and selected_item_id:
-            if pop_esc_yn(text = "Biztosan törli?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
-                local_db.execute(CSOMAG_TABLE_DELETE, (selected_item_id))
-                columns, results = local_db.select(CSOMAG_TABLE_SELECT)
-                text_to_log("ID: " + str(selected_item_id) + " DELETED")
-                window["-packages-"].update(values = results)
-                window["-info-"].update("Csomag törölve!", text_color = "red")
+            # Edit
+            if event == "-EDIT-":
+                if selected_item_id:
+                    update_item = edit_main(selected_item)
+                    if update_item is not None:
+                        if not local_db.is_value_there(columns, results, "Csomagszám", update_item[1]):
+                            window["-info-"].update("")
+                            update_val = (update_item[1], update_item[0])
+                            local_db.insert(CSOMAG_TABLE_UPDATE_BY_ID, (update_val))
+                            text_to_log("UPDATE: " + str(update_item[0]) + " - " + str(update_item[1]))
+                            columns, results = local_db.select(CSOMAG_TABLE_SELECT)
+                            window["-packages-"].update(values = results)
+                        else:
+                            window["-info-"].update("Ismétlődés!", text_color = "red")
+
+            # Delete
+            if event == "-DELETE-" and selected_item_id:
+                if pop_esc_yn(text = "Biztosan törli?", buttons = ["IGEN", "NEM"]) == "-IGEN-":
+                    local_db.execute(CSOMAG_TABLE_DELETE, (selected_item_id))
+                    columns, results = local_db.select(CSOMAG_TABLE_SELECT)
+                    text_to_log("ID: " + str(selected_item_id) + " DELETED")
+                    window["-packages-"].update(values = results)
+                    window["-info-"].update("Csomag törölve!", text_color = "red")
+        elif work_state != "pack":
+            window["-info-"].update("Csak csomagolásnál lehet módosítani!", text_color = "red")
 
         # Settings
         if event in ["-SETTINGS-", "-ctrl_a-"]:
@@ -386,7 +415,28 @@ def main(admin_mode = False):
                     if admin_mode:
                         return True, True
                     return True, False
-                
+
+        # Change work state
+        if "_WORK-" in event:
+            if event == "-PACK_WORK-" and work_state != "pack":
+                work_state = "pack"
+                window["-PACK_WORK-"].update(button_color = "green")
+                window["-FORKLIFT_WORK-"].update(button_color = TXT_C)
+                window["-OTHER_WORK-"].update(button_color = TXT_C)
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+            elif event == "-FORKLIFT_WORK-" and work_state != "forklift":
+                work_state = "forklift"
+                window["-PACK_WORK-"].update(button_color = TXT_C)
+                window["-FORKLIFT_WORK-"].update(button_color = "green")
+                window["-OTHER_WORK-"].update(button_color = TXT_C)
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+            elif event == "-OTHER_WORK-" and work_state != "other":
+                work_state = "other"
+                window["-PACK_WORK-"].update(button_color = TXT_C)
+                window["-FORKLIFT_WORK-"].update(button_color = TXT_C)
+                window["-OTHER_WORK-"].update(button_color = "green")
+                local_db.insert(CSOMAG_TABLE_INSERT, (f"{generate_uuid()}_work_state_{work_state}", usercode, hostname))
+
         # Event viewer
         if event == "-ctrl_e-" and admin_mode:
             event_main()
@@ -426,6 +476,9 @@ def main(admin_mode = False):
                 if "::-backup-" in event:
                     backup_db()
                     window["-info-"].update("Sikeres mentés!", text_color = "green")
+
+        if first_run:
+            first_run = False
 
     window.close()
     return False, False
