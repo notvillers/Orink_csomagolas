@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Octopy</title>
+{% endblock %}
+
+{% block body %}
+<div class="insert_package">
+    <form action="/", method="post">
+        <input type="text", class="insert_package" id="insert_package_package_no", name="package_no", placeholder="Csomagszám", title="Csomagszám", required, autocomplete="off", autofocus>
+        <input type="number", class="insert_package" id="insert_package_usercode", name="usercode", placeholder="Felhasználó kód", title="Felhasználó kód", required, autocomplete="off", value="{{usercode}}", readonly, disabled>
+        <input type="submit", class="insert_package" id="insert_package_submit", value="Rögzítés">
+    </form>
+</div>
+<br>
+<div class="packages_div">
+    <table class="table", id="packages_table">
+        <tr class="table_tr">
+            <th class="table_th", id="package_th_package_no">Csomagszám</th>
+            <th class="table_th", id="package_th_package_crus">Rögzítő</th>
+            <th class="table_th", id="package_th_package_crdti">Időpont</th>
+            <th class="table_th", id="package_th_package_options">Opciók</th>
+        </tr>
+        {% for package in packages %}
+        <tr class="table_tr">
+            <td class="table_td", id="package_td_package_no">{{ package.package_no }}</td>
+            <td class="table_td", id="package_td_package_crus">{{ package.crus }}</td>
+            <td class="table_td", id="package_td_package_crdti">{{ package.crdti.strftime('%H:%M (%Y.%m.%d)') }}</td>
+            <td class="table_td", id="package_td_package_options">
+                <a href="/edit/{{ package.id }}">
+                    <button class="button" id="index_edit_button">Módosítás</button>
+                </a>
+            </td>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

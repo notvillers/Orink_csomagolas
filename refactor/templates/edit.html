@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Octopy</title>
+{% endblock %}
+
+{% block body %}
+<div class="edit_form">
+    <form action="/edit/{{ package.id }}", method="post">
+        <table class="table", id="edit_table">
+            <tr>
+                <th class="table_th", id="edit_table_th">Megnevezés</th>
+                <th class="table_th", id="edit_table_th">Adat</th>
+            </tr>
+            <tr>
+                <td class="table_td", id="edit_table_name">Csomagszám</td>
+                <td class="table_td", id="edit_table_data"><input type="text" class="edit_package_info", id="edit_package_no" name="package_no", placeholder="Csomagszám", name="Csomagszám", value="{{ package.package_no }}", required, autofocus></td>
+            </tr>
+            <tr>
+                <td class="table_td", id="edit_table_name">Felhasználó kód</td>
+                <td class="table_td", id="edit_table_data"><input type="text" class="edit_package_info", id="edit_package_crus" name="crus", placeholder="Rögzítő", name="Rögzítő", value="{{ package.crus }}", readonly, disabled></td>
+            </tr>
+            <tr>
+                <td class="table_td", id="edit_table_name">Létrehozás dátuma</td>
+                <td class="table_td", id="edit_table_data"><input type="text" class="edit_package_info", id="edit_package_crdti" name="crdti", placeholder="Időpont", name="Időpont", value="{{ package.crdti.strftime('%H:%M (%Y.%m.%d)') }}", readonly, disabled></td>
+            </tr>
+        </table>
+        <div class="edit_buttons">
+            <input type="submit", class="button", id="edit_edit_button", value="Módosítás">
+            <a href="/delete/{{ package.id }}"><button class="button", id="edit_del_button">Törlés</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}

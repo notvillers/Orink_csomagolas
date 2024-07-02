@@ -1,0 +1,257 @@
+/* Body */
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    background-color: #d6e7f9;
+}
+
+body {
+    display: block;
+    padding: 2% 2% 2% 2%;
+    width: 80%;
+    margin: auto;
+}
+
+/* Logo */
+.logo {
+    display: block;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    animation: rotation 5s infinite linear;
+}
+
+/* Insert */
+.insert_package {
+    font-size: xx-large;
+    text-align: center;
+}
+
+#insert_package_package_no {
+    width: 30%;
+}
+
+#insert_package_usercode {
+    width: 5%;
+}
+
+#insert_package_submit {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #90c7ff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: xx-large;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#insert_package_submit:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+}
+#insert_package_submit:focus-visible{
+    outline-offset: 1px;
+}
+
+/* Main table */
+.packages_table, .table_td, .table_th {
+    border: 1px solid #aaa;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_th {
+    height: 45px;
+    background-color: black;
+    color: #d6e7f9;
+    font-size: xx-large;
+}
+
+.table_td {
+    text-align: left;
+    padding: 5px;
+    font-size: x-large;
+}
+
+#package_th_package_crus {
+    width: 10%;
+}
+
+#package_th_package_crdti {
+    width: 20%;
+}
+
+#package_th_package_options {
+    width: 10%;
+}
+
+#package_td_package_options {
+    text-align: center;
+}
+
+#index_edit_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #aff79f;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: x-large;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#index_edit_button:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+}
+#index_edit_button:focus-visible{
+    outline-offset: 1px;
+}
+
+/* Edit table */
+
+#edit_form {
+    align-self: center;
+}
+
+#edit_table {
+    border-collapse: collapse;
+    width: 45%;
+    margin: 0 auto;
+}
+
+#edit_table_name {
+    font-size: xx-large;
+    text-align: justify;
+}
+
+#edit_table_data {
+    text-align: center;
+}
+
+.edit_package_info {
+    font-size: xx-large;
+    text-align: justify;
+}
+
+.edit_buttons {
+    text-align: center;
+}
+
+#edit_edit_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #aff79f;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: xx-large;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+
+#edit_edit_button:hover {
+box-shadow: 4px 4px 0 #000;
+transform: translate(-4px,-4px);
+}
+#edit_edit_button:focus-visible{
+outline-offset: 1px;
+}
+
+#edit_del_button {
+        outline: 0;
+        grid-gap: 2px;
+        align-items: center;
+        background-color: #ff9090;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 1px;
+        cursor: pointer;
+        display: inline-flex;
+        flex-shrink: 0;
+        font-size: xx-large;
+        gap: 8px;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: hidden;
+        padding: 0px 4px;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        transition: all .1s ease-out;
+        white-space: nowrap;
+    }
+
+#edit_del_button:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+}
+#edit_del_button:focus-visible{
+    outline-offset: 1px;
+}
+
+/* Footer */
+footer {
+    display: table;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/* @keyframes */
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
