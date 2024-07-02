@@ -15,3 +15,4 @@ tui.py
 *.tcss
 *node_modules/
 *.txt
+config/config.json
