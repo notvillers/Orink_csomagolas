@@ -19,11 +19,14 @@ body {
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 35%;
 }
 
+/*
 .logo {
     animation: rotation 5s infinite linear;
 }
+*/
 
 /* Insert */
 .insert_package {
@@ -35,8 +38,17 @@ body {
     width: 30%;
 }
 
+#insert_package_package_no:read-only {
+    background-color: rgb(255, 127, 127);
+}
+
 #insert_package_usercode {
     width: 7%;
+}
+
+#work_state_choose {
+    width: 15%;
+    font-size: xx-large;
 }
 
 #insert_package_submit {
@@ -136,6 +148,11 @@ body {
 }
 #index_edit_button:focus-visible{
     outline-offset: 1px;
+}
+
+#table_footer {
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Edit table */
@@ -240,10 +257,69 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: 16px;
-    line-height: 2;
+    line-height: 0;
     letter-spacing: 1px;
-    color: #ffffff;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#index_change_user_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #d6e7f9;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: medium;
+    flex-shrink: 0;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#index_change_user_button:hover {
+    box-shadow: 2px 2px 0 #000;
+    transform: translate(-2px,-2px);
+}
+#index_change_user_button:focus-visible{
+    outline-offset: 1px;
+}
+
+#index_upload_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #d6e7f9;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: medium;
+    flex-shrink: 0;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#index_upload_button:hover {
+    box-shadow: 2px 2px 0 #000;
+    transform: translate(-2px,-2px);
+}
+#index_upload_button:focus-visible{
+    outline-offset: 1px;
 }
 
 /* @keyframes */

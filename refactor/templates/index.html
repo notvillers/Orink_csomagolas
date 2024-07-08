@@ -7,8 +7,23 @@
 {% block body %}
 <div class="insert_package">
     <form action="/", method="post">
-        <input type="text", class="insert_package" id="insert_package_package_no", name="package_no", placeholder="Csomagszám", title="Csomagszám", required, autocomplete="off", autofocus>
+        {% if active_work_state != 1 %}
+            <input type="text", class="insert_package" id="insert_package_package_no", name="package_no", placeholder="Csomagszám", title="Csomagszám", autocomplete="off", autofocus, disabled, readonly>
+        {% else %}
+            <input type="text", class="insert_package" id="insert_package_package_no", name="package_no", placeholder="Csomagszám", title="Csomagszám", required, autocomplete="off", autofocus>
+        {% endif %}
         <input type="number", class="insert_package" id="insert_package_usercode", name="usercode", placeholder="Felhasználó kód", title="Felhasználó kód", required, autocomplete="off", value="{{usercode}}", min="0", max="9999", required>
+        {% if work_states %}
+        <select name="work_state" id="work_state_choose">
+            {% for work_state in work_states %}
+                {% if work_state['selected'] %}
+                    <option value="{{ work_state['id'] }}" selected>{{ work_state['name'] }}</option>
+                {% else %}
+                    <option value="{{ work_state['id'] }}">{{ work_state['name'] }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        {% endif %}
         <input type="submit", class="insert_package" id="insert_package_submit", value="Rögzítés">
     </form>
 </div>
@@ -22,16 +37,34 @@
             <th class="table_th", id="package_th_package_options">Opciók</th>
         </tr>
         {% for package in packages %}
-        <tr class="table_tr">
-            <td class="table_td", id="package_td_package_no">{{ package.package_no }}</td>
-            <td class="table_td", id="package_td_package_crus">{{ package.crus }}</td>
-            <td class="table_td", id="package_td_package_crdti">{{ package.crdti.strftime('%H:%M (%Y.%m.%d)') }}</td>
-            <td class="table_td", id="package_td_package_options">
-                <a href="/edit/{{ package.id }}">
-                    <button class="button" id="index_edit_button">Módosítás</button>
-                </a>
-            </td>
+        {% if package.is_state == 0 %}
+            <tr class="table_tr">
+                <td class="table_td", id="package_td_package_no">{{ package.package_no }}</td>
+                <td class="table_td", id="package_td_package_crus">{{ package.crus }}</td>
+                <td class="table_td", id="package_td_package_crdti">{{ package.crdti.strftime('%H:%M (%Y.%m.%d)') }}</td>
+                <td class="table_td", id="package_td_package_options">
+                    <a href="/edit/{{ package.id }}">
+                        <button class="button" id="index_edit_button">Módosítás</button>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr class="table_tr", style="background-color: rgb(144, 199, 255);">
+                <td class="table_td", id="package_td_package_no">{{ package.package_no }}</td>
+                <td class="table_td", id="package_td_package_crus">{{ package.crus }}</td>
+                <td class="table_td", id="package_td_package_crdti">{{ package.crdti.strftime('%H:%M (%Y.%m.%d)') }}</td>
+                <td class="table_td", id="package_td_package_options"></td>
+            </tr>
+        {% endif %}
         {% endfor %}
     </table>
+    <br>
+    <br>
 </div>
+{% endblock %}
+{% block footer %}
+<p>
+    <button class="button" id="index_change_user_button">Felhasználó váltás</button>
+    <button class="button" id="index_upload_button">Adatok feltöltése</button>
+</p>
 {% endblock %}
