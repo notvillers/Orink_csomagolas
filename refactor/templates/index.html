@@ -8,7 +8,7 @@
 <div class="insert_package">
     <form action="/", method="post">
         <input type="text", class="insert_package" id="insert_package_package_no", name="package_no", placeholder="Csomagszám", title="Csomagszám", required, autocomplete="off", autofocus>
-        <input type="number", class="insert_package" id="insert_package_usercode", name="usercode", placeholder="Felhasználó kód", title="Felhasználó kód", required, autocomplete="off", value="{{usercode}}", readonly, disabled>
+        <input type="number", class="insert_package" id="insert_package_usercode", name="usercode", placeholder="Felhasználó kód", title="Felhasználó kód", required, autocomplete="off", value="{{usercode}}", min="0", max="9999", required>
         <input type="submit", class="insert_package" id="insert_package_submit", value="Rögzítés">
     </form>
 </div>

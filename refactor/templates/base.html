@@ -12,12 +12,12 @@
             <img src="{{url_for('static', filename='orinklogo.png')}}" class="logo"/>
         </a>
         <br>
-        {% block body %} {% endblock %}
+        {% block body %}{% endblock %}
     </body>
     <footer>
+        {% block footer %}{% endblock %}
         <p>
-            <img alt="Static Badge" src="https://img.shields.io/badge/Villers_Kriszti%C3%A1n-Orink_Hungary_Kft.-blue?style=for-the-badge&logo=flask&logoColor=black&labelColor=90c7ff&color=black
-            ">
+            <img alt="Static Badge" src="https://img.shields.io/badge/Villers_Kriszti%C3%A1n-Orink_Hungary_Kft.-blue?style=for-the-badge&logo=flask&logoColor=black&labelColor=90c7ff&color=black">
         </p>
     </footer>
 </html>
