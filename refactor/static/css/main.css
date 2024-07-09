@@ -39,6 +39,10 @@ body {
 }
 
 #insert_package_package_no:read-only {
+    background-color: rgb(144, 169, 195);
+}
+
+#insert_package_package_no_1:read-only {
     background-color: rgb(255, 127, 127);
 }
 
@@ -262,7 +266,7 @@ footer {
     background-color: rgb(0, 0, 0, 0.3);
 }
 
-#index_change_user_button {
+.footer_button {
     outline: 0;
     grid-gap: 2px;
     align-items: center;
@@ -284,26 +288,37 @@ footer {
     transition: all .1s ease-out;
     white-space: nowrap;
 }
-#index_change_user_button:hover {
+.footer_button:hover {
     box-shadow: 2px 2px 0 #000;
     transform: translate(-2px,-2px);
 }
-#index_change_user_button:focus-visible{
+.footer_button:focus-visible{
     outline-offset: 1px;
 }
 
-#index_upload_data_button {
+/* change_user */
+/* search */
+.users_search {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.user_search {
+    font-size: x-large;
+}
+
+#user_search_button {
     outline: 0;
     grid-gap: 2px;
     align-items: center;
-    background-color: #d6e7f9;
+    background-color: #90c7ff;
     color: #000;
     border: 1px solid #000;
     border-radius: 1px;
     cursor: pointer;
     display: inline-flex;
-    font-size: medium;
     flex-shrink: 0;
+    font-size: x-large;
     gap: 8px;
     justify-content: center;
     line-height: 1.5;
@@ -314,12 +329,17 @@ footer {
     transition: all .1s ease-out;
     white-space: nowrap;
 }
-#index_upload_data_button:hover {
-    box-shadow: 2px 2px 0 #000;
-    transform: translate(-2px,-2px);
+#user_search_button:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
 }
-#index_upload_data_button:focus-visible{
+#user_search_button:focus-visible{
     outline-offset: 1px;
+}
+
+/* table */
+#users_th_options {
+    width: 10%;
 }
 
 /* @keyframes */

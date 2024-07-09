@@ -1,6 +1,10 @@
 console.log("Octopy is ready to serve :)");
 
 /* index.html */
+function editPackage(id) {
+    window.location.href = "/edit/" + id;
+}
+
 function changeUserRedirect() {
     window.location.href = "/change_user";
 }

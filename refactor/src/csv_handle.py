@@ -31,6 +31,32 @@ class CsvMaster:
             matrix.append(line.strip().split(separator))
         return matrix
 
+    def order_by_element(self, order_by: int = 0) -> None:
+        '''order matrix by second element'''
+        matrix = self.read()
+        if not matrix:
+            return None
+        sorted_matrix = sorted(matrix, key=lambda x: x[order_by])
+        return sorted_matrix
+    
+    def search_in_line(self, search: str) -> list[list[str]]:
+        '''search in line'''
+        matrix = self.read()
+        if not matrix:
+            return None
+        new_matrix: list[list[str]] = []
+        for line in matrix:
+            line_content: str = "".join(line)
+            if search in line_content.lower():
+                new_matrix.append(line)
+        return new_matrix
+    
+    def search_in_line_by_order(self, search: str, order_by: int = 0) -> list[list[str]]:
+        '''search in line by order'''
+        matrix = self.search_in_line(search)
+        sorted_matrix = sorted(matrix, key=lambda x: x[order_by])
+        return sorted_matrix
+
     def change_path(self, new_path: str) -> None:
         '''change path'''
         self.path = new_path

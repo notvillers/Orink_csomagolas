@@ -43,7 +43,7 @@ work_states: list[dict] = [
     {"id": 1, "name": "csomagolás", "selected": True},
     {"id": 2, "name": "elpakolás", "selected": False},
     {"id": 3, "name": "targoncázás", "selected": False},
-    {"id": 4, "name": "egyéb", "selected": False}
+    {"id": 4, "name": "egyéb munkavégzés", "selected": False}
 ]
 
 def select_work_state(work_state_id: int):
@@ -167,9 +167,17 @@ def delete(package_id: int):
 @app.route("/change_user/", methods = ["GET", "POST"])
 def change_user():
     '''change user'''
+    if request.method == "POST":
+        search: str = request.form.get("user_to_search")
+        if search:
+            users = user_csv.search_in_line_by_order(search, 1)
+        else:
+            users = user_csv.order_by_element(1)
+    else:
+        users = user_csv.order_by_element(1)
     return render_template(
         "change_user.html",
-        users = user_csv.read(),
+        users = users,
         current_usercode = str(usercode_jsh.read()["usercode"])
     )
 
@@ -184,10 +192,9 @@ def run() -> None:
     '''run'''
     app.app_context().push()
     db.create_all()
-    app.run(debug = True)
+    app.run(debug = True, port=8000)
 
 if __name__ == "__main__":
     run()
 
-# TODO work_state alapján csomag módosítási lehetőség (vagy épp nem)
 # FTP feltöltés
