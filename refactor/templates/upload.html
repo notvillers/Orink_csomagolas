@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Feltöltés</title>
+{% endblock %}
+{% block body %}
+<div class="upload_div">
+    {% if ftp_status%}
+        <form action="/upload", method="post", class="upload_form">
+            <input type="submit", class="button", id="upload_upload_button", value="Adatbázis feltöltése">
+        </form>
+    {% else %}
+        <p style="text-align: center; font-size: x-large;">
+            Sajnálom, de az FTP szerver jelenleg nem elérhető 😭
+            <br>
+            <br>
+            <button class="button" id="upload_upload_button" onclick="uploadDataRedirect()">Újra próbálom</button>
+        </p>
+    {% endif %}
+</div>
+{% endblock %}
+{% block footer %}
+<p>
+    <button class="footer_button" id="change_user_button" onclick="changeUserRedirect()">Felhasználó váltás</button>
+</p>
+{% endblock %}

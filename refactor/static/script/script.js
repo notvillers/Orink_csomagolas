@@ -10,7 +10,7 @@ function changeUserRedirect() {
 }
 
 function uploadDataRedirect() {
-    window.location.href = "/";
+    window.location.href = "/upload";
 }
 
 /* change_user.html */

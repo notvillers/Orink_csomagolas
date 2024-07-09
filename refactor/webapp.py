@@ -6,9 +6,10 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from markupsafe import escape
 from villog import Logger
-from config import db_path, usercode_json, user_csv_path
+from config import db_path, usercode_json, user_csv_path, ftp_path
 from src.json_handle import JsonManager
 from src.csv_handle import CsvMaster
+from src.ftp_handle import Client as FtpClient
 from src.gen_uuid import generate_uuid
 
 path: str = os.path.dirname(__file__)
@@ -19,6 +20,14 @@ l.log("Webapp starting")
 usercode_jsh = JsonManager(usercode_json)
 if not os.path.exists(usercode_json):
     usercode_jsh.write({"usercode": 1})
+
+ftp_jsh = JsonManager(ftp_path)
+ftp_client = FtpClient(
+    hostname = ftp_jsh.read()["hostname"],
+    username = ftp_jsh.read()["username"],
+    password = ftp_jsh.read()["password"],
+    logger = l
+)
 
 user_csv = CsvMaster(user_csv_path)
 
@@ -77,7 +86,6 @@ def index() -> str:
     package_nos = [package.package_no for package in packages]
     if request.method == "POST":
         is_state: int = 0
-        l.log("POST request")
         try:
             usercode: int = int(request.form.get("usercode"))
             if usercode_jsh.read()["usercode"] != usercode:
@@ -187,6 +195,16 @@ def change_user_id(usercode: int):
     usercode_jsh.update({"usercode": usercode})
     return redirect("/change_user")
 
+@app.route("/upload/", methods = ["GET", "POST"])
+def upload():
+    '''upload db'''
+    if request.method == "POST":
+        None
+    return render_template(
+        "upload.html",
+        ftp_status = ftp_client.ping(),
+        ftp_info = None
+    )
 
 def run() -> None:
     '''run'''
