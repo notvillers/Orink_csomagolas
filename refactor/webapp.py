@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from markupsafe import escape
 from villog import Logger
-from config import db_path, usercode_json, user_csv_path, ftp_path
+from config import db_name, db_path, usercode_json, user_csv_path, ftp_path
 from src.json_handle import JsonManager
 from src.csv_handle import CsvMaster
 from src.ftp_handle import Client as FtpClient
@@ -198,12 +198,17 @@ def change_user_id(usercode: int):
 @app.route("/upload/", methods = ["GET", "POST"])
 def upload():
     '''upload db'''
+    result: str = None
     if request.method == "POST":
-        None
+        result = ftp_client.upload(
+            local_file_path = db_path,
+            remote_directory = "csomagolas_refactor",
+            remote_filename = db_name
+        )
     return render_template(
         "upload.html",
         ftp_status = ftp_client.ping(),
-        ftp_info = None
+        ftp_info = result
     )
 
 def run() -> None:

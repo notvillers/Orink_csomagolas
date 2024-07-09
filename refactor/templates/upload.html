@@ -16,6 +16,11 @@
             <button class="button" id="upload_upload_button" onclick="uploadDataRedirect()">Újra próbálom</button>
         </p>
     {% endif %}
+    {% if ftp_info %}
+        <p style="text-align: center; font-size: x-large;">
+            Sikeresen feltöltve: <strong>{{ ftp_info }}</strong>
+        </p>
+    {% endif %}
 </div>
 {% endblock %}
 {% block footer %}

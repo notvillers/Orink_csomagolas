@@ -62,7 +62,7 @@ class Client:
                     ftp.storbinary(f'STOR {remote_filename}', local_file)
 
                 self.__log(f"File '{local_file_path}' uploaded to '{remote_directory}/{remote_filename}'")
-            return f"File '{local_file_path}' uploaded to '{remote_directory}/{remote_filename}'"
+            return f"{remote_directory}/{remote_filename}"
         return None
 
     def download(self, remote_file_path: str, local_directory: str, local_filename: str) -> str:
@@ -77,5 +77,5 @@ class Client:
                     ftp.retrbinary(f'RETR {local_filename}', local_file.write)
 
                 self.__log(f"File '{remote_file_path}/{local_filename}' downloaded to '{local_directory}'")
-            return f"File '{remote_file_path}/{local_filename}' downloaded to '{local_directory}'"
+            return f"{local_directory}"
         return None
