@@ -6,8 +6,9 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from markupsafe import escape
 from villog import Logger
-from config import db_path, usercode_json
+from config import db_path, usercode_json, user_csv_path
 from src.json_handle import JsonManager
+from src.csv_handle import CsvMaster
 from src.gen_uuid import generate_uuid
 
 path: str = os.path.dirname(__file__)
@@ -18,6 +19,8 @@ l.log("Webapp starting")
 usercode_jsh = JsonManager(usercode_json)
 if not os.path.exists(usercode_json):
     usercode_jsh.write({"usercode": 1})
+
+user_csv = CsvMaster(user_csv_path)
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + db_path
@@ -145,7 +148,10 @@ def edit(package_id: int):
             return redirect("/")
     package = PackageDb.query.get_or_404(escape(package_id))
     print(package)
-    return render_template("edit.html", package = package)
+    return render_template(
+        "edit.html", 
+        package = package
+    )
 
 @app.route("/delete/<int:package_id>", methods = ["GET", "POST"])
 def delete(package_id: int):
@@ -158,6 +164,22 @@ def delete(package_id: int):
     l.log(f"Package '{package.package_no}' deleted")
     return redirect("/")
 
+@app.route("/change_user/", methods = ["GET", "POST"])
+def change_user():
+    '''change user'''
+    return render_template(
+        "change_user.html",
+        users = user_csv.read(),
+        current_usercode = str(usercode_jsh.read()["usercode"])
+    )
+
+@app.route("/change_user/<int:usercode>", methods = ["GET", "POST"])
+def change_user_id(usercode: int):
+    '''change user id'''
+    usercode_jsh.update({"usercode": usercode})
+    return redirect("/change_user")
+
+
 def run() -> None:
     '''run'''
     app.app_context().push()
@@ -169,4 +191,3 @@ if __name__ == "__main__":
 
 # TODO work_state alapján csomag módosítási lehetőség (vagy épp nem)
 # FTP feltöltés
-# USER listázás és választási lehetőség

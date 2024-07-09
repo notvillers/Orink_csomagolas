@@ -292,7 +292,7 @@ footer {
     outline-offset: 1px;
 }
 
-#index_upload_button {
+#index_upload_data_button {
     outline: 0;
     grid-gap: 2px;
     align-items: center;
@@ -314,11 +314,11 @@ footer {
     transition: all .1s ease-out;
     white-space: nowrap;
 }
-#index_upload_button:hover {
+#index_upload_data_button:hover {
     box-shadow: 2px 2px 0 #000;
     transform: translate(-2px,-2px);
 }
-#index_upload_button:focus-visible{
+#index_upload_data_button:focus-visible{
     outline-offset: 1px;
 }
 

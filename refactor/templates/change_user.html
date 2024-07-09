@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Octopy</title>
+{% endblock %}
+
+{% block body %}
+<div class="users_div">
+    <table class="table", id="users_table">
+        <tr class="table_tr">
+            <th class="table_th", id="users_th_usercode">Kód</th>
+            <th class="table_th", id="users_th_username">Név</th>
+            <th class="table_th", id="users_th_options">Opció</th>
+        </tr>
+        {% if users %}
+            {% for user in users %}
+                {% if user[0] == current_usercode %}
+                    <tr class="table_tr" style="background-color: rgb(144, 199, 255);">
+                        <td class="table_td", id="usercode_td_username">{{ user[0] }}</td>
+                        <td class="table_td", id="usercode_td_usercode">{{ user[1] }}</td>
+                        <td class="table_td", id="usercode_td_options">
+                            <button class="button" id="index_edit_button" style="background-color: #d6e7f9;">Kiválasztva</button>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            {% for user in users %}
+                {% if user[0] != current_usercode %}
+                    <tr class="table_tr">
+                        <td class="table_td", id="usercode_td_username">{{ user[0] }}</td>
+                        <td class="table_td", id="usercode_td_usercode">{{ user[1] }}</td>
+                        <td class="table_td", id="usercode_td_options">
+                            <button class="button" id="index_edit_button" onclick="changeUser({{ user[0] }})">Kiválasztás</button>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </table>
+</div>
+{% endblock %}
