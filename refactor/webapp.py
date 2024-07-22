@@ -12,15 +12,18 @@ from src.csv_handle import CsvMaster
 from src.ftp_handle import Client as FtpClient
 from src.gen_uuid import generate_uuid
 
+# Path for this file
 path: str = os.path.dirname(__file__)
 
+# Creating logger
 l = Logger()
-l.log("Webapp starting")
 
+# JsonManager for usercode.json
 usercode_jsh = JsonManager(usercode_json)
 if not os.path.exists(usercode_json):
     usercode_jsh.write({"usercode": 1})
 
+# JsonManager for ftp.json
 ftp_jsh = JsonManager(ftp_path)
 ftp_client = FtpClient(
     hostname = ftp_jsh.read()["hostname"],
@@ -29,14 +32,16 @@ ftp_client = FtpClient(
     logger = l
 )
 
+# Reading users
 user_csv = CsvMaster(user_csv_path)
 
+# Creating Flask app
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + db_path
 db = SQLAlchemy(app)
 app.secret_key = generate_uuid()
 
-# package db class
+# Package db class
 class PackageDb(db.Model):
     '''package_db'''
     id = db.Column(db.Integer, primary_key = True)
@@ -48,6 +53,7 @@ class PackageDb(db.Model):
     def __repr__(self) -> str:
         return f"{self.package_no} - {self.crus} - {self.crdti}"
 
+# Work states
 work_states: list[dict] = [
     {"id": 1, "name": "csomagolás", "selected": True},
     {"id": 2, "name": "elpakolás", "selected": False},
@@ -55,6 +61,7 @@ work_states: list[dict] = [
     {"id": 4, "name": "egyéb munkavégzés", "selected": False}
 ]
 
+# Select work state
 def select_work_state(work_state_id: int):
     '''select work state'''
     global work_states
@@ -64,6 +71,7 @@ def select_work_state(work_state_id: int):
         else:
             work_state["selected"] = False
 
+# Get name of the work state
 def get_work_state_name(work_state_id: int) -> str:
     '''get work state name'''
     for work_state in work_states:
@@ -71,6 +79,7 @@ def get_work_state_name(work_state_id: int) -> str:
             return work_state["name"]
     return "N/A"
 
+# Get active work state
 def get_active_work_state() -> int:
     '''get active work state'''
     for work_state in work_states:
@@ -90,9 +99,9 @@ def index() -> str:
             usercode: int = int(request.form.get("usercode"))
             if usercode_jsh.read()["usercode"] != usercode:
                 usercode_jsh.update({"usercode": usercode})
-                l.log(f"Usercode changed to {usercode}")
+                l.log(f"Usercode changed to '{usercode}'")
         except ValueError:
-            l.log("Usercode is not a number")
+            l.log(f"Usercode '{request.form.get("usercode")}' is not a number")
             redirect("/")
         package_no: str = request.form.get("package_no")
         work_state: str = request.form.get("work_state")
@@ -125,7 +134,7 @@ def index() -> str:
         new_package = PackageDb(package_no = package_no, crus = usercode_jsh.read()["usercode"], is_state = is_state)
         db.session.add(new_package)
         db.session.commit()
-        l.log(f"Package ({package_no}) added")
+        l.log(f"Package '{new_package.id} ({package_no})' added")
         return redirect("/")
     return render_template(
         "index.html",
@@ -136,6 +145,7 @@ def index() -> str:
         error = None
     )
 
+# edit.html
 @app.route("/edit/<int:package_id>", methods = ["GET", "POST"])
 def edit(package_id: int):
     '''edit package'''
@@ -152,26 +162,24 @@ def edit(package_id: int):
             if new_package_no not in package_nos or new_package_no or new_package_no != '':
                 package.package_no = new_package_no
                 db.session.commit()
-                l.log(f"Package '{old_package_no}' edited to '{new_package_no}'")
+                l.log(f"Package '{package.id}' edited from '{old_package_no}' to '{new_package_no}'")
             return redirect("/")
-    package = PackageDb.query.get_or_404(escape(package_id))
-    print(package)
     return render_template(
         "edit.html", 
         package = package
     )
 
+# delete package
 @app.route("/delete/<int:package_id>", methods = ["GET", "POST"])
 def delete(package_id: int):
     '''delete package'''
     package = PackageDb.query.get_or_404(escape(package_id))
-    print("lelelelel")
-    print(package.id)
     db.session.delete(package)
     db.session.commit()
-    l.log(f"Package '{package.package_no}' deleted")
+    l.log(f"Package '{package.id} ({package.package_no})' deleted")
     return redirect("/")
 
+# change_user.html
 @app.route("/change_user/", methods = ["GET", "POST"])
 def change_user():
     '''change user'''
@@ -189,12 +197,15 @@ def change_user():
         current_usercode = str(usercode_jsh.read()["usercode"])
     )
 
+# change user id
 @app.route("/change_user/<int:usercode>", methods = ["GET", "POST"])
 def change_user_id(usercode: int):
     '''change user id'''
     usercode_jsh.update({"usercode": usercode})
+    l.log(f"Usercode changed to '{usercode}'")
     return redirect("/change_user")
 
+# upload.html
 @app.route("/upload/", methods = ["GET", "POST"])
 def upload():
     '''upload db'''
@@ -211,13 +222,17 @@ def upload():
         ftp_info = result
     )
 
+# run
 def run() -> None:
     '''run'''
     app.app_context().push()
     db.create_all()
-    app.run(debug = True, port=8000)
+    l.log("Webapp starting")
+    app.run(
+        host = "0.0.0.0",
+        debug = True,
+        port = 8000
+    )
 
 if __name__ == "__main__":
     run()
-
-# FTP feltöltés
