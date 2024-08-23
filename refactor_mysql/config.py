@@ -52,3 +52,9 @@ O8_PACKAGE_CHECK_PATH: str = os.path.join(sql_path, O8_PACKAGE_CHECK)
 exit_on_not_found(O8_PACKAGE_CHECK_PATH)
 
 DEFAULT_USERCODE: int = 2
+
+WORK_STATES: dict[int, str] = {
+    1: "Csomagolás",
+    2: "Pakolás",
+    3: "Egyéb munkavégzés",
+}

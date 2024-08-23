@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Csomagolás</h1>
+    <h1 class="header", id="header">Csomagolás</h1>
     <div class="submit_package">
         <form action="/", method="post">
             <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
@@ -15,31 +15,39 @@
             <input type="number", placeholder="Felhasználó", name="user_code", value="{{ session.usercode }}", id="submit_user_code">
         </form>
     </div>
+    {% if work_states %}
     <div class="work_state">
-        <button>Csomagolás</button>
-        <button>Pakolás</button>
-        <button>Egyéb munkavégzés</button>
+        {% for key, value in work_states.items() %}
+            <button class="work_state_button", onclick="changeWorkState({{key}})">
+                {{ value }}
+            </button>
+        {% endfor %}
     </div>
+    {% endif %}
     {% if packages %}
         <table class="package_table">
-            <tr>
-                <th>ID</th>
-                <th>Csomagszám</th>
-                <th>Felhasználó</th>
-                <th>Időpont</th>
-                <th>Státusz</th>
-                <th>Opciók</th>
+            <tr class="package_table_tr_th">
+                <th class="package_table_th">ID</th>
+                <th class="package_table_th">Csomagszám</th>
+                <th class="package_table_th", id="package_table_th_crus">Felhasználó</th>
+                <th class="package_table_th", id="package_table_th_crdti">Időpont</th>
+                <th class="package_table_th", id="package_table_th_status">Státusz</th>
+                <th class="package_table_th", id="package_table_th_options">Opciók</th>
             </tr>
             {% for package in packages %}
-                <tr>
-                    <td>{{ package.id }}</td>
-                    <td>{{ package.package_no }}</td>
-                    <td>{{ package.get_username() }}</td>
-                    <td>{{ package.crdti }}</td>
-                    <td>{{ package.get_o8_state() }}</td>
-                    <td>
-                        <button>Módosítás</button>
-                        <button>Törlés</button>
+                <tr class="package_table_tr">
+                    <td class="package_table_td">{{ package.id }}</td>
+                    <td class="package_table_td">{{ package.package_no }}</td>
+                    <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
+                    <td class="package_table_td">{{ package.crdti }}</td>
+                    <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
+                    <td class="package_table_td", id="package_table_td_options">
+                        <button class="package_table_button", id="edit_button", onclick="editPackage('{{ package.id }}')">
+                            Módosít
+                        </button>
+                        <button class="package_table_button", id="delete_button", onclick="deletePackage('{{ package.id }}')">
+                            Töröl
+                        </button>
                     </td>
                 </tr>
             {% endfor %}

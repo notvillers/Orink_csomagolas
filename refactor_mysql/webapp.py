@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 from markupsafe import escape
 from villog import Logger
-from config import log_path, o8_json, maria_json, DEFAULT_USERCODE, O8_PACKAGE_CHECK_PATH
+from config import log_path, o8_json, maria_json, DEFAULT_USERCODE, O8_PACKAGE_CHECK_PATH, WORK_STATES
 from src.slave import date_str, gen_uuid, read_json, read_file
 from src.classes.octopus_handle import Octopus
 
@@ -127,7 +127,8 @@ def index() -> str:
     return render_template(
         "index.html",
         session = u_session,
-        packages = packages_today
+        packages = packages_today,
+        work_states = WORK_STATES
     )
 
 @app.route("/o8_check/", methods = ["GET", "POST"])

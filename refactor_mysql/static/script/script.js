@@ -1,8 +1,8 @@
 console.log("Octopy is ready to serve :)");
 
 /* index.html */
-function checkPackage() {
-    window.location.href = "/o8_check/";
+function changeWorkState(workState) {
+    window.location.href = "/work_state/" + workState;
 }
 
 function editPackage(package_no) {
