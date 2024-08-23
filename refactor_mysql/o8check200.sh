@@ -1,0 +1,1 @@
+wget http://localhost:8000/o8_check /dev/null
