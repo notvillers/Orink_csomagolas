@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>
+        Csomagolás
+    </title>
+{% endblock %}
+
+{% block body %}
+    <h1>Csomagolás</h1>
+    <div class="submit_package">
+        <form action="/", method="post">
+            <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
+            <input type="submit", value="Rögzít", id="insert_package_submit">
+            <input type="number", placeholder="Felhasználó", name="user_code", value="{{ session.usercode }}", id="submit_user_code">
+        </form>
+    </div>
+    <div class="work_state">
+        <button>Csomagolás</button>
+        <button>Pakolás</button>
+        <button>Egyéb munkavégzés</button>
+    </div>
+    {% if packages %}
+        <table class="package_table">
+            <tr>
+                <th>ID</th>
+                <th>Csomagszám</th>
+                <th>Felhasználó</th>
+                <th>Időpont</th>
+                <th>Státusz</th>
+                <th>Opciók</th>
+            </tr>
+            {% for package in packages %}
+                <tr>
+                    <td>{{ package.id }}</td>
+                    <td>{{ package.package_no }}</td>
+                    <td>{{ package.get_username() }}</td>
+                    <td>{{ package.crdti }}</td>
+                    <td>{{ package.get_o8_state() }}</td>
+                    <td>
+                        <button>Módosítás</button>
+                        <button>Törlés</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
+
+{% block footer %}
+    <p>folyamat azonosító: {{ session.session_id }}</p>
+{% endblock %}

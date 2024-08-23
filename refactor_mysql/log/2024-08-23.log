@@ -1,0 +1,294 @@
+﻿2024.08.23 11:05:10	ok
+2024.08.23 11:27:33	Flask webapp started
+2024.08.23 11:27:36	Flask webapp started
+2024.08.23 11:27:57	Flask webapp started
+2024.08.23 11:28:24	Flask webapp started
+2024.08.23 11:30:52	Flask webapp started
+2024.08.23 11:34:07	Flask webapp started
+2024.08.23 11:34:08	Flask webapp started
+2024.08.23 11:34:50	Flask webapp started
+2024.08.23 11:40:38	Flask webapp started
+2024.08.23 11:40:55	Flask webapp stopped
+2024.08.23 11:40:55	Flask webapp stopped
+2024.08.23 11:40:57	Flask webapp started
+2024.08.23 11:40:57	Flask webapp started
+2024.08.23 11:41:30	Flask webapp started
+2024.08.23 11:42:56	Flask webapp started
+2024.08.23 11:43:19	Flask webapp stopped
+2024.08.23 11:43:19	Flask webapp stopped
+2024.08.23 11:44:41	Flask webapp started
+2024.08.23 11:44:42	Flask webapp started
+2024.08.23 11:47:59	Flask webapp started
+2024.08.23 11:50:41	Flask webapp started
+2024.08.23 11:51:18	Flask webapp started
+2024.08.23 12:27:16	osql.local reached
+2024.08.23 12:27:16	Connecting to osql.local@o_orink
+2024.08.23 12:27:21	Connected to osql.local@o_orink
+2024.08.23 12:27:22	Table 'USERS' found
+2024.08.23 12:27:22	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:27:22	Flask webapp started
+2024.08.23 12:27:22	osql.local reached
+2024.08.23 12:27:22	Connecting to osql.local@o_orink
+2024.08.23 12:27:27	Connected to osql.local@o_orink
+2024.08.23 12:27:27	Table 'USERS' found
+2024.08.23 12:27:27	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:27:27	Flask webapp started
+2024.08.23 12:27:31	osql.local reached
+2024.08.23 12:27:31	Connecting to osql.local@o_orink
+2024.08.23 12:27:35	Flask webapp stopped
+2024.08.23 12:29:44	osql.local reached
+2024.08.23 12:29:44	Connecting to osql.local@o_orink
+2024.08.23 12:29:50	Connected to osql.local@o_orink
+2024.08.23 12:29:50	Table 'USERS' found
+2024.08.23 12:29:50	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:29:50	Flask webapp started
+2024.08.23 12:29:50	osql.local reached
+2024.08.23 12:29:50	Connecting to osql.local@o_orink
+2024.08.23 12:29:56	Connected to osql.local@o_orink
+2024.08.23 12:29:56	Table 'USERS' found
+2024.08.23 12:29:56	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:29:56	Flask webapp started
+2024.08.23 12:31:15	osql.local reached
+2024.08.23 12:31:15	Connecting to osql.local@o_orink
+2024.08.23 12:31:21	Connected to osql.local@o_orink
+2024.08.23 12:31:21	Table 'USERS' found
+2024.08.23 12:31:21	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:31:21	Flask webapp started
+2024.08.23 12:31:22	osql.local reached
+2024.08.23 12:31:22	Connecting to osql.local@o_orink
+2024.08.23 12:31:28	Connected to osql.local@o_orink
+2024.08.23 12:31:28	Table 'USERS' found
+2024.08.23 12:31:28	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:31:28	Flask webapp started
+2024.08.23 12:32:17	osql.local reached
+2024.08.23 12:32:17	Connecting to osql.local@o_orink
+2024.08.23 12:32:23	Connected to osql.local@o_orink
+2024.08.23 12:32:23	Table 'USERS' found
+2024.08.23 12:32:23	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:32:23	Flask webapp started
+2024.08.23 12:32:23	osql.local reached
+2024.08.23 12:32:23	Connecting to osql.local@o_orink
+2024.08.23 12:32:29	Connected to osql.local@o_orink
+2024.08.23 12:32:29	Table 'USERS' found
+2024.08.23 12:32:29	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:32:29	Flask webapp started
+2024.08.23 12:36:57	osql.local reached
+2024.08.23 12:36:57	Connecting to osql.local@o_orink
+2024.08.23 12:37:04	Connected to osql.local@o_orink
+2024.08.23 12:37:05	Table 'USERS' found
+2024.08.23 12:37:05	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:37:05	Flask webapp started
+2024.08.23 12:37:23	osql.local reached
+2024.08.23 12:37:23	Connecting to osql.local@o_orink
+2024.08.23 12:37:28	Connected to osql.local@o_orink
+2024.08.23 12:37:29	Table 'USERS' found
+2024.08.23 12:37:29	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:37:29	Flask webapp started
+2024.08.23 12:38:59	osql.local reached
+2024.08.23 12:38:59	Connecting to osql.local@o_orink
+2024.08.23 12:39:05	Connected to osql.local@o_orink
+2024.08.23 12:39:05	Table 'USERS' found
+2024.08.23 12:39:05	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:39:05	Flask webapp started
+2024.08.23 12:40:24	osql.local reached
+2024.08.23 12:40:24	Connecting to osql.local@o_orink
+2024.08.23 12:40:30	Connected to osql.local@o_orink
+2024.08.23 12:40:30	Table 'USERS' found
+2024.08.23 12:40:30	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:40:30	Flask webapp started
+2024.08.23 12:40:54	osql.local reached
+2024.08.23 12:40:54	Connecting to osql.local@o_orink
+2024.08.23 12:40:59	Connected to osql.local@o_orink
+2024.08.23 12:40:59	Table 'USERS' found
+2024.08.23 12:40:59	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:40:59	Flask webapp started
+2024.08.23 12:41:42	osql.local reached
+2024.08.23 12:41:42	Connecting to osql.local@o_orink
+2024.08.23 12:41:48	Connected to osql.local@o_orink
+2024.08.23 12:41:48	Table 'USERS' found
+2024.08.23 12:41:48	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:41:48	Flask webapp started
+2024.08.23 12:43:48	osql.local reached
+2024.08.23 12:43:48	Connecting to osql.local@o_orink
+2024.08.23 12:43:53	Connected to osql.local@o_orink
+2024.08.23 12:43:53	Table 'USERS' found
+2024.08.23 12:43:53	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:43:53	Flask webapp started
+2024.08.23 12:44:25	Connection to osql.local closed
+2024.08.23 12:44:25	Connection to osql.local@o_orink closed
+2024.08.23 12:44:25	Flask webapp stopped
+2024.08.23 12:44:25	Connection to osql.local closed
+2024.08.23 12:44:25	Connection to osql.local@o_orink closed
+2024.08.23 12:44:25	Flask webapp stopped
+2024.08.23 12:54:31	osql.local reached
+2024.08.23 12:54:31	Connecting to osql.local@o_orink
+2024.08.23 12:54:37	Connected to osql.local@o_orink
+2024.08.23 12:54:37	Table 'USERS' found
+2024.08.23 12:54:37	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:54:37	Flask webapp started
+2024.08.23 12:54:38	osql.local reached
+2024.08.23 12:54:38	Connecting to osql.local@o_orink
+2024.08.23 12:54:44	Connected to osql.local@o_orink
+2024.08.23 12:54:44	Table 'USERS' found
+2024.08.23 12:54:44	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:54:44	Flask webapp started
+2024.08.23 12:55:06	Fetching checkable packages
+2024.08.23 12:55:06	Checking package adsasd
+2024.08.23 12:55:06	Checking package adsasd in Octopus
+2024.08.23 12:56:48	osql.local reached
+2024.08.23 12:56:48	Connecting to osql.local@o_orink
+2024.08.23 12:56:53	Connected to osql.local@o_orink
+2024.08.23 12:56:53	Table 'USERS' found
+2024.08.23 12:56:53	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:56:53	Flask webapp started
+2024.08.23 12:56:56	osql.local reached
+2024.08.23 12:56:56	Connecting to osql.local@o_orink
+2024.08.23 12:57:01	Connected to osql.local@o_orink
+2024.08.23 12:57:01	Table 'USERS' found
+2024.08.23 12:57:01	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:57:01	Flask webapp started
+2024.08.23 12:57:24	osql.local reached
+2024.08.23 12:57:24	Connecting to osql.local@o_orink
+2024.08.23 12:57:29	Connected to osql.local@o_orink
+2024.08.23 12:57:29	Table 'USERS' found
+2024.08.23 12:57:29	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:57:29	Flask webapp started
+2024.08.23 12:57:49	Fetching checkable packages
+2024.08.23 12:57:49	Checking package adsasd
+2024.08.23 12:57:49	Checking package adsasd in Octopus
+2024.08.23 12:57:49	Package adsasd found in Octopus
+2024.08.23 12:57:49	Checking package 21321312
+2024.08.23 12:57:49	Checking package 21321312 in Octopus
+2024.08.23 12:57:49	Package 21321312 found in Octopus
+2024.08.23 12:58:03	osql.local reached
+2024.08.23 12:58:03	Connecting to osql.local@o_orink
+2024.08.23 12:58:08	Connected to osql.local@o_orink
+2024.08.23 12:58:08	Table 'USERS' found
+2024.08.23 12:58:08	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 12:58:08	Flask webapp started
+2024.08.23 13:00:32	osql.local reached
+2024.08.23 13:00:32	Connecting to osql.local@o_orink
+2024.08.23 13:00:38	Connected to osql.local@o_orink
+2024.08.23 13:00:38	Table 'USERS' found
+2024.08.23 13:00:38	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:00:38	Flask webapp started
+2024.08.23 13:01:28	Fetching checkable packages
+2024.08.23 13:01:28	Checking package adsasd
+2024.08.23 13:01:28	Checking package adsasd in Octopus
+2024.08.23 13:01:28	Package adsasd not found in Octopus
+2024.08.23 13:01:28	Checking package 21321312
+2024.08.23 13:01:28	Checking package 21321312 in Octopus
+2024.08.23 13:01:28	Package 21321312 not found in Octopus
+2024.08.23 13:02:02	Fetching checkable packages
+2024.08.23 13:02:02	Checking package adsasd
+2024.08.23 13:02:02	Checking package adsasd in Octopus
+2024.08.23 13:02:02	Package adsasd not found in Octopus
+2024.08.23 13:02:02	Checking package 21321312
+2024.08.23 13:02:02	Checking package 21321312 in Octopus
+2024.08.23 13:02:02	Package 21321312 not found in Octopus
+2024.08.23 13:02:02	Checking package OH000003_7
+2024.08.23 13:02:02	Checking package OH000003_7 in Octopus
+2024.08.23 13:02:02	Package OH000003_7 found in Octopus
+2024.08.23 13:02:24	osql.local reached
+2024.08.23 13:02:24	Connecting to osql.local@o_orink
+2024.08.23 13:02:29	Connected to osql.local@o_orink
+2024.08.23 13:02:30	Table 'USERS' found
+2024.08.23 13:02:30	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:02:30	Flask webapp started
+2024.08.23 13:02:37	osql.local reached
+2024.08.23 13:02:37	Connecting to osql.local@o_orink
+2024.08.23 13:02:43	Connected to osql.local@o_orink
+2024.08.23 13:02:43	Table 'USERS' found
+2024.08.23 13:02:43	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:02:43	Flask webapp started
+2024.08.23 13:07:17	osql.local reached
+2024.08.23 13:07:17	Connecting to osql.local@o_orink
+2024.08.23 13:07:23	Connected to osql.local@o_orink
+2024.08.23 13:07:23	Table 'USERS' found
+2024.08.23 13:07:23	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:07:23	Flask webapp started
+2024.08.23 13:07:49	osql.local reached
+2024.08.23 13:07:49	Connecting to osql.local@o_orink
+2024.08.23 13:07:54	Connected to osql.local@o_orink
+2024.08.23 13:07:54	Table 'USERS' found
+2024.08.23 13:07:54	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:07:54	Flask webapp started
+2024.08.23 13:08:02	Fetching checkable packages
+2024.08.23 13:08:02	Checking package adsasd in Octopus
+2024.08.23 13:08:02	Package adsasd not found in Octopus
+2024.08.23 13:08:02	Checking package 21321312 in Octopus
+2024.08.23 13:08:02	Package 21321312 not found in Octopus
+2024.08.23 13:08:03	Checking package OH000003_7 in Octopus
+2024.08.23 13:08:03	Package OH000003_7 found in Octopus
+2024.08.23 13:08:30	osql.local reached
+2024.08.23 13:08:30	Connecting to osql.local@o_orink
+2024.08.23 13:08:35	Connected to osql.local@o_orink
+2024.08.23 13:08:35	Table 'USERS' found
+2024.08.23 13:08:35	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:08:35	Flask webapp started
+2024.08.23 13:16:19	osql.local reached
+2024.08.23 13:16:19	Connecting to osql.local@o_orink
+2024.08.23 13:16:24	Connected to osql.local@o_orink
+2024.08.23 13:16:25	Table 'USERS' found
+2024.08.23 13:16:25	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:16:25	Flask webapp started
+2024.08.23 13:16:37	osql.local reached
+2024.08.23 13:16:37	Connecting to osql.local@o_orink
+2024.08.23 13:16:42	Connected to osql.local@o_orink
+2024.08.23 13:16:42	Table 'USERS' found
+2024.08.23 13:16:42	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:16:42	Flask webapp started
+2024.08.23 13:18:29	osql.local reached
+2024.08.23 13:18:29	Connecting to osql.local@o_orink
+2024.08.23 13:18:34	Connected to osql.local@o_orink
+2024.08.23 13:18:34	Table 'USERS' found
+2024.08.23 13:18:34	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:18:34	Flask webapp started
+2024.08.23 13:26:00	osql.local reached
+2024.08.23 13:26:00	Connecting to osql.local@o_orink
+2024.08.23 13:26:06	Connected to osql.local@o_orink
+2024.08.23 13:26:06	Table 'USERS' found
+2024.08.23 13:26:06	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:26:06	Flask webapp started
+2024.08.23 13:27:30	osql.local reached
+2024.08.23 13:27:30	Connecting to osql.local@o_orink
+2024.08.23 13:27:35	Connected to osql.local@o_orink
+2024.08.23 13:27:35	Table 'USERS' found
+2024.08.23 13:27:35	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:27:35	Flask webapp started
+2024.08.23 13:28:55	osql.local reached
+2024.08.23 13:28:55	Connecting to osql.local@o_orink
+2024.08.23 13:29:01	Connected to osql.local@o_orink
+2024.08.23 13:29:01	Table 'USERS' found
+2024.08.23 13:29:01	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:29:01	Flask webapp started
+2024.08.23 13:29:20	osql.local reached
+2024.08.23 13:29:20	Connecting to osql.local@o_orink
+2024.08.23 13:29:26	Connected to osql.local@o_orink
+2024.08.23 13:29:26	Table 'USERS' found
+2024.08.23 13:29:26	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:29:26	Flask webapp started
+2024.08.23 13:34:41	osql.local reached
+2024.08.23 13:34:41	Connecting to osql.local@o_orink
+2024.08.23 13:34:46	Connected to osql.local@o_orink
+2024.08.23 13:34:46	Table 'USERS' found
+2024.08.23 13:34:46	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:34:46	Flask webapp started
+2024.08.23 13:34:58	osql.local reached
+2024.08.23 13:34:58	Connecting to osql.local@o_orink
+2024.08.23 13:35:04	Connected to osql.local@o_orink
+2024.08.23 13:35:04	Table 'USERS' found
+2024.08.23 13:35:04	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:35:04	Flask webapp started
+2024.08.23 13:35:06	osql.local reached
+2024.08.23 13:35:06	Connecting to osql.local@o_orink
+2024.08.23 13:35:12	Connected to osql.local@o_orink
+2024.08.23 13:35:12	Table 'USERS' found
+2024.08.23 13:35:12	Executing: select  * from USERS with (nolock) where 1 = 1
+2024.08.23 13:35:12	Flask webapp started
+2024.08.23 13:38:59	Connection to osql.local closed
+2024.08.23 13:38:59	Connection to osql.local@o_orink closed
+2024.08.23 13:38:59	Flask webapp stopped
+2024.08.23 13:38:59	Connection to osql.local closed
+2024.08.23 13:38:59	Connection to osql.local@o_orink closed
+2024.08.23 13:38:59	Flask webapp stopped
