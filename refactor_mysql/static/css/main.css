@@ -109,7 +109,7 @@ body {
 }
 
 /* Main table */
-.packages_table, .table_td, .table_th {
+.package_table, .package_table_td, .package_table_th {
     border: 1px solid #aaa;
 }
 
@@ -129,6 +129,14 @@ body {
     text-align: left;
     padding: 5px;
     font-size: large;
+}
+
+#package_table_th_id {
+    width: 5%;
+}
+
+#package_table_td_id {
+    text-align: center;
 }
 
 #package_table_th_crus {

@@ -27,8 +27,8 @@
     {% if packages %}
         <table class="package_table">
             <tr class="package_table_tr_th">
-                <th class="package_table_th">ID</th>
-                <th class="package_table_th">Csomagszám</th>
+                <th class="package_table_th", id="package_table_th_id">ID</th>
+                <th class="package_table_th", id="package_table_th_no">Csomagszám</th>
                 <th class="package_table_th", id="package_table_th_crus">Felhasználó</th>
                 <th class="package_table_th", id="package_table_th_crdti">Időpont</th>
                 <th class="package_table_th", id="package_table_th_status">Státusz</th>
@@ -36,10 +36,10 @@
             </tr>
             {% for package in packages %}
                 <tr class="package_table_tr">
-                    <td class="package_table_td">{{ package.id }}</td>
-                    <td class="package_table_td">{{ package.package_no }}</td>
+                    <td class="package_table_td", id="package_table_td_id">{{ package.id }}</td>
+                    <td class="package_table_td", id="package_table_td_no">{{ package.package_no }}</td>
                     <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
-                    <td class="package_table_td">{{ package.crdti }}</td>
+                    <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
                     <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
                     <td class="package_table_td", id="package_table_td_options">
                         <button class="package_table_button", id="edit_button", onclick="editPackage('{{ package.id }}')">
