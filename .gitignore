@@ -16,3 +16,4 @@ tui.py
 *node_modules/
 *.txt
 config/config.json
+*.log
