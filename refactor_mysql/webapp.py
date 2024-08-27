@@ -380,6 +380,7 @@ def summary() -> None:
         file_path = temp_path,
         file_name = f"{date_str()}_{gen_uuid()}.xlsx"
     )
+
     return send_file(
         xlsx_path,
         as_attachment = True
