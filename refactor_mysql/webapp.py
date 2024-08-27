@@ -394,7 +394,7 @@ def run() -> None:
     app.run(
         host = "0.0.0.0",
         debug = True,
-        port = 8000
+        port = 6000
     )
     octopus.close()
     l.log("Flask webapp stopped")
