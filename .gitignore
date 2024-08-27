@@ -14,6 +14,5 @@ raspi5-*
 tui.py
 *.tcss
 *node_modules/
-*.txt
 config/config.json
 *.log
