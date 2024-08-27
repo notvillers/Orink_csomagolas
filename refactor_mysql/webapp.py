@@ -8,7 +8,7 @@ from sqlalchemy import desc
 from markupsafe import escape
 from villog import Logger
 from villog.writexcel import WorkSheet, WorkBook
-from config import log_path, o8_json, maria_json, DEFAULT_USERCODE, O8_PACKAGE_CHECK_PATH, WORK_STATES
+from config import log_path, o8_json, maria_json, DEFAULT_USERCODE, O8_PACKAGE_CHECK_PATH, WORK_STATES, temp_path
 from src.slave import date_str, gen_uuid, read_json, read_file
 from src.classes.octopus_handle import Octopus
 
@@ -376,8 +376,12 @@ def summary() -> None:
         name = "Összesítő",
         content = sheets
     )
+    xlsx_path: str = summary_workbook.xlsx_create(
+        file_path = temp_path,
+        file_name = f"{date_str()}_{gen_uuid()}.xlsx"
+    )
     return send_file(
-        summary_workbook.xlsx_create(),
+        xlsx_path,
         as_attachment = True
     )
 
