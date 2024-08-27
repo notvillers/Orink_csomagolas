@@ -24,7 +24,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    {% if packages %}
+    {% if packages and session.current_work_state == 1 %}
         <table class="package_table">
             <tr class="package_table_tr_th">
                 <th class="package_table_th", id="package_table_th_id">ID</th>
@@ -42,12 +42,13 @@
                     <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
                     <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
                     <td class="package_table_td", id="package_table_td_options">
-                        <button class="package_table_button", id="edit_button", onclick="editPackage('{{ package.id }}')">
-                            Módosít
-                        </button>
-                        <button class="package_table_button", id="delete_button", onclick="deletePackage('{{ package.id }}')">
-                            Töröl
-                        </button>
+                        {% if package.crus == session.usercode %}
+                            <button class="package_table_button", id="delete_button", onclick="deletePackage({{ package.id }})">
+                                Töröl
+                            </button>
+                        {% else %}
+                            Nem a te csomagod
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}

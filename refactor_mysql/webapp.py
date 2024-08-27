@@ -53,7 +53,6 @@ class Packages(db.Model):
 
     def check_octopus(self) -> None:
         '''check octopus'''
-        l.log(f"Checking package {self.package_no} in Octopus")
         query: str = read_file(O8_PACKAGE_CHECK_PATH)
         result: list[str] = octopus.custom_query_only_values(
             query,
@@ -63,9 +62,6 @@ class Packages(db.Model):
             self.o8_state = True
             if result[0][0]:
                 self.o8_found = True
-                l.log(f"Package {self.package_no} found in Octopus")
-            else:
-                l.log(f"Package {self.package_no} not found in Octopus")
             db.session.commit()
 
     def get_o8_state(self) -> str:
@@ -85,22 +81,51 @@ class UserSession(db.Model):
     session_id = db.Column(db.String(200), nullable = False)
     session_filter = db.Column(db.String(200), nullable = True)
     usercode = db.Column(db.Integer, nullable = False, default = DEFAULT_USERCODE)
+    ip_address = db.Column(db.String(200), nullable = True)
+    current_work_state = db.Column(db.Integer, nullable = True, default = 1)
 
     def __repr__(self) -> str:
         return f"<UserSession {self.session_id}>"
 
+class Logs(db.Model):
+    '''logs db'''
+    id = db.Column(db.Integer, primary_key = True)
+    log = db.Column(db.String(200), nullable = False)
+    session_id = db.Column(db.String(200), nullable = True)
+    log_date = db.Column(db.DateTime, default = datetime.now)
+
+    def __repr__(self) -> str:
+        return f"<Log {self.log}>"
+
+def db_log(content: str, session_id: int = None) -> None:
+    '''log to db'''
+    new_log = Logs(
+        log = content,
+        session_id = session_id
+    )
+    db.session.add(new_log)
+    db.session.commit()
+
+def is_work_state(work_state_int) -> bool:
+    '''is work state'''
+    for key, value in WORK_STATES.items():
+        if key == work_state_int:
+            return True
+    return False
+
 @app.route("/", methods = ["GET", "POST"])
 def index() -> str:
     '''index page'''
-
     if "session_id" not in session:
         session["session_id"] = gen_uuid()
         new_session = UserSession(
-            session_id = session["session_id"]
+            session_id = session["session_id"],
+            ip_address = request.remote_addr if request.remote_addr else "Ismeretlen IP"
         )
         db.session.add(new_session)
         db.session.commit()
         u_session = new_session
+        db_log(f"New session from {request.remote_addr}", session["session_id"])
     else:
         u_session = UserSession.query.filter_by(session_id = session["session_id"]).first()
     all_packages = Packages.query.order_by(desc(Packages.id))
@@ -115,11 +140,13 @@ def index() -> str:
                 )
                 db.session.add(new_package)
                 db.session.commit()
+                db_log(f"New package added: {package_no}", session["session_id"])
                 all_packages = Packages.query.order_by(desc(Packages.id))
-        if user_code:
+        if user_code and int(user_code) != u_session.usercode:
             if int(user_code) in [user[0] for user in users]:
                 u_session.usercode = int(user_code)
                 db.session.commit()
+                db_log(f"User code changed to: {user_code}", session["session_id"])
     packages_today = []
     for package in all_packages:
         if package.crdti.date() == datetime.now().date():
@@ -131,11 +158,63 @@ def index() -> str:
         work_states = WORK_STATES
     )
 
+@app.route("/delete/<int:package_id>")
+def delete(package_id: int) -> str:
+    '''delete package'''
+    package = Packages.query.filter_by(id = package_id).first()
+    if package:
+        db_log(f"Deleting request for: {package.package_no}", session["session_id"])
+        u_session = UserSession.query.filter_by(session_id = session["session_id"]).first()
+        return render_template(
+            "delete.html",
+            session = u_session,
+            package = package
+        )
+    return redirect(
+        "/"
+    )
+
+@app.route("/delete_confirm/<int:package_id>")
+def delete_confirm(package_id: int) -> str:
+    '''delete package confirm'''
+    package = Packages.query.filter_by(id = package_id).first()
+    u_session = UserSession.query.filter_by(session_id = session["session_id"]).first()
+    if package:
+        if package.crus == u_session.usercode:
+            db_log(f"Deleting package: {package.package_no}", session["session_id"])
+            db.session.delete(package)
+            db.session.commit()
+    return redirect(
+        "/"
+    )
+
+@app.route("/work_state/<int:work_state>")
+def work_state(new_work_state: int) -> str:
+    '''change work state'''
+    if is_work_state(new_work_state):
+        if session["session_id"]:
+            u_session = UserSession.query.filter_by(session_id = session["session_id"]).first()
+            if u_session:
+                old_state = u_session.current_work_state
+                u_session.current_work_state = new_work_state
+                db.session.commit()
+                new_work_state = Packages(
+                    package_no = f"{WORK_STATES[new_work_state]}_{gen_uuid()}",
+                    is_state = True,
+                    crus = u_session.usercode
+                )
+                db.session.add(new_work_state)
+                db.session.commit()
+                db_log(f"Work state changed from {old_state} to {new_work_state}", session["session_id"])
+    return redirect(
+        "/"
+    )
+
 @app.route("/o8_check/", methods = ["GET", "POST"])
 def check() -> str:
     '''check packages'''
     all_packages = Packages.query.all()
-    l.log("Fetching checkable packages")
+    db_log("Fetching checkable packages")
     for package in all_packages:
         if not package.o8_state:
             package.check_octopus()

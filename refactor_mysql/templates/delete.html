@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>
+        Törlés: {{ package.package_no }}
+    </title>
+{% endblock %}
+
+{% block body %}
+<div class="del_options">
+    <button class="del_button" onclick="deletePackageConfirmed({{ package.id }})">Igen</button>
+    <button class="back_button" onclick="goHome()">Nem</button>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <p>folyamat azonosító: {{ session.session_id }}</p>
+{% endblock %}
