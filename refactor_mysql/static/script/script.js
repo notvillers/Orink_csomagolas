@@ -17,3 +17,12 @@ function deletePackageConfirmed(package_id) {
 function goHome() {
     window.location.href = "/";
 }
+
+function goUsers() {
+    window.location.href = "/users";
+}
+
+/* users.html */
+function switchUser(id) {
+    window.location.href = "/switch_user/" + id;
+}

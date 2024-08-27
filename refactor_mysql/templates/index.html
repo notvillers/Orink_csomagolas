@@ -13,14 +13,21 @@
             <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
             <input type="submit", value="Rögzít", id="insert_package_submit">
             <input type="number", placeholder="Felhasználó", name="user_code", value="{{ session.usercode }}", id="submit_user_code">
+            <button type="button", id="submit_change_user" onclick="goUsers()">Felhasználó váltás</button>
         </form>
     </div>
     {% if work_states %}
     <div class="work_state">
         {% for key, value in work_states.items() %}
-            <button class="work_state_button", onclick="changeWorkState({{key}})">
-                {{ value }}
-            </button>
+            {% if key == session.current_work_state %}
+                <button class="work_state_button", onclick="changeWorkState({{key}})", style="background-color: lightgreen;">
+                    {{ value }}
+                </button>
+            {% else %}
+                <button class="work_state_button", onclick="changeWorkState({{key}})">
+                    {{ value }}
+                </button>
+            {% endif %}
         {% endfor %}
     </div>
     {% endif %}
@@ -32,7 +39,7 @@
                 <th class="package_table_th", id="package_table_th_crus">Felhasználó</th>
                 <th class="package_table_th", id="package_table_th_crdti">Időpont</th>
                 <th class="package_table_th", id="package_table_th_status">Státusz</th>
-                <th class="package_table_th", id="package_table_th_options">Opciók</th>
+                <!--<th class="package_table_th", id="package_table_th_options">Opciók</th>-->
             </tr>
             {% for package in packages %}
                 <tr class="package_table_tr">
@@ -41,7 +48,7 @@
                     <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
                     <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
                     <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
-                    <td class="package_table_td", id="package_table_td_options">
+                    <!--<td class="package_table_td", id="package_table_td_options">
                         {% if package.crus == session.usercode %}
                             <button class="package_table_button", id="delete_button", onclick="deletePackage({{ package.id }})">
                                 Töröl
@@ -49,7 +56,7 @@
                         {% else %}
                             Nem a te csomagod
                         {% endif %}
-                    </td>
+                    </td>-->
                 </tr>
             {% endfor %}
         </table>

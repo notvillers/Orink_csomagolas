@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>
+        Csomagolás
+    </title>
+{% endblock %}
+
+{% block body %}
+    {% if users %}
+        <table class="user_table">
+            <tr class="user_table_tr_th">
+                <th class="user_table_th">Felhasználó kód</th>
+                <th class="user_table_th">Felhasználó név</th>
+                <th class="user_table_th">Opció</th>
+            {% for user in users %}
+                <tr class="user_table_tr">
+                    <td class="user_table_td">{{ user[0] }}</td>
+                    <td class="user_table_td">{{ user[1] }}</td>
+                    <td class="user_table_td" id="user_table_td_options">
+                        {% if user[0] != session.usercode %}
+                        <button id="switch_user_button" onclick="switchUser({{ user[0] }})">
+                            Kiválaszt
+                        </button>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
+
+{% block footer %}
+    <p>folyamat azonosító: {{ session.session_id }}</p>
+{% endblock %}

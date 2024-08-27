@@ -69,6 +69,37 @@ body {
     outline-offset: 1px;
 }
 
+#submit_change_user {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #7dc0ff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: medium;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#submit_change_user:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+    background-color: #0084ff
+}
+#submit_change_user:focus-visible{
+    outline-offset: 1px;
+}
+
 .work_state {
     display: flex;
     justify-content: center;
@@ -363,6 +394,65 @@ footer {
     box-shadow: 2px 2px 0 #000;
     transform: translate(-2px,-2px);
 }
+
 .footer_button:focus-visible{
+    outline-offset: 1px;
+}
+
+
+.user_table, .user_table_td, .user_table_th {
+    border: 1px solid #aaa;
+}
+
+.user_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.user_table_th {
+    height: 30px;
+    background-color: black;
+    color: #d6e7f9;
+    font-size: large;
+}
+
+.user_table_td {
+    text-align: left;
+    padding: 5px;
+    font-size: large;
+}
+
+#user_table_td_options {
+    text-align: center;
+}
+
+#switch_user_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #90c7ff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: medium;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#switch_user_button:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+    background-color: #0080ff
+}
+#switch_user_button:focus-visible{
     outline-offset: 1px;
 }
