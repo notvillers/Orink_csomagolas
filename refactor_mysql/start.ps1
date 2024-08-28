@@ -5,4 +5,4 @@ Set-Location $scriptPath
 # Activating .venv
 .\.venv\Scripts\Activate.ps1
 # Starting WSGI
-waitress-serve --listen *:6000 webapp:app
+waitress-serve --listen *:9000 webapp:app
