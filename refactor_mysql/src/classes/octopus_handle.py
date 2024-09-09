@@ -377,7 +377,7 @@ class Octopus:
             **kfilter
         )
 
-    def custom_query(self, query: str, inserter: list[any]|None) -> tuple|None:
+    def custom_query(self, query: str, inserter: list[any]|None = None) -> tuple|None:
         """
         Selects a custom query from the database
 
@@ -389,7 +389,7 @@ class Octopus:
         """
         return self.__client.select(query, inserter)
 
-    def custom_query_to_table(self, query: str, inserter: list[any]|None) -> Table:
+    def custom_query_to_table(self, query: str, inserter: list[any]|None = None) -> Table:
         """
         Selects a custom query from the database and returns it as a Table object
 
@@ -404,7 +404,7 @@ class Octopus:
             return Table(columns, result)
         return None
 
-    def custom_query_only_columns(self, query: str, inserter: list[any]|None) -> list[str]|None:
+    def custom_query_only_columns(self, query: str, inserter: list[any]|None = None) -> list[str]|None:
         """
         Selects a custom query from the database and returns only the columns
 
