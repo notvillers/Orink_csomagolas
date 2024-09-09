@@ -25,7 +25,7 @@
     <div class="work_state">
         {% for key, value in work_states.items() %}
             {% if key == session.current_work_state %}
-                <button class="work_state_button", onclick="changeWorkState({{key}})", style="background-color: lightgreen;", disabled>
+                <button class="work_state_button", style="background-color: lightgreen;", disabled>
                     {{ value }}
                 </button>
             {% else %}

@@ -1,11 +1,44 @@
 '''mssql db connection'''
 
-from sys import exit as sys_exit
 import os
 from time import sleep
 from ping3 import ping
 import pyodbc
 from villog import Logger
+
+class OctopusPythonException(Exception):
+    '''Exception for Octopus 8 python module'''
+
+class OctopusFunction:
+    '''Octopus 8 function class'''
+
+    def __init__(self,
+        query: str,
+        info: str|None = None
+    ) -> None:
+        self.query: str = query
+        self.info: str|None = info
+
+    def __str__(self) -> str:
+        return self.query
+
+class OctopusScalarValueFunctions:
+    '''Octopus 8 scalar value functions class'''
+    CIKKID_FROM_CIKKSZAM: OctopusFunction = OctopusFunction(
+        query = "select c.CIKKID from CIKK c with (nolock) where c.CIKKSZAM = ?;",
+        info = "? = cikkszam | Returns cikkid"
+    )
+    ELADHATO_KESZLET: OctopusFunction = OctopusFunction(
+        query = "select dbo.F_GETCIKKKESZLET2(?, ?, 5, NULL, '3', NULL);",
+        info = "? = cikkid, ? = raktarak | Returns eladhato keszlet"
+    )
+    F_GETCIKKKESZLET2: OctopusFunction = ELADHATO_KESZLET
+
+
+class OctopusFunctions:
+    '''Octopus 8 functions class'''
+    scalar_value: OctopusScalarValueFunctions = OctopusScalarValueFunctions()
+
 
 class MsSQLClient:
     '''mssql client class'''
@@ -16,7 +49,7 @@ class MsSQLClient:
         username: str,
         password: str,
         is_trusted: bool = True,
-        logger: Logger = None
+        logger: Logger|None = None
     ) -> None:
         self.server: str = server
         self.database: str = database
@@ -25,7 +58,7 @@ class MsSQLClient:
         self.cursor: pyodbc.Connection.cursor = self.connection.cursor()
 
     def __str__(self) -> str:
-        return f"{self.server}@{self.database}"
+        return f"{self.database}@{self.server}"
 
     def __log(self, content: str) -> None:
         '''log content'''
@@ -37,7 +70,7 @@ class MsSQLClient:
     def __ping(self, attempt: int = 5, wait: int = 10) -> bool:
         '''ping the server'''
         if attempt != 0:
-            response_time: float = ping(self.server)
+            response_time: float|None = ping(self.server)
             if response_time or response_time == 0:
                 self.__log(f"{self.server} reached")
                 return True
@@ -51,31 +84,34 @@ class MsSQLClient:
         self.__log(f"Can't reach {self.server}, no more attempts")
         return False
 
-    def __get_driver(self) -> str:
+    def __get_driver(self) -> str|None:
         '''get the driver'''
-        drivers = pyodbc.drivers()
+        drivers: list[str] = pyodbc.drivers()
         for driver in drivers:
             if driver.startswith("ODBC Driver ") and driver.endswith(" for SQL Server"):
                 return driver.replace("ODBC Driver ", "").replace(" for SQL Server", "")
+        if drivers:
+            return drivers[0]
         return None
 
     def __connect(self, username: str, password: str, is_trusted: bool = True) -> pyodbc.Connection:
+        '''connect to the server'''
         if not self.__ping():
-            sys_exit()
+            raise OctopusPythonException(f"{self.server} not reachable")
         odbc_driver: str = self.__get_driver()
         if not odbc_driver:
             self.__log("No ODBC driver found")
-            sys_exit()
+            raise OctopusPythonException("No ODBC driver found")
         connection_string: str = ""
         connection_string += 'DRIVER={ODBC Driver ' + odbc_driver
         connection_string += ' for SQL Server};SERVER=' + self.server
         connection_string += ';DATABASE=' + self.database
         connection_string += ';UID=' + username
         connection_string += ';PWD=' + password
-        connection_string += ";TrustServerCertificate=" + ("yes;" if is_trusted else "no;")
-        self.__log(f"Connecting to {self.server}@{self.database}")
+        connection_string += ";TrustServerCertificate=" + ("yes" if is_trusted else "no") + ";"
+        self.__log(f"Connecting to {self.database}@{self.server}")
         connection: pyodbc.Connection = pyodbc.connect(connection_string)
-        self.__log(f"Connected to {self.server}@{self.database}")
+        self.__log(f"Connected to {self.database}@{self.server}")
         return connection
 
     def close(self) -> None:
@@ -84,7 +120,20 @@ class MsSQLClient:
         self.connection.close()
         self.__log(f"Connection to {self.server} closed")
 
-    def __execute(self, query: str, insert: list = None) -> tuple:
+    def __execute(self, query: str, insert: list|None = None) -> None:
+        '''execute query'''
+        if insert is not None:
+            self.cursor.execute(query, insert)
+        else:
+            self.cursor.execute(query)
+        self.connection.commit()
+        self.__log(f"Executed.")
+
+    def execute(self, query: str, insert: list|None = None) -> None:
+        '''execute query'''
+        self.__execute(query, insert)
+
+    def __execute_with_result(self, query: str, insert: list|None = None) -> tuple|None:
         '''execute query'''
         if insert is not None:
             self.cursor.execute(query, insert)
@@ -94,11 +143,11 @@ class MsSQLClient:
         columns = [description[0] for description in self.cursor.description]
         return columns, result
 
-    def select(self, query: str, insert: list = None) -> tuple:
+    def select(self, query: str, insert: list|None = None) -> tuple|None:
         '''select query'''
-        return self.__execute(query, insert)
+        return self.__execute_with_result(query, insert)
 
-    def one_value_select(self, query: str, insert: list = None) -> any:
+    def one_value_select(self, query: str, insert: list|None = None) -> str|int|None:
         '''select one value'''
         _, result = self.select(query, insert)
         return result[0][0] if result else None
@@ -116,16 +165,16 @@ class Table:
         '''convert to dict'''
         return self.__dict__
 
-    def __column_index(self, column_name: str) -> int:
+    def __column_index(self, column_name: str) -> int|None:
         '''return column index'''
         for index, column in enumerate(self.columns):
             if column.lower() == column_name.lower():
                 return index
         return None
 
-    def return_column(self, column_name: str) -> list[str]:
+    def return_column(self, column_name: str) -> list[str]|None:
         '''return column by name'''
-        column_index: int = self.__column_index(column_name)
+        column_index: int | None = self.__column_index(column_name)
         if column_index is not None:
             return [row[column_index] for row in self.rows]
         return None
@@ -142,20 +191,22 @@ class Table:
             new_rows.append(new_row)
         return new_rows
 
-class Octopus:
 
+class Octopus:
     '''Octopus 8 class'''
 
     def __init__(self,
-        login_data: dict = None,
-        server: str = None,
-        database: str = None,
-        username: str = None,
-        password: str = None,
+        login_data: dict|None = None,
+        server: str|None = None,
+        database: str|None = None,
+        username: str|None = None,
+        password: str|None = None,
         is_server_trusted: bool = True,
         do_logs: bool = True,
-        logger: Logger = None,
-        row_limit: int = None
+        logger: Logger|None = None,
+        row_limit: int|None = None,
+        do_table_fetch: bool = True,
+        allow_execute: bool = False
     ) -> None:
         self.__do_logs: bool = do_logs
         if do_logs:
@@ -173,25 +224,31 @@ class Octopus:
             is_trusted = is_server_trusted,
             logger = self.__logger
         )
-        self.__row_limit: int = row_limit
+        self.__row_limit: int|None = row_limit
         self.__tables: list[str] = self.__get_tables()
 
-        for table in self.__tables:
-            if table.lower() != "table":
-                setattr(self,
-                    f"get_table_{table.lower()}",
-                    lambda
-                        table = table,
-                        raw_filter = "",
-                        order_by = None,
-                        **kfilter:
-                        self.__get_table(
-                            table,
-                            raw_filter,
-                            order_by,
-                            **kfilter
-                        )
-                )
+        if do_table_fetch:
+            for table in self.__tables:
+                if table.lower() != "table":
+                    setattr(self,
+                        f"get_table_{table.lower()}",
+                        lambda
+                            table = table,
+                            raw_filter = "",
+                            order_by = None,
+                            **kfilter:
+                            self.__get_table(
+                                table,
+                                raw_filter,
+                                order_by,
+                                **kfilter
+                            )
+                    )
+
+        self.__allow_execute: bool = allow_execute
+
+    eladhato_keszlet_raktarak: list[str]|None = None
+    __functions: OctopusFunctions = OctopusFunctions()
 
     def __str__(self) -> str:
         return str(self.__client)
@@ -221,15 +278,14 @@ class Octopus:
             return login_data[key]
         if value:
             return value
-        self.__log(f"No {key} found, exiting...")
-        sys_exit(1)
+        raise OctopusPythonException(f"No '{key}' found")
 
     def __get_row_limit(self) -> str:
         '''get row limit to query'''
         if self.__row_limit and self.__row_limit > 0:
             return f" top {str(self.__row_limit)}"
         return ""
-    
+
     def set_row_limit(self, row_limit: int) -> None:
         '''set row limit
         @param: row_limit Row limit'''
@@ -240,8 +296,7 @@ class Octopus:
         _, results = self.__client.select("select name from sys.tables")
         tables = [result[0] for result in results]
         if not tables:
-            self.__log("No tables found")
-            exit(1)
+            raise OctopusPythonException("No tables found")
         return tables
 
     def __is_table(self, table: str) -> bool:
@@ -266,7 +321,7 @@ class Octopus:
         if isinstance(kfilter_item[1], int):
             return f"{kfilter_item[0]} = {kfilter_item[1]}"
 
-    def __get_table(self, table, raw_filter: str = "", order_by: list[tuple] = None, **kfilter) -> Table:
+    def __get_table(self, table, raw_filter: str = "", order_by: list[tuple]|None = None, **kfilter) -> Table:
         """
         Selects a table from the database with the given filters and order by clause
 
@@ -299,7 +354,7 @@ class Octopus:
                 return Table(columns, result)
         return None
 
-    def get_table(self, table: str, raw_filter: str = "", order_by: list[tuple] = None, **kfilter) -> Table:
+    def get_table(self, table: str, raw_filter: str = "", order_by: list[tuple]|None = None, **kfilter) -> Table:
         """
         Selects a table from the database with the given filters and order by clause
 
@@ -322,7 +377,7 @@ class Octopus:
             **kfilter
         )
 
-    def custom_query(self, query: str, insert: tuple = None) -> tuple:
+    def custom_query(self, query: str) -> tuple|None:
         """
         Selects a custom query from the database
 
@@ -332,11 +387,9 @@ class Octopus:
         Returns:
             tuple: Columns and result
         """
-        if insert:
-            return self.__client.select(query, insert)
         return self.__client.select(query)
 
-    def custom_query_to_table(self, query: str, insert: tuple = None) -> Table:
+    def custom_query_to_table(self, query: str) -> Table:
         """
         Selects a custom query from the database and returns it as a Table object
 
@@ -346,15 +399,12 @@ class Octopus:
         Returns:
             Table: Table object
         """
-        if insert:
-            columns, result = self.custom_query(query, insert)
-        else:
-            columns, result = self.custom_query(query)
+        columns, result = self.custom_query(query)
         if result:
             return Table(columns, result)
         return None
 
-    def custom_query_only_columns(self, query: str, insert: tuple = None) -> list[str]:
+    def custom_query_only_columns(self, query: str) -> list[str]|None:
         """
         Selects a custom query from the database and returns only the columns
 
@@ -364,13 +414,10 @@ class Octopus:
         Returns:
             list[str]: Columns
         """
-        if insert:
-            columns, _ = self.__client.select(query, insert)
-            return columns
         columns, _ = self.__client.select(query)
         return columns
 
-    def custom_query_only_values(self, query: str, insert: tuple = None) -> list[list]:
+    def custom_query_only_values(self, query: str) -> list[list]|None:
         """
         Selects a custom query from the database and returns only the values
 
@@ -380,13 +427,106 @@ class Octopus:
         Returns:
             list[list]: Values
         """
-        if insert:
-            _, result = self.__client.select(query, insert)
-            return result
         _, result = self.__client.select(query)
         return result
 
-    def close(self) -> None:
-        '''close connection'''
-        self.__client.close()
-        self.__log(f"Connection to {self} closed")
+    def __execute(self, query: str, insert: list|None = None) -> None:
+        '''execute a query'''
+        if self.__allow_execute:
+            self.__client.execute(query, insert)
+        else:
+            raise OctopusPythonException("Execution is not allowed, set 'allow_execute' to True")
+
+    def execute(self, query: str, insert: list|None = None) -> None:
+        """
+        Execute a query
+
+        Args:
+            query (str): Query string
+            insert (list, optional): Insert values. Defaults to None.
+        """
+        self.__execute(query, insert)
+
+    def __read_file(self, path: str, encoding: str = "utf-8-sig") -> str:
+        '''read file content'''
+        if not os.path.exists(path):
+            raise OctopusPythonException(f"File not found: {path}")
+        with open(path, "r", encoding = encoding) as file:
+            return file.read()
+
+    def __execute_file(self, path: str, encoding: str = "utf-8-sig") -> None:
+        '''execute file content'''
+        return self.custom_query(self.__read_file(path, encoding))
+
+    def execute_file(self, path: str, encoding: str = "utf-8-sig") -> None:
+        '''execute file content'''
+        return self.__execute_file(path, encoding)
+    
+    def execute_file_to_table(self, path: str, encoding: str = "utf-8-sig") -> Table:
+        '''execute file content to table'''
+        return self.custom_query_to_table(self.__read_file(path, encoding))
+
+    def get_cikkid_from_cikkszam(self, cikkszam: str) -> int|None:
+        """
+        Get cikkid from cikkszam
+
+        Arg:
+            cikkszam (str): Cikkszam
+
+        Returns:
+            int: Cikkid
+        """
+        query: str = self.__functions.scalar_value.CIKKID_FROM_CIKKSZAM.query
+        value: int | None = self.__client.one_value_select(query, (cikkszam))
+        return value if value else None
+
+    def set_eladhato_raktarak(self, raktarak: list[str]) -> None:
+        """
+        Set the raktarak for eladhato keszlet
+
+        Arg:
+            raktarak (list[str]): Raktarak
+        """
+        self.eladhato_keszlet_raktarak = raktarak
+        self.__log(f"Eladhato keszlet raktarak set to: {self.eladhato_keszlet_raktarak}")
+
+    def __eladhato_keszlet_raktarak_to_str(self, separator: str = ";", raktarak: list[str]|None = None) -> str:
+        '''convert eladhato keszlet raktarak to string'''
+        if not raktarak and  not self.eladhato_keszlet_raktarak:
+            raise OctopusPythonException("Üres az eladható raktárak listája")
+        raktarak: list[str] = raktarak if raktarak else self.eladhato_keszlet_raktarak
+        return separator.join([raktar for raktar in raktarak])
+
+    def __get_eladhato_keszlet(self, cikkid: int|None = None, cikkszam: str|None = None, raktarak: list[str] = None) -> float|None:
+        '''get eladhato keszlet'''
+        f_cikkid: int|None = None
+        if cikkid:
+            f_cikkid = cikkid
+        if cikkszam:
+            f_cikkid = self.get_cikkid_from_cikkszam(cikkszam)
+        if f_cikkid is None:
+            return None
+        if raktarak:
+            raktarak_str: str = self.__eladhato_keszlet_raktarak_to_str(raktarak = raktarak)
+        else:
+            raktarak_str: str = self.__eladhato_keszlet_raktarak_to_str()
+        if not f_cikkid or not raktarak_str:
+            return None
+        query: str = self.__functions.scalar_value.ELADHATO_KESZLET.query
+        value: int = self.__client.one_value_select(query, (f_cikkid, raktarak_str))
+        return float(value) if float(value) else 0
+
+    def get_eladhato_keszlet(self, cikkid: int|None = None, cikkszam: str|None = None, raktarak: list[str]|None = None) -> float|None:
+        """
+        Get eladható készlet
+
+        Arg:
+            cikkid (int. optional): Cikkid
+            cikkszam (str. optional): Cikkszam
+            raktarak (list[str], optional): Raktarak
+
+        Returns:
+            int: Eladható készlet
+        """
+        keszlet: int = self.__get_eladhato_keszlet(cikkid, cikkszam, raktarak)
+        return keszlet if keszlet else None

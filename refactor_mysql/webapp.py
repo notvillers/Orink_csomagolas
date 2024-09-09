@@ -24,16 +24,27 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{db_data['username']}:
 db = SQLAlchemy(app)
 app.secret_key = gen_uuid()
 
-octopus: Octopus = Octopus(
-    login_data = o8_data,
-    logger = l
-)
+def get_octopus_connection() -> Octopus:
+    '''get octopus connection'''
+    return Octopus(
+        login_data = o8_data,
+        logger = l
+    )
 
-users: list[str] = octopus.get_table(
-    table = "USERS"
-).return_columns(
-    column_names = ["USERCODE", "USERNAME"]
-)
+def get_users_from_octopus() -> list[str]:
+    '''get users from octopus'''
+    octopus: Octopus = get_octopus_connection()
+    users: list[str] = octopus.get_table(
+        table = "USERS",
+        USERACTIVE = 1,
+        USERTIPUS = 1
+    ).return_columns(
+        column_names = ["USERCODE", "USERNAME"]
+    )
+    octopus.close()
+    return users
+
+users: list[list] = get_users_from_octopus()
 
 def get_username(usercode: int) -> str:
     '''get username'''
@@ -59,7 +70,7 @@ class Packages(db.Model):
                 return user[1]
         return "Ismeretlen felhasználó"
 
-    def check_octopus(self) -> None:
+    def check_octopus(self, octopus: Octopus) -> None:
         '''check octopus'''
         query: str = read_file(O8_PACKAGE_CHECK_PATH)
         result: list[str] = octopus.custom_query_only_values(
@@ -210,16 +221,17 @@ def work_state(new_work_state: int) -> str:
             u_session: UserSession = UserSession.query.filter_by(session_id = session["session_id"]).first()
             if u_session:
                 old_state: int = u_session.current_work_state
-                u_session.current_work_state = new_work_state
-                db.session.commit()
-                new_work_state: Packages = Packages(
-                    package_no = f"{WORK_STATES[new_work_state]}#{gen_uuid()}",
-                    is_state = True,
-                    crus = u_session.usercode
-                )
-                db.session.add(new_work_state)
-                db.session.commit()
-                db_log(f"Work state changed from {old_state} to {new_work_state}", session["session_id"])
+                if old_state != new_work_state:
+                    u_session.current_work_state = new_work_state
+                    db.session.commit()
+                    new_work_state: Packages = Packages(
+                        package_no = f"{WORK_STATES[new_work_state]}#{gen_uuid()}",
+                        is_state = True,
+                        crus = u_session.usercode
+                    )
+                    db.session.add(new_work_state)
+                    db.session.commit()
+                    db_log(f"Work state changed from {old_state} to {new_work_state}", session["session_id"])
     return redirect(
         "/"
     )
@@ -229,9 +241,12 @@ def check() -> str:
     '''check packages'''
     all_packages: list[Packages] = Packages.query.all()
     db_log("Fetching checkable packages")
-    for package in all_packages:
-        if not package.o8_state:
-            package.check_octopus()
+    if all_packages:
+        octopus: Octopus = get_octopus_connection()
+        for package in all_packages:
+            if not package.o8_state:
+                package.check_octopus(octopus = octopus)
+        octopus.close()
     return redirect(
         "/"
     )
@@ -396,7 +411,6 @@ def run() -> None:
         debug = True,
         port = 9000
     )
-    octopus.close()
     l.log("Flask webapp stopped")
 
 if __name__ == "__main__":
