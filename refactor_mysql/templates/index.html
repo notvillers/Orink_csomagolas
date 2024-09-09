@@ -11,7 +11,7 @@
     <div class="submit_package">
         <form action="/", method="post">
             {% if session.current_work_state == 1 %}
-                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
+                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no", autofocus>
                 <input type="submit", value="Rögzít", id="insert_package_submit">
             {% else %}
                 <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no", disabled>
@@ -25,7 +25,7 @@
     <div class="work_state">
         {% for key, value in work_states.items() %}
             {% if key == session.current_work_state %}
-                <button class="work_state_button", onclick="changeWorkState({{key}})", style="background-color: lightgreen;">
+                <button class="work_state_button", onclick="changeWorkState({{key}})", style="background-color: lightgreen;", disabled>
                     {{ value }}
                 </button>
             {% else %}
