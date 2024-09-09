@@ -68,6 +68,11 @@ body {
 #insert_package_submit:focus-visible{
     outline-offset: 1px;
 }
+#insert_package_submit:disabled {
+    background-color: #797979;
+    color: #ffffff;
+    border: 1px solid #000;
+}
 
 #submit_change_user {
     outline: 0;
@@ -192,6 +197,12 @@ body {
 
 #package_table_td_options {
     text-align: center;
+}
+
+#package_table_td_state {
+    width: 100%;
+    text-align: center;
+    background-color: #7dc0ff;
 }
 
 #edit_button {

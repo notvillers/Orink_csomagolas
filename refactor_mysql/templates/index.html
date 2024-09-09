@@ -10,8 +10,13 @@
     <h1 class="header", id="header">Csomagolás</h1>
     <div class="submit_package">
         <form action="/", method="post">
-            <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
-            <input type="submit", value="Rögzít", id="insert_package_submit">
+            {% if session.current_work_state == 1 %}
+                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
+                <input type="submit", value="Rögzít", id="insert_package_submit">
+            {% else %}
+                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no", disabled>
+                <input type="submit", value="Rögzít", id="insert_package_submit", disabled>
+            {% endif %}
             <input type="number", placeholder="Felhasználó", name="user_code", value="{{ session.usercode }}", id="submit_user_code">
             <button type="button", id="submit_change_user" onclick="goUsers()">Felhasználó váltás</button>
         </form>
@@ -31,7 +36,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    {% if packages and session.current_work_state == 1 %}
+    {% if packages %}
         <table class="package_table">
             <tr class="package_table_tr_th">
                 <th class="package_table_th", id="package_table_th_id">ID</th>
@@ -42,22 +47,30 @@
                 <!--<th class="package_table_th", id="package_table_th_options">Opciók</th>-->
             </tr>
             {% for package in packages %}
-                <tr class="package_table_tr">
-                    <td class="package_table_td", id="package_table_td_id">{{ package.id }}</td>
-                    <td class="package_table_td", id="package_table_td_no">{{ package.package_no }}</td>
-                    <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
-                    <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
-                    <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
-                    <!--<td class="package_table_td", id="package_table_td_options">
-                        {% if package.crus == session.usercode %}
-                            <button class="package_table_button", id="delete_button", onclick="deletePackage({{ package.id }})">
-                                Töröl
-                            </button>
-                        {% else %}
-                            Nem a te csomagod
-                        {% endif %}
-                    </td>-->
-                </tr>
+                {% if not package.is_state %}
+                    <tr class="package_table_tr">
+                        <td class="package_table_td", id="package_table_td_id">{{ package.id }}</td>
+                        <td class="package_table_td", id="package_table_td_no">{{ package.get_package_no() }}</td>
+                        <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
+                        <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
+                        <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
+                        <!--<td class="package_table_td", id="package_table_td_options">
+                            {% if package.crus == session.usercode %}
+                                <button class="package_table_button", id="delete_button", onclick="deletePackage({{ package.id }})">
+                                    Töröl
+                                </button>
+                            {% else %}
+                                Nem a te csomagod
+                            {% endif %}
+                        </td>-->
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td class="package_table_td", id="package_table_td_state" colspan="5">
+                            <strong>{{ package.get_package_no() }}</strong>
+                        </td>
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
     {% endif %}

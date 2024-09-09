@@ -163,7 +163,7 @@ def index() -> str:
                 db_log(f"User code changed to: {user_code}", session["session_id"])
     packages_today: list[Packages] = []
     for package in all_packages:
-        if package.crdti.date() == datetime.now().date() and package.is_state == False:
+        if package.crdti.date() == datetime.now().date():
             packages_today.append(package)
     return render_template(
         "index.html",
