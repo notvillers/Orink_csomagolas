@@ -377,7 +377,7 @@ class Octopus:
             **kfilter
         )
 
-    def custom_query(self, query: str) -> tuple|None:
+    def custom_query(self, query: str, inserter: list[any]|None) -> tuple|None:
         """
         Selects a custom query from the database
 
@@ -387,9 +387,9 @@ class Octopus:
         Returns:
             tuple: Columns and result
         """
-        return self.__client.select(query)
+        return self.__client.select(query, inserter)
 
-    def custom_query_to_table(self, query: str) -> Table:
+    def custom_query_to_table(self, query: str, inserter: list[any]|None) -> Table:
         """
         Selects a custom query from the database and returns it as a Table object
 
@@ -399,12 +399,12 @@ class Octopus:
         Returns:
             Table: Table object
         """
-        columns, result = self.custom_query(query)
+        columns, result = self.custom_query(query, inserter)
         if result:
             return Table(columns, result)
         return None
 
-    def custom_query_only_columns(self, query: str) -> list[str]|None:
+    def custom_query_only_columns(self, query: str, inserter: list[any]|None) -> list[str]|None:
         """
         Selects a custom query from the database and returns only the columns
 
@@ -414,10 +414,10 @@ class Octopus:
         Returns:
             list[str]: Columns
         """
-        columns, _ = self.__client.select(query)
+        columns, _ = self.__client.select(query, inserter)
         return columns
 
-    def custom_query_only_values(self, query: str) -> list[list]|None:
+    def custom_query_only_values(self, query: str, inserter: list[any]|None = None) -> list[list]|None:
         """
         Selects a custom query from the database and returns only the values
 
@@ -427,7 +427,7 @@ class Octopus:
         Returns:
             list[list]: Values
         """
-        _, result = self.__client.select(query)
+        _, result = self.__client.select(query, inserter)
         return result
 
     def __execute(self, query: str, insert: list|None = None) -> None:
@@ -530,3 +530,7 @@ class Octopus:
         """
         keszlet: int = self.__get_eladhato_keszlet(cikkid, cikkszam, raktarak)
         return keszlet if keszlet else None
+
+    def close(self) -> None:
+        '''close connection'''
+        self.__client.close()
