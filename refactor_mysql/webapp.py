@@ -16,12 +16,12 @@ l: Logger = Logger(
     file_path = os.path.join(log_path, f"{date_str()}.log")
 )
 
-o8_data: str = read_json(o8_json)
-db_data: str = read_json(maria_json)
+o8_data: dict = read_json(o8_json)
+db_data: dict = read_json(maria_json)
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{db_data['username']}:{db_data['password']}@{db_data['server']}:{db_data['port']}/{db_data['database']}"
-db = SQLAlchemy(app)
+db: SQLAlchemy = SQLAlchemy(app)
 app.secret_key = gen_uuid()
 
 def get_octopus_connection() -> Octopus:
