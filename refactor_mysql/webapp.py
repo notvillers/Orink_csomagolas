@@ -254,8 +254,18 @@ def check() -> str:
 @app.route("/users/")
 def show_users() -> str:
     '''users'''
-    u_session: UserSession = UserSession.query.filter_by(session_id = session["session_id"]).first()
-    user_list: list[list] = users.sort
+    if "session_id" not in session:
+        session["session_id"] = gen_uuid()
+        new_session: UserSession = UserSession(
+            session_id = session["session_id"],
+            ip_address = request.remote_addr if request.remote_addr else "Ismeretlen IP"
+        )
+        db.session.add(new_session)
+        db.session.commit()
+        u_session: UserSession = new_session
+        db_log(f"New session from {request.remote_addr}", session["session_id"])
+    else:
+        u_session: UserSession = UserSession.query.filter_by(session_id = session["session_id"]).first()
     return render_template(
         "users.html",
         session = u_session,
