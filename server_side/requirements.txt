@@ -1,4 +1,0 @@
-ping3==4.0.8
-pyodbc==5.1.0
-villog==0.0.9
-XlsxWriter==3.2.0

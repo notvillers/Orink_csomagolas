@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "basic-ftp": "^5.0.5"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.7"
-  }
-}
