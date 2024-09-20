@@ -411,6 +411,13 @@ def summary() -> None:
         as_attachment = True
     )
 
+@app.route("/scanner")
+def scanner_setup() -> str:
+    '''scanner setup'''
+    return render_template(
+        "scanner_setup.html"
+    )
+
 def run() -> None:
     '''starts the webapp'''
     l.log("Flask webapp started")
