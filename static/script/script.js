@@ -26,3 +26,7 @@ function goUsers() {
 function switchUser(id) {
     window.location.href = "/switch_user/" + id;
 }
+
+function loadLastUser() {
+    window.location.href = "/load_last_user";
+}

@@ -8,6 +8,11 @@
 
 {% block body %}
     {% if users %}
+    <div class="user_search">
+        <button type="button", class="load_last_user_button", id="load_last_user_button", onclick="loadLastUser()">
+            Előző felhasználó visszaállítása
+        </button>
+    </div>
         <table class="user_table">
             <tr class="user_table_tr_th">
                 <th class="user_table_th">Felhasználó kód</th>

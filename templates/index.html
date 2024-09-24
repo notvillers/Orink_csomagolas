@@ -11,7 +11,7 @@
     <div class="submit_package">
         <form action="/", method="post">
             {% if session.current_work_state == 1 %}
-                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no", autofocus>
+                <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no">
                 <input type="submit", value="Rögzít", id="insert_package_submit">
             {% else %}
                 <input type="text", placeholder="Csomagszám", autofocus, name="package_no", id="submit_package_no", disabled>
@@ -37,6 +37,7 @@
     </div>
     {% endif %}
     {% if packages %}
+        Mai csomagjaid száma: {{ package_count }}
         <table class="package_table">
             <tr class="package_table_tr_th">
                 <th class="package_table_th", id="package_table_th_id">ID</th>
@@ -56,7 +57,11 @@
                         {% endif %}
                         <td class="package_table_td", id="package_table_dt_crus">{{ package.get_username() }}</td>
                         <td class="package_table_td", id="package_table_td_crdti">{{ package.crdti }}</td>
-                        <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
+                        {% if not package.is_state %}
+                            <td class="package_table_td", id="package_table_td_status">{{ package.get_o8_state() }}</td>
+                        {% else %}
+                            <td class="package_table_td", id="package_table_td_status"></td>
+                        {% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}

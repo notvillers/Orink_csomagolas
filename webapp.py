@@ -53,6 +53,7 @@ def get_username(usercode: int) -> str:
             return user[1]
     return "Ismeretlen felhasználó"
 
+
 class Packages(db.Model):
     '''packages db'''
     id: int = db.Column(db.Integer, primary_key = True)
@@ -100,6 +101,24 @@ class Packages(db.Model):
     def __repr__(self) -> str:
         return f"<Package {self.package_no}>"
 
+
+def packages_today() -> list[str]:
+    '''today packages'''
+    all_packages: list[Packages] = Packages.query.all()
+    today_packages: list[Packages] = []
+    for package in all_packages:
+        if package.crdti.date() == datetime.now().date() and not package.is_state :
+            today_packages.append(package)
+    return today_packages
+
+def users_in_packages(packages: list[Packages]) -> list[int]:
+    '''users in packages'''
+    users: list[int] = []
+    for package in packages:
+        if package.crus not in users:
+            users.append(package.crus)
+    return users
+
 class UserSession(db.Model):
     '''user session db'''
     id: int = db.Column(db.Integer, primary_key = True)
@@ -130,6 +149,7 @@ def db_log(content: str, session_id: int = None) -> None:
     )
     db.session.add(new_log)
     db.session.commit()
+    print(content)
 
 def is_work_state(work_state_int) -> bool:
     '''is work state'''
@@ -176,11 +196,13 @@ def index() -> str:
     for package in all_packages:
         if package.crdti.date() == datetime.now().date():
             packages_today.append(package)
+    package_count: int = package_counter_for_user(packages_today, u_session.usercode)
     return render_template(
         "index.html",
         session = u_session,
         packages = packages_today,
-        work_states = WORK_STATES
+        work_states = WORK_STATES,
+        package_count = package_count
     )
 
 @app.route("/delete/<int:package_id>")
@@ -236,21 +258,6 @@ def work_state(new_work_state: int) -> str:
         "/"
     )
 
-@app.route("/o8_check/", methods = ["GET", "POST"])
-def check() -> str:
-    '''check packages'''
-    all_packages: list[Packages] = Packages.query.all()
-    db_log("Fetching checkable packages")
-    if all_packages:
-        octopus: Octopus = get_octopus_connection()
-        for package in all_packages:
-            if not package.o8_state:
-                package.check_octopus(octopus = octopus)
-        octopus.close()
-    return redirect(
-        "/"
-    )
-
 @app.route("/users/")
 def show_users() -> str:
     '''users'''
@@ -281,6 +288,33 @@ def switch_user(usercode: int) -> str:
             u_session.usercode = usercode
             db.session.commit()
             db_log(f"User code changed to: {usercode}", session["session_id"])
+    return redirect(
+        "/"
+    )
+
+@app.route("/load_last_user", methods = ["GET", "POST"])
+def load_last_user() -> str:
+    '''load last user'''
+    if "session_id" not in session:
+        session["session_id"] = gen_uuid()
+        new_session: UserSession = UserSession(
+            session_id = session["session_id"],
+            ip_address = request.remote_addr if request.remote_addr else "Ismeretlen IP"
+        )
+        db.session.add(new_session)
+        db.session.commit()
+        u_session: UserSession = new_session
+        db_log(f"New session from {request.remote_addr}", session["session_id"])
+    else:
+        u_session: UserSession = UserSession.query.filter_by(session_id = session["session_id"]).first()
+    ip_address: str = request.remote_addr if request.remote_addr else "Ismeretlen IP"
+    sessions_with_same_ip: list[UserSession] = UserSession.query.filter_by(ip_address = ip_address).order_by(desc(UserSession.id)).all()
+    for session_with_same_ip in sessions_with_same_ip:
+        if session_with_same_ip.usercode != DEFAULT_USERCODE and session_with_same_ip.session_id != u_session.session_id and session_with_same_ip.usercode != u_session.usercode:
+            u_session.usercode = session_with_same_ip.usercode
+            db.session.commit()
+            db_log(f"User code changed to: {session_with_same_ip.usercode}", session["session_id"])
+            break
     return redirect(
         "/"
     )
@@ -346,6 +380,15 @@ def checked_package_counter_for_user(packages: list[Packages], usercode: int) ->
 @app.route("/summary")
 def summary() -> None:
     '''summary'''
+    all_packages: list[Packages] = Packages.query.all()
+    db_log("Fetching checkable packages")
+    if all_packages:
+        octopus: Octopus = get_octopus_connection()
+        for package in all_packages:
+            if not package.o8_state:
+                package.check_octopus(octopus = octopus)
+        octopus.close()
+    db_log("Packages syncronized with O8")
     sheets: list[WorkSheet] = []
     summary_data_header: list[str] = [
         "Dátum", "Felhasználókód", "Felhasználónév", "Csomagszám", "Talált csomagok"
@@ -405,7 +448,6 @@ def summary() -> None:
         file_path = temp_path,
         file_name = f"{date_str()}_{gen_uuid()}.xlsx"
     )
-
     return send_file(
         xlsx_path,
         as_attachment = True
@@ -416,6 +458,33 @@ def scanner_setup() -> str:
     '''scanner setup'''
     return render_template(
         "scanner_setup.html"
+    )
+
+@app.route("/view/<int:view_no>")
+def view(view_no: int) -> str:
+    '''view'''
+    if view_no == 1:
+        today_packages: list[Packages] = packages_today()
+        users: list[int] = users_in_packages(today_packages)
+        summary_data: list[list] = []
+        for user in users:
+            summary_data.append(
+                [
+                    get_username(user),
+                    package_counter_for_user(today_packages, user)
+                ]
+            )
+    return redirect(
+        "/"
+    )
+
+@app.route("/update_users")
+def update_users() -> str:
+    '''update users'''
+    global users
+    users = get_users_from_octopus()
+    return redirect(
+        "/"
     )
 
 def run() -> None:

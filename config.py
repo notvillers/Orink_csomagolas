@@ -55,6 +55,6 @@ DEFAULT_USERCODE: int = 2
 
 WORK_STATES: dict[int, str] = {
     1: "Csomagolás",
-    2: "Pakolás",
-    3: "Egyéb munkavégzés",
+    2: "Egyéb munkavégzés",
+    3: "Szünet"
 }

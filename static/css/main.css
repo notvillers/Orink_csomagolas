@@ -408,6 +408,76 @@ footer {
     outline-offset: 1px;
 }
 
+.user_search {
+    text-align: center;
+}
+
+#load_last_user_button {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #fdff88;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: medium;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#load_last_user_button:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+    background-color: #fcff37
+}
+#load_last_user_button:focus-visible{
+    outline-offset: 1px;
+}
+
+#user_search {
+    width: 20%;
+    font-size: large;
+}
+
+#user_search_submit {
+    outline: 0;
+    grid-gap: 2px;
+    align-items: center;
+    background-color: #90ff99;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: medium;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 0px 4px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .1s ease-out;
+    white-space: nowrap;
+}
+#user_search_submit:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+    background-color: #00ff15
+}
+#user_search_submit:focus-visible{
+    outline-offset: 1px;
+}
 
 .user_table, .user_table_td, .user_table_th {
     border: 1px solid #aaa;
