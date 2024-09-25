@@ -430,7 +430,7 @@ def summary() -> None:
                 [
                     package.crdti,
                     package.get_package_no(),
-                    package.get_o8_state() if package.is_state else "Munkaállapot"
+                    package.get_o8_state() if not package.is_state else "Munkaállapot"
                 ]
             )
         sheets.append(
