@@ -1,6 +1,6 @@
 console.log("Octopy is ready to serve :)");
 
-/* index.html */
+/* index.html *
 function changeWorkState(workState) {
     window.location.href = "/work_state/" + workState;
 }

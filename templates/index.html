@@ -67,6 +67,14 @@
             {% endfor %}
         </table>
     {% endif %}
+    <script>
+        /* focusing on iput field by default */
+        function setFocus(elementId) {
+            document.getElementById(elementId).focus();
+            console.log("Focus set to " + elementId);
+        }
+        setFocus("submit_package_no");
+    </script>
 {% endblock %}
 
 {% block footer %}
