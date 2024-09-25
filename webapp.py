@@ -72,17 +72,18 @@ class Packages(db.Model):
         return "Ismeretlen felhasználó"
 
     def check_octopus(self, octopus: Octopus) -> None:
-        '''check octopus'''
+        '''check octopus for package no.'''
         query: str = read_file(O8_PACKAGE_CHECK_PATH)
-        result: list[str] = octopus.custom_query_only_values(
-            query,
-            [self.package_no]
-        )
-        if result:
-            self.o8_state = True
-            if result[0][0]:
-                self.o8_found = True
-            db.session.commit()
+        if not self.o8_state:
+            result: list[str] = octopus.custom_query_only_values(
+                query,
+                [self.package_no]
+            )
+            if result:
+                self.o8_state = True
+                if result[0][0]:
+                    self.o8_found = True
+                db.session.commit()
 
     def get_o8_state(self) -> str:
         '''get o8 state'''
@@ -429,7 +430,7 @@ def summary() -> None:
                 [
                     package.crdti,
                     package.get_package_no(),
-                    package.get_o8_state()
+                    package.get_o8_state() if package.is_state else "Munkaállapot"
                 ]
             )
         sheets.append(
