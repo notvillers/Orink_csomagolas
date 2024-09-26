@@ -254,7 +254,7 @@ def work_state(new_work_state: int) -> str:
                     )
                     db.session.add(new_work_state)
                     db.session.commit()
-                    db_log(f"Work state changed from {old_state} to {new_work_state}", session["session_id"])
+                    db_log(f"Work state changed from {str(old_state)} to {str(u_session.current_work_state)}", session["session_id"])
     return redirect(
         "/"
     )
